@@ -44,7 +44,10 @@ All commands run from the root.
    - For each source, `jq -r '.sources[]|.snapshot_file+" "+.snapshot_sha256'` matches `sha256sum` of that file.
    If one fails, correct the JSON and redo steps 6 and 7. These outputs go to the CONTEXT file, not to the `.md`, because writing them into the `.md` would change its hash.
 8. **Hand-off note.** Write `results/ctx00/CONTEXT-ctx00.md` with the **CONTEXT template** of `record-schema.md`: status `frozen`, paths and hashes, the hash checks of step 7, the questions closed by forced closure, the assumptions with their closure criterion, and the reading order.
-9. **Stop.** Do not start Ctx 01. Tell the person the three files are written.
+9. **Record and stop.** Return the signer, baseline path and hash to the
+   orchestrator, which records `STAGE_APPROVED`, updates execution state and
+   closes step 7 per `record-schema.md`. Do not start Ctx 01. Tell the person the
+   three hand-off files are written.
 
 ## Output
 

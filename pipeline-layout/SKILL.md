@@ -9,7 +9,7 @@ All results live under `results/` at the root, flat, with no `output` subfolder.
 The method's own catalog lives beside this skill: `pipeline-layout/guardrails.md`.
 
 ```
-results/ctx00/  intake.md, sources/SRC-nn.md, problem-definition.md,
+results/ctx00/  state.json, events.jsonl, intake.md, sources/SRC-nn.md, problem-definition.md,
                 problem-baseline.json, problem-baseline.sha256, CONTEXT-ctx00.md
 results/ctx01/  record.json, state.json, events.jsonl, rounds/O<n>/…,
                 requirements-baseline.json, requirements-baseline.sha256, CONTEXT-ctx01.md

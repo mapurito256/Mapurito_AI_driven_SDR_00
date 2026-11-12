@@ -28,7 +28,9 @@ not hold the detail of any sub-stage; each skill does.
 ## Working files
 
 The stage reads and writes only these, defined under **Working files** in
-`references/record-schema.md`: `results/ctx00/intake.md` (the numbered, immutable
+`references/record-schema.md`: `results/ctx00/state.json` and
+`results/ctx00/events.jsonl` (execution state and history),
+`results/ctx00/intake.md` (the numbered, immutable
 statements), `results/ctx00/sources/SRC-nn.md` (one copy per normative source),
 `results/ctx00/problem-definition.md` (the document), and, after approval,
 `results/ctx00/problem-baseline.json`, `results/ctx00/problem-baseline.sha256` and
@@ -59,7 +61,11 @@ Formats shared across skills live in `references/record-schema.md`; the JSON sha
 
 ## Base flow
 
-Run the seven steps in order. Each step writes its section, then runs the
+Initialize or resume the execution records per **Execution state and events** in
+`references/record-schema.md`. The orchestrator records each verification,
+completed step, presentation and human response there, including those performed
+inside `dp-close-feedback` and `dp-freeze-handoff`. Run the seven steps in order.
+Each step writes its section, then runs the
 verifications named. In steps 1 to 5 verification covers only what was just
 written; only step 6 and each feedback round verify the whole document, so the
 cost does not multiply.
@@ -82,8 +88,9 @@ document cannot be approved while any question is open. There are at most three
 feedback rounds, and `dp-gap-search` re-runs at most twice — after rounds 1 and
 2, never after round 3. If the document is not clean after round 3, the stage is
 declared not approved and restarted with a corrected input. In that case, and
-if the person stops the stage, only `results/ctx00/CONTEXT-ctx00.md` is written, with
-`Status: not_approved` and the reason; no JSON is generated.
+if the person stops the stage, write `results/ctx00/CONTEXT-ctx00.md` with
+`Status: not_approved` and the reason; no baseline JSON is generated. Preserve
+the working document, execution state and event history.
 
 ## Stop rules
 
@@ -95,10 +102,11 @@ if the person stops the stage, only `results/ctx00/CONTEXT-ctx00.md` is written,
 
 ## Where state lives
 
-Stage state lives in the document itself, in section 10: the feedback log
-(one entry per round), the two counters — feedback rounds used (n of 3) and gap
-search re-runs used (n of 2) — and the verification verdicts; the decision lives
-in section 11. There is no event log and no separate state file.
+Current execution state lives in `results/ctx00/state.json`; chronological events
+are appended to `results/ctx00/events.jsonl`. The document's section 10 retains the
+feedback log, counters and verification verdicts, and section 11 retains the
+decision. Keep the snapshot consistent with those sections. On interruption,
+resume from the records and existing files as specified in `record-schema.md`.
 
 ## Hand-off to Ctx 01
 
@@ -112,7 +120,8 @@ files, written by `dp-freeze-handoff`:
 | `results/ctx00/CONTEXT-ctx00.md` | Status, paths and hashes, questions closed by forced closure, open assumptions with closure criterion, and the reading order for Ctx 01. |
 
 Reading order for Ctx 01: the context note, the JSON, then `results/ctx00/intake.md` and
-the sources. If the stage was not approved, only the context note exists.
+the sources. If the stage was not approved, the context note records that outcome
+and no frozen baseline exists; working files and execution records remain.
 
 ## Do not
 

@@ -69,7 +69,7 @@ resolve-architecture-v2/       ← ctx02  (SKILL.md, skills/ra-*, references/, e
 compile-build-package-v2/      ← ctx03  (SKILL.md, skills/cb-*, references/, evals/)
 02_contexto/                   ← human background docs; not needed to run stages
 results/                       ← ALL outputs (created by the stages)
-  ctx00/  intake.md, sources/, problem-definition.md, problem-baseline.json/.sha256, CONTEXT-ctx00.md
+  ctx00/  state.json, events.jsonl, intake.md, sources/, problem-definition.md, problem-baseline.json/.sha256, CONTEXT-ctx00.md
   ctx01/  record.json, state.json, events.jsonl, rounds/O<n>/, requirements-baseline.json/.sha256/.md, CONTEXT-ctx01.md
   ctx02/  state.json, events.jsonl, questions.json, items.json, substages/, validations/, architecture-baseline.json/.sha256/.md, final-design.md, CONTEXT-ctx02.md
   ctx03/  state.json, STATUS.md, events.jsonl, questions.json, items.json, spec-register.json, specs/, validations/, build-package-baseline.json/.sha256/.md, final-spec.md, CONTEXT-ctx03.md
@@ -172,8 +172,9 @@ Read `results/` to find where things stand (check in this order, last match wins
 | Evidence | State |
 |---|---|
 | `results/` missing or empty | Nothing run. Start ctx00. |
+| `results/ctx00/state.json` exists and `status` is not `approved` | ctx00 in progress or stopped; read `status`, `next_action` and events, then resume per its `SKILL.md`, even if freeze files are partially present. |
 | `results/ctx00/CONTEXT-ctx00.md` says `Status: not_approved` | ctx00 failed. Restart it with a corrected input. |
-| `results/ctx00/problem-baseline.json` + `.sha256` exist | ctx00 done → ctx01 is next. |
+| `results/ctx00/problem-baseline.json` + `.sha256` exist and `state.json` says `approved` (or an older run without `state.json` has an approved hand-off) | ctx00 done → ctx01 is next, subject to the admission checks. |
 | `results/ctx01/state.json` exists, no `requirements-baseline.json` | ctx01 in progress. Resume per its `SKILL.md`. |
 | `results/ctx01/requirements-baseline.json` + `.sha256` | ctx01 done → ctx02 is next. |
 | `results/ctx02/state.json` without `architecture-baseline.json` | ctx02 in progress (read `status`, `blocked_by`). |

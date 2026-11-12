@@ -106,7 +106,7 @@ flowchart TD
 - **Human validation: just one, at the end.** There is no review between sub-stages; open questions accumulate and are presented together in the document.
 - **Rounds:** up to 3 feedback rounds; the gap search is repeated at most 2 times (after rounds 1 and 2).
 - **Approval:** only with the person's literal `APROBAR` and their name, and with zero open questions. If after round 3 it is not clean, the stage is left **not approved** and restarts with a corrected input.
-- **Output:** `results/ctx00/` with `intake.md` (immutable), `sources/`, `problem-definition.md` (11 sections), `problem-baseline.json`, `problem-baseline.sha256`, `CONTEXT-ctx00.md`.
+- **Output:** `results/ctx00/` with `state.json`, `events.jsonl`, `intake.md` (immutable), `sources/`, `problem-definition.md` (11 sections), `problem-baseline.json`, `problem-baseline.sha256`, `CONTEXT-ctx00.md`.
 
 ### 4.2 ctx01 · Specify requirements (`specify-requirements`)
 

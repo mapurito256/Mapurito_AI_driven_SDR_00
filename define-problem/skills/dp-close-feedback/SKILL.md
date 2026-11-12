@@ -71,15 +71,17 @@ input.
 ## Not approved
 
 If round 3 ends without a clean document, or the person stops the stage: do not
-load `dp-freeze-handoff`, write no JSON and no `.sha256`. Write only
+load `dp-freeze-handoff` or write the baseline JSON or its `.sha256`. Write
 `results/ctx00/CONTEXT-ctx00.md` with the **CONTEXT template**, `Status: not_approved`,
 the `Reason`, the paths and hashes (`sha256sum`) of the `.md` and `intake.md`, and
-the open questions and assumptions as they stand. Then stop.
+the open questions and assumptions as they stand. Preserve the working files;
+the orchestrator records `STAGE_STOPPED` and updates execution state. Then stop.
 
 ## Feedback log (section 10)
 
-Section 10 holds one entry per round and two counters. It is the only record of
-feedback; no separate file is created. Each entry records:
+Section 10 holds one detailed entry per round and two counters. The orchestrator
+also records feedback events and current counters in the execution files defined
+in `record-schema.md`; those records do not replace the detailed log. Each entry records:
 
 - the round number (1, 2 or 3);
 - the questions presented (`OQ-nn`);
@@ -96,7 +98,7 @@ the verification skills; the freeze checks are added later by `dp-freeze-handoff
 
 `results/ctx00/problem-definition.md` with all eleven sections, every open question
 closed, and section 10 holding the feedback log and counters; or, in the not
-approved case, `results/ctx00/CONTEXT-ctx00.md` only.
+approved case, `results/ctx00/CONTEXT-ctx00.md` without a baseline.
 
 ## Exit condition
 

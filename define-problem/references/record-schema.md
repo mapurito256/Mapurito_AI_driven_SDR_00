@@ -15,12 +15,67 @@ heading title, and this file prevails over them. Mechanical checks use
 
 | File | What it holds |
 |---|---|
+| `results/ctx00/state.json` | Current status, step, counters, blockers and next action. |
+| `results/ctx00/events.jsonl` | Append-only execution history, one JSON object per line. |
 | `results/ctx00/intake.md` | The material, one `STM-nn` statement per line, `Total statements:` line first. Immutable once numbered. |
 | `results/ctx00/sources/SRC-nn.md` | One plain-text copy per normative source; citations are checked against it. |
 | `results/ctx00/problem-definition.md` | The readable document, for the person. |
 | `results/ctx00/problem-baseline.json` | The frozen baseline, same information as JSON; only after approval (`baseline-schema.md`). |
 | `results/ctx00/problem-baseline.sha256` | One `sha256sum -c` line for the JSON. |
 | `results/ctx00/CONTEXT-ctx00.md` | Hand-off note (**CONTEXT template**); written whether approved or not. |
+
+## Execution state and events
+
+The orchestrator owns these files. Create them at the start of a new run before
+step 1; never truncate them when resuming. `state.json` is the current snapshot:
+
+| Field | Meaning |
+|---|---|
+| `stage` | `Ctx00` |
+| `status` | `running`, `blocked`, `approved` or `not_approved` |
+| `current_step` | Step 1–7 being executed, or `null` after closure. |
+| `feedback_rounds_used` | Completed feedback rounds, 0–3; matches section 10 when present. |
+| `gap_search_reruns_used` | Completed gap-search re-runs, 0–2; matches section 10 when present. |
+| `decision` | `pending`, `APROBAR` or `DETENER`; only a person's decision is recorded. |
+| `blocked_by` | Open question ids and unresolved verification failures, or an empty list. |
+| `next_action` | Next step and skill, or the human response awaited; `null` after closure. |
+
+Initialize the snapshot and empty log, then append `STAGE_START` once. Initialize
+with `status: running`, `current_step: 1`, zero counters,
+`decision: pending`, an empty `blocked_by` and the step 1 action. `blocked`
+means waiting for a human response or an unresolved failure; transition back to
+`running` when work can continue. `approved` is set only
+after the human approval and successful freeze; `not_approved` covers the
+existing stop and failed-feedback outcomes. These are execution statuses; the
+existing hand-off and baseline status values are unchanged.
+
+`events.jsonl` has one JSON object per line, appended in order. Every event has
+`ts` (ISO 8601), `event`, `step` (1–7), and `round` (0 before feedback, otherwise
+1–3). Emit only these event names:
+
+| Event | When and payload |
+|---|---|
+| `STAGE_START` | Initialize a new run; input path and its SHA-256. |
+| `VERIFICATION_RESULT` | Each verification, including retries; skill or check, scope, verdict and evidence location in section 10 or the hand-off. |
+| `SUBSTAGE_END` | Each completed step; step number and output paths. |
+| `VALIDATION_ISSUED` | Each presentation to the person; document path and open question ids. |
+| `HUMAN_FEEDBACK` | Each human response, including direct approval or stop; decision if given, signer if provided, and answers and requested changes as received. |
+| `STAGE_APPROVED` | Freeze completed; signer, baseline path and SHA-256. |
+| `STAGE_STOPPED` | Not approved after the feedback limit or stopped by the person; reason. |
+
+For a generated artifact, write it first, then append its event, then update
+`state.json`. Record a human response in `HUMAN_FEEDBACK` when received, before
+applying it; the detailed feedback goes in section 10 as usual. Persist the
+snapshot after each completed step, verification,
+presentation and human response, including failures and stops. The detailed
+answers, citations and verification verdicts remain in the document; events do
+not replace section 10. Do not claim a step completed without `SUBSTAGE_END`.
+On resume, read state, the event log and existing documents. A step without its
+closing event is incomplete: resume it from its existing evidence without
+duplicating completed actions or repeating a human decision. If the records
+disagree, report the inconsistency and reconcile it with existing evidence and,
+if needed, the person before proceeding. Do not recreate missing logs for an
+older run or overwrite existing results without explicit confirmation.
 
 ## Identifiers
 

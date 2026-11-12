@@ -82,7 +82,7 @@ Everything is saved in `results/`, inside each stage's folder. Stages are never 
 
 ```
 results/
-├── ctx00/   intake.md · sources/ · problem-definition.md ·
+├── ctx00/   state.json · events.jsonl · intake.md · sources/ · problem-definition.md ·
 │            problem-baseline.json · problem-baseline.sha256 · CONTEXT-ctx00.md
 ├── ctx01/   record.json · state.json · events.jsonl · rounds/O1…O6/ ·
 │            requirements-baseline.json/.sha256/.md · CONTEXT-ctx01.md
