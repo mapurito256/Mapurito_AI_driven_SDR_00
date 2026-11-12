@@ -1,0 +1,102 @@
+{
+  "project": "sdr-fm-spectrum-sensing",
+  "stage": "Ctx00",
+  "intake": { "file": "input.md" },
+  "items": {
+    "STM": [
+      { "id": "STM-01", "text": "Hi team, hope the quarter is going well.", "origin": "declared", "status": "seed", "discard_code": "NOISE" },
+      { "id": "STM-02", "text": "In our city the FM broadcast band often carries transmissions that no one has authorized, and licensed stations complain of interference.", "origin": "declared", "status": "seed", "field": "problem" },
+      { "id": "STM-03", "text": "We need to know, channel by channel, whether each FM broadcast channel is occupied and how that occupancy changes over the day.", "origin": "declared", "status": "seed", "field": "objectives" },
+      { "id": "STM-04", "text": "We also want to notice when a channel's occupancy departs from its usual pattern so an analyst can look into it.", "origin": "declared", "status": "seed", "field": "objectives" },
+      { "id": "STM-05", "text": "Success for us means we can see the state of every channel in the target band on each pass, and that unexpected changes surface quickly.", "origin": "declared", "status": "seed", "field": "performance_expectations", "transfer_class": "E2" },
+      { "id": "STM-06", "text": "The target band is the FM broadcast band from 88 to 108 MHz.", "origin": "declared", "status": "seed", "field": "target_signals_bands" },
+      { "id": "STM-07", "text": "The sensor must run unattended at a fixed site for days at a time.", "origin": "declared", "status": "seed", "field": "declared_constraints", "transfer_class": "E2" },
+      { "id": "STM-08", "text": "An RTL-SDR dongle and a Raspberry Pi are already available for the project.", "origin": "declared", "status": "seed", "field": "assumptions" },
+      { "id": "STM-09", "text": "We had assumed a neural-network classifier running on the Pi would be the way to label each channel.", "origin": "declared", "status": "seed", "field": "assumptions" },
+      { "id": "STM-10", "text": "The analyst on the spectrum operations desk will review the occupancy reports and anomaly flags.", "origin": "declared", "status": "seed", "field": "monitoring_task" },
+      { "id": "STM-11", "text": "Broadcast station operators are affected because their interference complaints depend on what we report, though they never touch the system.", "origin": "declared", "status": "seed", "field": "scope" },
+      { "id": "STM-12", "text": "The national spectrum regulator sets the rules for using the FM band and may want occupancy evidence.", "origin": "declared", "status": "seed", "field": "scope" },
+      { "id": "STM-13", "text": "We do not want this system to demodulate or record the audio content of any station - only whether a channel is in use.", "origin": "declared", "status": "seed", "field": "scope" },
+      { "id": "STM-14", "text": "Decoding RDS metadata is out of scope for now.", "origin": "declared", "status": "seed", "field": "scope" },
+      { "id": "STM-15", "text": "The sensor only needs to cover one fixed site; a mobile or multi-site network is not part of this project.", "origin": "declared", "status": "seed", "field": "scope" },
+      { "id": "STM-16", "text": "Expected result: a per-channel occupancy log and an anomaly flag stream the analyst can read each cycle.", "origin": "declared", "status": "seed", "field": "expected_results", "transfer_class": "E2" }
+    ],
+    "PRB": [
+      { "id": "PRB-01", "text": "Operators cannot tell, channel by channel, whether FM broadcast channels are occupied or interfered with over time, so unauthorized use and interference go unnoticed.", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "licensed stations complain of interference", "location": "STM-02" } ] }
+    ],
+    "OBJ": [
+      { "id": "OBJ-01", "text": "Determine the occupancy state of each FM broadcast channel in the target band over time.", "operational_decision": "Decide whether a channel is occupied so operators can flag unexpected use.", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "whether each FM broadcast channel is occupied", "location": "STM-03" } ] },
+      { "id": "OBJ-02", "text": "Identify when a channel's occupancy departs from its usual pattern.", "operational_decision": "Decide whether to raise an anomaly flag for analyst review.", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "when a channel's occupancy departs from its usual pattern", "location": "STM-04" } ] }
+    ],
+    "MOE": [
+      { "id": "MOE-01", "obj": "OBJ-01", "title": "Channel occupancy observation coverage", "definition": "fraction of target FM channels for which an occupancy state is reported each observation cycle", "unit": "percent of channels", "reference_point": "every channel in the target band reported each cycle", "sense": "higher_is_better", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "see the state of every channel in the target band on each pass", "location": "STM-05" } ] },
+      { "id": "MOE-02", "obj": "OBJ-02", "title": "Anomaly flag latency", "definition": "time between an occupancy change and the reported anomaly flag", "unit": "seconds", "reference_point": "flag reported within the same observation cycle", "sense": "lower_is_better", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "unexpected changes surface quickly", "location": "STM-05" } ] }
+    ],
+    "STK": [
+      { "id": "STK-01", "text": "Spectrum operations analyst who reviews occupancy reports and anomaly flags.", "stk_type": "user", "use": "reviews occupancy reports and anomaly flags to decide on field inspection", "inferred": false, "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "The analyst on the spectrum operations desk will review the occupancy reports and anomaly flags", "location": "STM-10" } ] },
+      { "id": "STK-02", "text": "FM broadcast station operators affected by what the system reports, though they do not use it.", "stk_type": "affected", "inferred": false, "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "Broadcast station operators are affected", "location": "STM-11" } ] },
+      { "id": "STK-03", "text": "National spectrum regulator that sets the FM band rules.", "stk_type": "regulator", "inferred": false, "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "The national spectrum regulator sets the rules for using the FM band", "location": "STM-12" } ] },
+      { "id": "STK-04", "text": "Site operator who installs and maintains the unattended sensor node.", "stk_type": "operator", "inferred": true, "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "The sensor must run unattended at a fixed site", "location": "STM-07" } ] }
+    ],
+    "ENV": [
+      { "id": "ENV-01", "text": "The sensor operates unattended at a single fixed site for days at a time.", "env_type": "physical", "inferred": false, "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "The sensor must run unattended at a fixed site for days at a time", "location": "STM-07" } ] },
+      { "id": "ENV-02", "text": "The receiver hardware tunes across the FM broadcast band.", "env_type": "electromagnetic", "inferred": true, "origin": "derived", "status": "verified",
+        "derives_from": [ { "quote": "receiver tunes from 24 MHz to 1766 MHz", "location": "SRC-01" } ] },
+      { "id": "ENV-03", "text": "An RTL-SDR dongle and a Raspberry Pi are available at the site.", "env_type": "physical", "inferred": false, "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "An RTL-SDR dongle and a Raspberry Pi are already available", "location": "STM-08" } ] }
+    ],
+    "BND": [
+      { "id": "BND-01", "text": "Channel-occupancy sensing of the target FM band at one fixed site.", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "cover one fixed site", "location": "STM-15" } ] }
+    ],
+    "EXT": [
+      { "id": "EXT-01", "text": "FM broadcast transmitters radiating in the target band.", "direction": "inbound", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "the FM broadcast band often carries transmissions", "location": "STM-02" } ] },
+      { "id": "EXT-02", "text": "Spectrum operations analyst receiving reports and flags.", "direction": "outbound", "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "review the occupancy reports and anomaly flags", "location": "STM-10" } ] }
+    ],
+    "SCP": [
+      { "id": "SCP-IN-01", "text": "Report the occupancy state of each FM channel each cycle.", "side": "in", "traces_to": "OBJ-01", "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "whether each FM broadcast channel is occupied", "location": "STM-03" } ] },
+      { "id": "SCP-IN-02", "text": "Flag anomalous occupancy for analyst review.", "side": "in", "traces_to": "OBJ-02", "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "an analyst can look into it", "location": "STM-04" } ] },
+      { "id": "SCP-OUT-01", "text": "Demodulating or recording station audio content.", "side": "out", "reason": "explicitly excluded by the user", "code": "USER_EXCLUDED", "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "demodulate or record the audio content of any station", "location": "STM-13" } ] },
+      { "id": "SCP-OUT-02", "text": "Decoding RDS metadata.", "side": "out", "reason": "deferred for now by the user", "code": "USER_EXCLUDED", "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "Decoding RDS metadata is out of scope for now", "location": "STM-14" } ] },
+      { "id": "SCP-OUT-03", "text": "Mobile or multi-site coverage.", "side": "out", "reason": "out of project scope for this release", "code": "USER_EXCLUDED", "origin": "declared", "status": "seed",
+        "derives_from": [ { "quote": "a mobile or multi-site network is not part of this project", "location": "STM-15" } ] }
+    ],
+    "SRC": [
+      { "id": "SRC-01", "text": "SDR receiver datasheet (local snapshot).", "issuer": "device vendor", "identifier": "sdr-rx-datasheet", "version": "snapshot-2026-11", "date": "2026-11-05", "snapshot_file": "rtl-sdr-datasheet.md", "snapshot_sha256": "67b6de99809ba817a7ba0df690bd3d8d61ec92463ebab3af9febf228861b6a9c", "origin": "declared", "status": "verified" },
+      { "id": "SRC-02", "text": "FM band use reference (local snapshot).", "issuer": "national spectrum authority", "identifier": "fm-band-use-ref", "version": "snapshot-2026-11", "date": "2026-11-05", "snapshot_file": "spectrum-use-reference.md", "snapshot_sha256": "af2b398657fb0fda7e536dd2e882d83da5653dc715d83c6fbe20e75643411825", "origin": "declared", "status": "verified" }
+    ],
+    "APP": [
+      { "id": "APP-01", "trigger": "uses_radio_spectrum", "resolution": "src", "src": "SRC-02", "origin": "derived", "status": "provisional" },
+      { "id": "APP-02", "trigger": "measures_human_em_exposure", "resolution": "not_applicable", "reason": "the system reports channel occupancy state, not human exposure levels", "origin": "derived", "status": "provisional" },
+      { "id": "APP-03", "trigger": "captures_or_demodulates_content", "resolution": "not_applicable", "reason": "demodulation and audio recording are explicitly out of scope (SCP-OUT-01)", "origin": "derived", "status": "provisional" },
+      { "id": "APP-04", "trigger": "processes_personal_data", "resolution": "not_applicable", "reason": "no personal data is captured; only channel occupancy state", "origin": "derived", "status": "provisional" },
+      { "id": "APP-05", "trigger": "produces_regulatory_evidence", "resolution": "not_applicable", "reason": "occupancy logs are for internal operator review; formal evidence export is deferred (ASM-01)", "origin": "derived", "status": "provisional" },
+      { "id": "APP-06", "trigger": "emits_test_signals", "resolution": "not_applicable", "reason": "the sensor only receives; it emits no test signals", "origin": "derived", "status": "provisional" }
+    ],
+    "ASM": [
+      { "id": "ASM-01", "text": "Providing occupancy evidence to the national spectrum regulator is deferred; the first release targets internal operator review only.", "owner": "product owner", "closure_criterion": "regulator confirms whether formal evidence export is required, before the Ctx 01 freeze", "origin": "derived", "status": "provisional",
+        "derives_from": [ { "quote": "may want occupancy evidence", "location": "STM-12" } ] },
+      { "id": "ASM-02", "text": "The intake proposed a neural-network classifier on the Pi; this is a solution and is deferred as a candidate for Ctx 02, not part of the problem definition.", "owner": "architecture lead (Ctx 02)", "closure_criterion": "resolved during the Ctx 02 trade study", "origin": "declared", "status": "provisional",
+        "derives_from": [ { "quote": "a neural-network classifier running on the Pi", "location": "STM-09" } ] }
+    ],
+    "OQ": [
+      { "id": "OQ-01", "text": "Does the regulator require a formal occupancy-evidence export?", "state": "converted", "converted_to": "ASM-01", "origin": "derived" }
+    ]
+  }
+}

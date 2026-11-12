@@ -1,0 +1,696 @@
+
+
+	
+		Compilación Jurídica del MINTIC - Resolución 31 de 2025 ANE
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+		
+			
+
+				
+					
+						
+							
+								
+									
+										
+										
+											
+												
+													
+														
+															
+																
+															
+														
+													
+												
+											
+										
+										
+									
+								
+							
+							  
+								
+									
+										
+										
+											
+												
+													
+														
+															
+																
+																	
+																
+															
+														
+														
+															
+																
+																	
+																						
+																			
+																		
+																	
+																
+															
+														
+														
+														
+														
+															
+																 
+																
+															
+														
+													
+												
+											
+										
+											
+									
+								
+							
+							
+								
+									
+										
+										
+											
+												
+													
+														
+															
+																
+																	Inicio
+																
+																
+																	Decreto Único del Sector TIC
+																
+																
+																	Normativa del Sector TIC
+																
+																
+																	Herramientas de búsqueda
+																
+																
+																	Documentos para comentar
+																
+																
+																	Novedades
+																
+															
+														
+														
+															
+														
+														
+															Inicio
+															Decreto Único del Sector TIC
+															Compilación normativa del Sector TIC
+															Procesos de asignación de espectro radioeléctrico
+															Herramientas de búsqueda
+															Índice por temas misionales
+															Normativa organizacional MINTIC
+															Normativa común a las entidades públicas
+															Jurisprudencia
+															Doctrina
+															Novedades
+															Documentos para comentar
+														
+													
+												
+											
+										
+										
+									
+								
+							
+
+						
+					
+				
+				
+					
+						
+							
+								
+									
+										
+										
+											
+												
+													
+														
+															
+																
+																	
+																		keyboard_backspace
+																		Inicio
+																	
+																
+															
+															
+																
+																	Documento
+																
+															
+														
+													
+												
+												
+													
+														
+															
+																
+																	
+																		keyboard_backspace
+																		Inicio
+																	
+																
+															
+															
+																
+																	Documento
+																
+															
+														
+													
+												
+											
+										
+										
+									
+								
+							
+							
+								
+									
+										
+										
+											
+												
+													
+														
+															
+																Resolución 31 de 2025 ANE
+															
+														
+														
+															
+																
+																	Ocultar anotaciones
+																
+															
+														
+														
+															
+																
+																	
+																		
+																			
+																				download
+																			
+																		
+																	
+																
+															
+														
+													
+												
+											
+										
+										
+									
+								
+							
+							
+								
+									
+										
+										
+											
+												
+													
+														
+															
+																
+																	
+																		Buscar
+																		search
+																	
+																
+																
+																	
+																		Índice
+																		developer_guide
+																	
+																
+															
+														
+													
+													
+													
+													
+														
+														
+														
+													
+													
+														
+
+RESOLUCIÓN 000031 DE 2025
+(febrero 5)
+Diario Oficial No. 53.028 de 12 de febrero de 2025
+Diario Oficial disponible en la web de la Imprenta Nacional de Colombia el 17 de febrero de 2025
+AGENCIA NACIONAL DEL ESPECTRO
+Por medio de la cual se actualiza el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 - Plan Técnico Nacional de Radiodifusión Sonora en Frecuencia Modulada (FM).
+EL DIRECTOR GENERAL DE LA AGENCIA NACIONAL DEL ESPECTRO, 
+en ejercicio de sus facultades establecidas en el artículo 28 de la Ley 1341 de 2009, el artículo 36 de la Ley 1978 de 2019, el artículo 5o del Decreto número 093 de 2010, el artículo 5o del Decreto número 4169 de 2011, Resolución MinTIC 2932 del 5 de agosto de 2024, y
+CONSIDERANDO:
+Que el artículo 75 de la Constitución Política establece que el espectro electromagnético es un bien público inenajenable (sic) e imprescriptible sujeto a la gestión y control del Estado, y se garantiza la igualdad de oportunidades en el acceso a su uso en los términos que fije la ley. Igualmente, dispone que, para garantizar el pluralismo informativo y la competencia, el Estado intervendrá por mandato de la ley para evitar las prácticas monopolísticas en el uso del espectro electromagnético. 
+Que los artículos 101 y 102 de la Constitución Política establecen que el espectro electromagnético es un bien público que forma parte de Colombia y pertenece a la Nación. 
+Que el numeral 7 del artículo 4o de la Ley 1341 de 2009, modificado por el artículo 4o de la Ley 1978 de 2019, establece como uno de los fines de la intervención del Estado en el sector de las Tecnologías de la Información y las Comunicaciones, el de: “garantizar el uso adecuado y eficiente del espectro radioeléctrico, así como la reorganización del mismo, respetando el principio de protección a la inversión, asociada al uso del espectro”. 
+Que el artículo 25 de la Ley 1341 de 2009 creó la Agencia Nacional del Espectro (ANE) y posteriormente el Decreto número 4169 de 2011 le señaló como objeto el de brindar soporte técnico para la gestión, planeación y ejercicio de la vigilancia y control del espectro radioeléctrico. 
+Que el inciso 8 del artículo 57 de la Ley 1341 de 2009 señala que: “los concesionarios de los servicios de radiodifusión sonora deberán prestar el servicio atendiendo los parámetros técnicos esenciales que fije el Ministerio de Tecnologías de la Información y las Comunicaciones.” 
+Que de acuerdo con los numerales 2 y 3 del artículo 36 de la Ley 1978 de 2019, es función de la ANE elaborar por solicitud del Ministerio de Tecnologías de la Información y las Comunicaciones (MinTIC) los Cuadros de Características Técnicas de la Red (CCTR), junto con los estudios técnicos y documentos de soporte, así como establecer y mantener actualizados los planes técnicos de radiodifusión sonora. 
+Que el artículo 6o de la Resolución número 2614 del 26 de julio de 2022, expedida por el MinTIC, establece que al servicio público de Radiodifusión Sonora le aplican, entre otras, las resoluciones que adoptan los Planes Técnicos Nacionales de Radiodifusión Sonora en Amplitud Modulada (AM) y en Frecuencia Modulada (FM) proferidas por la ANE. 
+Que por medio de la Resolución ANE 463 del 21 de diciembre de 2020, que adicionó el Capítulo 2 al Título 2 y el Anexo 2 a la Resolución ANE 105 de 2020, se adoptó y modificó el Plan Técnico Nacional de Radiodifusión Sonora en Frecuencia Modulada (FM) – en adelante PTNRS en FM- con el fin de modernizar y optimizar la gestión del espectro radioeléctrico. Posteriormente, el PTNRS en FM fue modificado mediante la Resolución ANE 742 del 18 de octubre de 2023, con el objetivo de establecer condiciones que facilitaran a las estaciones de radiodifusión sonora del país aumentar su cobertura para la prestación del servicio, previo cumplimiento de las condiciones establecidas en dicho plan. 
+Que, de acuerdo con la modificación realizada, los canales en el PTNRS en FM están conformados por los siguientes parámetros técnicos esenciales: (I) Frecuencia de operación, (II) Frecuencia de enlace entre estudios y sistema de transmisión, (III) Potencia radiada aparente y (IV) el Área de servicio, y cualquier modificación de alguno de estos parámetros requiere la actualización del citado plan. 
+Que el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 (PTNRS en FM), fue modificado por las Resoluciones ANE 10 del 20 de enero de 2021, 25 del 5 de febrero de 2021, 116 del 9 de abril de 2021, 227 del 27 de mayo de 2021, 284 del 18 de junio de 2021, 348 del 21 de julio de 2021, 357 del 26 de julio de 2021, 606 del 9 de diciembre de 2021, 646 del 29 de diciembre de 2021, 147 del 28 de marzo de 2022, 282 del 2 de junio de 2022, 419 del 21 de julio de 2022, 637 del 13 de octubre de 2022, 804 del 19 de diciembre de 2022, 49 del 8 de febrero de 2023, 90 del 24 de febrero de 2023, 222 del 24 de marzo de 2023, 509 del 31 de julio de 2023, 692 del 25 de septiembre de 2023, 1086 del 21 de diciembre de 2023, 41 del 9 de febrero de 2024, 538 del 25 de julio de 2024, 919 del 10 de octubre de 2024, 1083 del 13 de noviembre 2024 y 1280 del 18 de diciembre de 2024. 
+Que el MinTIC, por medio del radicado de Front Office número 242136747 del 21 de octubre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante CORPORACIÓN INTEGRAL M Y P, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Sáchica, departamento de Boyacá, en la frecuencia 94,1 MHz, código de expediente 54912 y distintivo de llamada HKD51. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio de los radicados Front Office número 242150849 del 13 de noviembre de 2024 y 242165072 del 7 de diciembre de 2024, los cuales fueron atendidos por el solicitante mediante los radicados Front Office número 241100310 del 28 de noviembre de 2024 y 241105872 del 15 de diciembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241107607 del 20 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante CORPORACIÓN INTEGRAL M Y P en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HKD51, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando el área de servicio de 1 a 2 municipios. 
+Que el MinTIC, por medio del radicado de Front Office número 242167648 del 12 de diciembre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante FUNDACIÓN SOCIAL DE MUJERES PUTUMAYENSES, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Mocoa, departamento de Putumayo, en la frecuencia 89,8 MHz, código de expediente 54971 y distintivo de llamada HJE54. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio de los radicados Front Office número 242151334 del 15 de noviembre de 2024 y 242165081 del 7 de diciembre de 2024, los cuales fueron atendidos por el solicitante mediante los radicados Front Office número 241101998 del 3 de diciembre de 2024 y 241106900 del 18 de diciembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241108885 del 25 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante FUNDACIÓN SOCIAL DE MUJERES PUTUMAYENSES en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HJE54, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,25 kW a 0,9 kW. 
+Que el MinTIC, por medio del radicado de Front Office número 242136738 del 21 de octubre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante CORPORACIÓN POR LOS DERECHOS HUMANOS DE LAS COMUNIDADES AFROCOLOMBIANAS RIBEREÑAS DEL RÍO MAGDALENA (CORPORACIÓN CIMARRÓN), para la prestación del servicio de Radiodifusión Sonora Comunitaria Étnica en Frecuencia Modulada, en el municipio de San Martín de Loba, departamento de Bolívar, en la frecuencia 105,7 MHz, código de expediente 54875 y distintivo de llamada HJRU. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio del radicado Front Office número 242155766 del 22 de noviembre de 2024, el cual fue atendido por el solicitante mediante el radicado Front Office número 241099057 del 26 de noviembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241103748 del 7 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante CORPORACIÓN POR LOS DERECHOS HUMANOS DE LAS COMUNIDADES AFROCOLOMBIANAS RIBEREÑAS DEL RÍO MAGDALENA (CORPORACIÓN CIMARRÓN) en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HJRU, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando el área de servicio de 1 a 5 municipios y la potencia de operación de 0,2 kW a 0,9 kW. 
+Que el MinTIC, por medio del radicado de Front Office número 242140282 del 28 de octubre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante ASOCIACIÓN SOMONDOCO COMUNICA, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Somondoco, departamento de Boyacá, en la frecuencia 100,6 MHz, código de expediente 54918 y distintivo de llamada HKD69. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio de los radicados Front Office número 242151332 del 15 de noviembre de 2024 y 242155769 del 22 de noviembre de 2024, los cuales fueron atendidos por el solicitante mediante los radicados Front Office número 241096249 del 18 de noviembre de 2024 y 241106539 del 17 de diciembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241108880 del 25 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante ASOCIACIÓN SOMONDOCO COMUNICA en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HKD69, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando el área de servicio de 1 a 5 municipios y la potencia de operación de 0,2 kW a 0,8 kW. 
+Que el MinTIC, por medio del radicado de Front Office número 242146901 del 7 de noviembre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante CORPORACIÓN POSITIVA, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Jardín, departamento de Antioquia, en la frecuencia 101,4 MHz, código de expediente 54886 y distintivo de llamada HJS22. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio del radicado Front Office número 242160957 del 1 de diciembre de 2024, el cual fue atendido por el solicitante mediante el radicado Front Office número 241104220 del 10 de diciembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241107605 del 20 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante CORPORACIÓN POSITIVA en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HJS22, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,2 kW a 0,9 kW. 
+Que el MinTIC, por medio del radicado de Front Office número 242155841 del 24 de noviembre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante ASOCIACIÓN POR EL DESARROLLO DEL ARTE Y LA CULTURA DE BOYACÁ, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Tinjacá, departamento de Boyacá, en la frecuencia 90,6 MHz, código de expediente 54921 y distintivo de llamada HKD81. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio del radicado Front Office número 242165077 del 7 de diciembre de 2024, el cual fue atendido por el solicitante mediante el radicado Front Office número 241105968 del 16 de diciembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241108881 del 25 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante ASOCIACIÓN POR EL DESARROLLO DEL ARTE Y LA CULTURA DE BOYACÁ en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HKD81, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,2 kW a 0,9 kW, eliminado la frecuencia de enlace 318,7 MHz y aumentando el área de servicio de 1 a 3 municipios. 
+Que el MinTIC, por medio del radicado número 242160367 del 29 de noviembre de 2024 y del radicado ANE GD-014425-E-2024 del 11 de diciembre de 2024, requirió a la ANE para analizar y conceptuar desde el punto de vista técnico la solicitud de la modificación de los parámetros técnicos esenciales, correspondientes a la ubicación del sistema radiante, patrones de radiación del arreglo de antenas del sistema de trasmisión y modificación de las características técnicas de la red de enlace presentada por parte del concesionario JUNTA DE ACCIÓN COMUNAL DEL ÁREA URBANA DEL MUNICIPIO DE ARBOLEDAS, que presta el servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Arboledas, departamento de Norte de Santander. La emisora se identifica con el código de expediente 52490. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio del oficio radicado ANE GD-014902-E-2024 del 19 de diciembre de 2024, el cual fue atendido por el concesionario mediante el oficio radicado ANE GD- 000257-E-2025 del 14 de enero de 2025. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, por medio del radicado ANE GD-000443-E-2025 del 21 de enero de 2025, informoíal MinTIC que analizada la documentación técnica enviada por el concesionario JUNTA DE ACCIÓN COMUNAL DEL ÁREA URBANA DEL MUNICIPIO DE ARBOLEDAS, en relación con lo establecido en el PTNRS en F.M., se debe actualizar el canal, identificado con distintivo de llamada HKJ72, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando el área de servicio de 1 a 2 municipios. 
+Que el MinTIC, por medio del radicado número 242163489 del 5 de diciembre de 2024 y radicado ANE GD-014648-E-2024 del 15 de diciembre de 2024, solicitó a la ANE evaluar la disponibilidad de un canal radioeléctrico para la prestación del servicio de radiodifusión sonora de interés público, en el municipio de Juradó, departamento de Chocó, en la banda de Frecuencia Modulada. 
+Que la ANE, mediante el radicado ANE GD-015599-E-2024 del 27 de diciembre de 2024, informó al MinTIC la disponibilidad del canal radioeléctrico, Clase C, identificado con el distintivo de llamada HJK87, en estado proyectado para la prestación del servicio de radiodifusión sonora de interés público en Frecuencia Modulada en el municipio de Juradó, departamento del Chocó. Como resultado, se hace necesario actualizar el área de servicio del canal HJK87 incorporando dicho municipio en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020. 
+Que el MinTIC, por medio del radicado número 242168277 del 13 de diciembre de 2024 y del radicado ANE GD-014680-E-2024 del 16 de diciembre de 2024, solicitó a la ANE evaluar la disponibilidad de un canal radioeléctrico – Convocatoria número 1 emisoras comunitarias 2024 - para la prestación del servicio de radiodifusión sonora, en el municipio La Cumbre, departamento del Valle del Cauca, en la banda de Frecuencia Modulada, en el citado municipio. 
+Que, la ANE, una vez realizado el análisis técnico de disponibilidad de espectro, por medio del radicado ANE GD-015641-E-2024 del 27 de diciembre de 2024, informó al MinTIC la disponibilidad del canal radioeléctrico, Clase D, identificado con el distintivo de llamada HKBB, para la prestación del servicio de radiodifusión sonora en Frecuencia Modulada, en el municipio de La Cumbre, departamento del Valle del Cauca. Como resultado, se hace necesario incorporar el canal HKBB en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020. 
+Que el MinTIC, por medio del radicado número 242169400 del 16 de diciembre de 2024 y del radicado ANE GD-015269-E-2024 del 20 de diciembre de 2024, solicitó a la ANE evaluar la disponibilidad de un canal radioeléctrico para la prestación del servicio de radiodifusión sonora de interés público, en el municipio de San Vicente de Chucurí, departamento de Santander, en la banda de Frecuencia Modulada. 
+Que la ANE, mediante el radicado ANE GD-000336-E-2025 del 16 de enero de 2025, informó al MinTIC la disponibilidad del canal radioeléctrico, Clase C, identificado con el distintivo de llamada HKAA, para la prestación del servicio de radiodifusión sonora de interés público en Frecuencia Modulada en el municipio de San Vicente de Chucurí, departamento de Santander. Como resultado, se hace necesario incorporar el canal HKAA en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020. 
+Que mediante Resolución número 1280 del 18 de diciembre de 2024, la ANE actualizó el Apéndice A y B del Anexo 2 de la Resolución ANE 105 de 2020 (PTNRS en FM), incorporando la información técnica correspondiente a 40 de los 72 canales radioeléctricos solicitados por el MinTIC, en el marco de la Convocatoria número 001 de 2024, publicada para la manifestación de interés entre el 1 de octubre y el 1 de noviembre del mismo año. 
+Que, de conformidad con lo considerado en la Resolución número 1280 del 18 de diciembre de 2024, la ANE, mediante el radicado GD-015756-E-2024 del 30 de diciembre de 2024, concluyó el análisis técnico de disponibilidad de espectro solicitado por el MinTIC en el marco de la Convocatoria número 001 de 2024, respecto de los municipios restantes. A continuación, se presenta la información correspondiente a los canales que cuentan con disponibilidad técnica para su incorporación en el Apéndice A del Plan Técnico Nacional de Radiodifusión Sonora en Frecuencia Modulada (PTNRS en FM). Este análisis se realizó conforme a los criterios técnicos establecidos en el PTNRS en FM, actualizado mediante la Resolución ANE 463 del 21 de diciembre de 2020 y modificado por la Resolución ANE 742 del 18 de octubre de 2023: 
+CLASE DISTINTIVO DEPARTAMENTO MUNICIPIO 
+D HKAR Antioquia Puerto Nare 
+D HKA57 Cundinamarca Une 
+D HKBC Cundinamarca Quipile 
+D HKAY Cundinamarca Fosca 
+D HKA94 Cundinamarca Ubaque 
+D HJZ50 Bolívar Hatillo de Loba 
+D HJZ51 Bolívar Barranco de Loba 
+D HJZ46 Bolívar Altos del Rosario 
+D HKAE Bolívar Mompox 
+D HKAI Cauca Buenos Aires 
+D HKAG Cauca San Sebastián 
+D HJZ33 Cesar Astrea 
+D HJZ53 Córdoba Puerto Escondido 
+D HKBD Córdoba Pueblo Nuevo 
+D HKAS Guajira Manaure 
+D HKBE Huila Baraya 
+D HKAW Magdalena Plato 
+D HKAT Magdalena Aracataca 
+D HKAU Nariño Olaya Herrera 
+D HKAV Nariño San Pablo 
+D HKAO Risaralda Mistrato 
+D HKB78 Tolima Villahermosa 
+D HJZ30 Tolima Dolores 
+D HKBA Vichada Cumaribo 
+Adicionalmente, en atención a lo solicitado por MinTIC, de la revisión llevada a cabo se concluye la necesidad de adelantar los siguientes cambios: 
+- Para el canal con distintivo HJJY, actualmente en estado proyectado, se modifica el municipio de la concesión, la clase del canal, la Potencia Radiada Aparente (P.R.A) y el área de servicio de la siguiente manera: el municipio de la concesión se cambia de Ibagué, en el departamento de Tolima (Código DANE 73001), al municipio de Ambalema, en el mismo departamento (Código DANE 73030); la clase del canal se ajusta de “C” a “D”, y la P.R.A se reduce de 1 kW a 0,15 kW. 
+- Para el canal con distintivo HJT30, actualmente en estado proyectado, se modifica el municipio de la concesión, la clase del canal y la Potencia Radiada Aparente (P.R.A) de la siguiente manera: el municipio de la concesión se cambia de La Dorada, en el departamento de Caldas (Código DANE 17380), al municipio de Puerto Salgar, en el departamento de Cundinamarca (Código DANE 25572); la clase del canal se ajusta de “C” a “D”, y la P.R.A se reduce de 0,5 kW a 0,2 kW. 
+- Para el canal con distintivo HJL44, actualmente en estado proyectado, se modifica la clase del canal y la Potencia Radiada Aparente (P.R.A) de la siguiente manera: la clase se ajusta de “C” a “D”, y la P.R.A se reduce de 0,5 kW a 0,2 kW. 
+- Para el canal con distintivo HJS66, actualmente en estado proyectado, se modifica su clase de “C” a “D”, y la Potencia Radiada Aparente (P.R.A) de 0,5 kW a 0,2 kW. Asimismo, se constituye su área de servicio con los siguientes municipios del departamento del Atlántico: Sabanagrande (Código DANE 08634), Santo Tomás (Código DANE 08685), Palmar de Varela (Código DANE 08520) y Malambo (Código DANE 08433). 
+Que, para los municipios de La Estrella en el departamento de Antioquia, Barranquilla y Soledad en el departamento del Atlántico, Filadelfia en el departamento de Caldas, y Corinto en el departamento del Cauca, donde el MinTIC solicitó análisis de disponibilidad de espectro para un canal clase “D”, no se encontró disponibilidad de una frecuencia en la banda de FM, de acuerdo con lo establecido en el PTNRS en FM. 
+Que el MinTIC, por medio del radicado de Front Office número 242140292 del 28 de octubre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante JUNTA DE ACCIÓN COMUNAL BARRIO LA CUARENTA, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Betania, departamento de Antioquia, en la frecuencia 105,4 MHz, código de expediente 54889 y distintivo de llamada HKA47. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio de los radicados Front Office número 242158378 del 27 de noviembre de 2024 y 242175721 del 25 de diciembre de 2024, los cuales fueron atendidos por el solicitante mediante los radicados Front Office número 241105851 del 15 de diciembre de 2024 y 251005384 del 17 de enero de 2025. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 251006901 del 22 de enero de 2025, informó al MinTIC que analizada la documentación técnica enviada por el solicitante JUNTA DE ACCIÓN COMUNAL BARRIO LA CUARENTA en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HKA47, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,2 kW a 0,9 kW.
+Que el MinTIC, por medio del radicado de Front Office número 242136746 del 21 de octubre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante ASOCIACIÓN RADIAL COMUNITARIA DE MUZO BOYACÁ, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Muzo, departamento de Boyacá, en la frecuencia 99,1 MHz, código de expediente 54910 y distintivo de llamada HKD30. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio de los radicados Front Office número 242150485 del 13 de noviembre de 2024, 242165069 del 7 de diciembre de 2024 y 242175722 del 25 de diciembre de 2024, los cuales fueron atendidos por el solicitante mediante los radicados Front Office número 241099034 del 26 de noviembre de 2024, 241106077 del 16 de diciembre de 2024 y 241108956 del 26 de diciembre de 2024. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 251006902 del 22 de enero de 2025, informó al MinTIC que analizada la documentación técnica enviada por el solicitante ASOCIACIÓN RADIAL COMUNITARIA DE MUZO BOYACÁ en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HKD30, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,2 kW a 0,9 kW y el área de servicio de 1 a 2 municipios. 
+Que el MinTIC, por medio del radicado de Front Office número 242166017 del 10 de diciembre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante ASOCIACIÓN DE DESPLAZADOS AFRODESCENDIENTES, RAIZALES Y PALENQUEROS VÍCTIMAS DEL DEPARTAMENTO DE LA GUAJIRA “LOS AFRO DEL CERRO PINTAO”, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Villanueva, departamento de La Guajira, en la frecuencia 102,8 MHz, código de expediente 54862 y distintivo de llamada HJR95. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 241106212 del 16 de diciembre de 2024, informó al MinTIC que analizada la documentación técnica enviada por el solicitante ASOCIACIÓN DE DESPLAZADOS AFRODESCENDIENTES, RAIZALES Y PALENQUEROS VÍCTIMAS DEL DEPARTAMENTO DE LA GUAJIRA “LOS AFRO DEL CERRO PINTAO” en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HJR95, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,05 kW a 0,9 kW y el área de servicio de 1 a 3 municipios. 
+Que el MinTIC, por medio del radicado de Front Office número 242175848 del 26 de diciembre de 2024, remitió a la ANE la solicitud de aprobación de los parámetros técnicos esenciales para el otorgamiento de la concesión presentada por el solicitante ASOCIACIÓN AMERICANA INTERCULTURAL DE COMUNIDADES NEGRAS AFROCOLOMBIANAS RAIZALES Y PALENQUERAS, para la prestación del servicio de Radiodifusión Sonora Comunitaria en Frecuencia Modulada, en el municipio de Becerril, departamento de Cesar, en la frecuencia 100,5 MHz, código de expediente 54940 y distintivo de llamada HJW51. 
+Que, la ANE, una vez revisada la documentación enviada realizó requerimiento de aclaración por medio de los radicados Front Office número 252018017 del 28 de enero de 2025 y 252019590 del 31 de enero de 2025, los cuales fueron atendidos por el solicitante mediante los radicados Front Office número 251010101 del 29 de enero de 2025 y 251010705 del 31 de enero de 2025. 
+Que, la ANE, una vez culminado el análisis técnico de la solicitud, mediante radicado de Front Office número 251010838 del 31 de enero de 2025, informó al MinTIC que analizada la documentación técnica enviada por el solicitante ASOCIACIÓN AMERICANA INTERCULTURAL DE COMUNIDADES NEGRAS AFROCOLOMBIANAS RAIZALES Y PALENQUERAS en relación con lo establecido en el PTNRS en FM, se hace necesario actualizar el canal, identificado con el distintivo de llamada HJW51, en el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020, modificando la potencia de operación de 0,25 kW a 0,9 kW. 
+Que la ANE, de acuerdo con lo señalado anteriormente, procederá a realizar la actualización del Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 (PTNRS en FM), de la siguiente manera: 
+- Incorporación de canal: 26 
+- Eliminación de la frecuencia de enlace: 1 
+- Modificación de clase de canal: 3 
+- Modificación de la potencia de operación: 13 
+- Modificación del área de servicio: 8 
+- Incorporación del área de servicio: 1 
+- Modificar municipio de la concesión: 2 
+Que mediante Acuerdo número 003 del 18 de septiembre de 2023, el Consejo Directivo de la ANE delegó en el Director General de la ANE la aprobación de las modificaciones de los canales radioeléctricos de los Apéndices del Plan Técnico Nacional de Radiodifusión Sonora. 
+Que, en mérito de lo expuesto, 
+RESUELVE: 
+ARTÍCULO 1o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, incorporando los siguientes canales, cuyos parámetros quedarán así:
+
+ARTÍCULO 2o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, el área de servicio de los siguientes canales, cuyo parámetro quedará así:
+
+ARTÍCULO 3o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, la potencia de operación de los siguientes canales, cuyo parámetro quedará así:
+
+ARTÍCULO 4o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, la potencia de operación y área de servicio de los siguientes canales, cuyos parámetros quedarán así:
+
+ARTÍCULO 5o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, la potencia de operación, el área de servicio y la eliminación de la frecuencia de enlace del siguiente canal, cuyos parámetros quedarán así:
+
+ARTÍCULO 6o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, el municipio de la concesión, la clase de canal, la potencia de operación y área de servicio del siguiente canal, cuyos parámetros quedarán así:
+
+ARTÍCULO 7o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, el municipio de la concesión, la clase de canal y potencia de operación del siguiente canal, cuyos parámetros quedarán así:
+
+ARTÍCULO 8o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, la clase de canal y la potencia de operación del siguiente canal, cuyos parámetros quedarán así:
+
+ARTÍCULO 9o. MODIFICACIÓN DEL APÉNDICE A DEL ANEXO 2 DE LA RESOLUCIÓN ANE 105 DE 2020 – PLAN TÉCNICO NACIONAL DE RADIODIFUSIÓN SONORA EN FRECUENCIA MODULADA (FM). Modificar en el apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 – Plan Técnico Nacional de Radiodifusión Sonora en FM, la clase de canal, la potencia de operación e incorporar el área de servicio del siguiente canal, cuyos parámetros quedarán así:
+
+ARTÍCULO 10. MODIFICACIONES. La presente resolución modifica en lo pertinente el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020 - Plan Técnico Nacional de Radiodifusión Sonora en Frecuencia Modulada (FM), adoptado mediante la Resolución ANE 463 del 21 de diciembre de 2020. 
+
+ARTÍCULO 11. NO PROCEDENCIA DE RECURSOS. Contra la presente resolución no procede recurso alguno en sede administrativa, de conformidad con lo establecido en el artículo 75 de la Ley 1437 de 2011. 
+
+ARTÍCULO 12. VIGENCIA. La presente resolución rige a partir de su publicación en el Diario Oficial. 
+Publíquese y cúmplase. 
+Dada en Bogotá, D. C., a 5 de febrero de 2025. 
+El Director General, 
+Sergio Sotomayor Rodríguez
+
+														
+													
+												
+											
+										
+										
+									
+								
+							
+						
+					
+				
+
+			
+		
+		
+			
+				
+					
+						
+							
+								
+								
+									
+										
+											
+												
+													
+												
+												
+													Compilación Jurídica Ministerio de Tecnologías de la Información y Comunicaciones
+												
+												
+													ISBN : [2745-2646]
+												
+												
+													Última actualización: 
+												
+												
+													Control de versiones
+												
+												
+													Créditos y reserva de derechos de autor
+												
+												
+												  Ministerio de Tecnologías de la Información y Comunicaciones- DRA © 2024
+												
+											
+										
+									
+								
+								
+							
+						
+					
+					
+						
+							
+								
+								
+									
+										
+											
+												Ministerio de Tecnologías de la Información y las Comunicaciones
+											
+											
+												
+													Edificio Murillo Toro Cra. 8a entre calles 12A y 12B Bogotá, Colombia - Código Postal 111711.
+												
+												
+													Teléfono Conmutador: +57 601 344 34 60 - Línea Gratuita: 01-800-0914014
+												
+												
+													Línea Anticorrupción: 01-800-0912667
+												
+												
+													Correo Institucional: 
+													minticresponde@mintic.gov.co
+												
+												
+													Denuncias por actos de corrupción:
+													soytransparente@mintic.gov.co
+												
+												
+													Notificaciones judiciales:
+												
+												
+													
+														notificacionesjudiciales@mintic.gov.co
+													
+												
+												
+													
+														notificacionesjudicialesfontic@mintic.gov.co
+													
+												
+												
+													Horario de Atención Presencial:
+												
+												
+													Lunes a viernes de 8:30 a.m - 4:30 p.m Jornada Continua
+												
+												
+													© Copyright 2021 - Todos los derechos reservados Gobierno de Colombia
+												
+												
+												
+											
+											
+												
+													
+												
+												
+													
+												
+											
+										
+										
+											
+												
+													
+														
+														ministerio_tic
+													
+												
+												
+													
+														
+														@ministerio_tic
+													
+												
+												
+													
+														
+														@ministerio_tic
+													
+												
+												
+													
+														
+														@Ministerio_TIC
+													
+												
+												
+													
+														
+														MinisterioTIC
+													
+												
+											
+											
+												
+													
+														
+														@ministeriotic
+													
+												
+												
+													
+														
+														+573212173083l
+													
+												
+											
+										
+										
+										
+											
+												
+													Política de privacidad y condiciones de uso 
+													Contacto 
+													Mapa del sitio
+													
+												
+											
+										
+									
+								
+								
+							
+						
+					
+					
+						
+							
+								
+									
+								
+								
+									
+								
+							
+						
+						
+				
+			
+		
+
+		
+			
+				
+					
+						
+						
+						
+							×
+						
+					
+					
+					
+				
+			
+		
+		
+			
+				
+					
+						
+						Contraste | Modo oscuro
+					
+				
+				
+					
+						
+						Reducir letra (16px)
+					
+				
+				
+					
+						
+						Aumentar letra (16px)
+					
+				
+				
+					
+						
+							
+							Centro de relevo 
+						
+					
+				
+			
+		
+		Volver arriba
+	
+

@@ -1,0 +1,107 @@
+# Intake - Propuesta de proyecto: sistema de monitoreo espectral regulatorio para radiodifusión sonora FM basado en SDR
+
+> Material de entrada normalizado para Ctx 00 (00.1). Cada bullet es una declaración; el motor las numera STM-01.. y las clasificación vive en record.json, no aquí. Transcripción del PDF de entrada sin interpretar; se conservan los identificadores del documento.
+
+- D-01 [D] El sistema debe servir a un objetivo regulatorio: verificar si existen emisiones no autorizadas en la banda FM.
+- D-02 [D] Debe verificar si las emisiones incumplen el ancho de banda autorizado. Cuando una emisión excede ese ancho, el sistema debe marcarla como incumplimiento.
+- D-03 [I, a partir de D-01] La vigilancia del espectro es una función estatal. La Agencia Nacional del Espectro (ANE) ejerce vigilancia y control del espectro, entre ellas la identificación de emisiones no autorizadas.
+- D-04 [D] Verificar el cumplimiento de forma rigurosa con evidencia que se pueda usar para imponer una sanción o una demanda exige un equipo de medición profesional y un procedimiento que son caros de implementar y requieren tiempo.
+- D-05 [D] De ahí la necesidad de un dispositivo de costo eficiente que sirva como filtro de alerta temprana: hace monitoreo en tiempo real y realiza campañas de medición, y genera alertas tempranas cuando detecta emisiones no autorizadas o emisiones que incumplen la normativa por emitir con un ancho de banda superior al establecido por la ANE.
+- D-06 [D] El dispositivo no reemplaza la medición profesional: la antecede. La alerta temprana prioriza dónde conviene después hacer la medición profesional que sustente la sanción o la demanda.
+- D-07 [D] El ancho de banda de referencia que cita el autor para FM es 200 kHz.
+- D-08 [I, contexto verificado] Las emisiones FM no autorizadas interfieren con estaciones autorizadas y con frecuencias de servicios aeronáuticos. La ANE lo ha señalado públicamente.
+- D-09 [I, contexto verificado] La capacidad de control en ciudades intermedias y pequeñas es limitada. Un trabajo académico de 2020 sobre un prototipo SDR de monitoreo FM en Popayán señala que las visitas de control son anuales y que faltan personal e infraestructura. Esto sostiene la necesidad de un filtro de bajo costo que amplíe la cobertura de vigilancia.
+- OG-01 [D] Un sistema basado en SDR, de costo eficiente, que funcione como filtro de alerta temprana: detecta emisiones FM no autorizadas y verifica su cumplimiento frente a los parámetros autorizados con el ancho de banda como parámetro obligatorio para priorizar una medición profesional posterior.
+- OG-01 medida de éxito: no declarada por el autor. El carácter de alerta temprana implica una medida de sensibilidad (no dejar pasar emisiones en incumplimiento) frente a una de precisión, pero el autor no fijó cuál pesa más ni con qué valor.
+- SB-1 [D] Servicio de monitoreo en tiempo real. Monitoreo clásico de RF para la banda FM en tiempo real: espectrograma con waterfall y PSD, más las métricas base de las gráficas.
+- SB-2 [D] Servicio de demodulación y audio en streaming. Reproduce el audio de la emisión mientras el usuario observa, en tiempo real, el espectro y la emisión monitoreada.
+- SB-3 [D] Servicio de validación de cumplimiento normativo. Ejecuta una campaña de medición, aplica el modelo de localización espectral, compara con la base de datos de la ANE mediante un algoritmo determinístico y genera un reporte.
+- OE-01 [D] Operar el monitoreo en tiempo real: espectrograma, waterfall, PSD y métricas base (servicio SB-1).
+- OE-02 [D] Demodular y reproducir el audio en streaming, simultáneo al monitoreo (servicio SB-2).
+- OE-03 [D] Ejecutar la campaña de medición, localizar espectralmente cada emisión y clasificarla contra la base ANE, con reporte (servicio SB-3).
+- OE-04 [D] Asegurar la fiabilidad de la medida mediante calibración y márgenes de tolerancia (transversal).
+- OE-05 [D] Ser de costo eficiente y operar como filtro de alerta temprana (transversal).
+- Definición operativa - localización espectral: cuando el autor dice localización se refiere a localización espectral, es decir, detectar la emisión y determinar su frecuencia central y su ancho de banda. No es localización geográfica de la fuente. Esta definición resuelve la ambigüedad detección o localización de la v0.1.
+- RF-A1 [D] Mostrar el monitoreo clásico de RF para la banda FM en tiempo real: espectrograma con waterfall y PSD (densidad espectral de potencia).
+- RF-A2 [D] Mostrar las métricas base de las gráficas: potencia promedio, potencia instantánea, SNR, potencia pico, entre otras.
+- RF-A3 [D] Mostrar las métricas de excursión o desviación máxima de frecuencia de la emisión.
+- RF-B1 [D] Demodular la emisión FM y reproducir su audio en streaming.
+- RF-B2 [D] Reproducir el audio mientras el usuario ve en tiempo real el espectro y la emisión que se está monitoreando (simultaneidad con SB-1).
+- RF-C1 [D] Ejecutar una campaña de medición en un tiempo determinado: el sensor genera mediciones cada n segundos, de forma continua durante un tiempo determinado (horas o minutos), y con cada medición espaciada de la siguiente por otro tiempo determinado. Los valores de n, de la duración y del espaciado viajan a Ctx 01.
+- RF-C2 [D] Con los resultados de la campaña, aplicar el modelo de localización espectral: detectar cada emisión y determinar su frecuencia central y su ancho de banda.
+- RF-C3 [D] Aplicar un algoritmo determinístico que compare los resultados con la base de datos de la ANE y determine, de las emisiones capturadas, cuáles están autorizadas y cuáles incumplen el ancho de banda autorizado.
+- RF-C4 [D] Generar un reporte con los resultados de la medición.
+- RF-G1 [D] El sistema debe estar basado en SDR.
+- RF-G2 [D] El sistema debe calibrarse para asegurar la fiabilidad de la medida, en amplitud y en frecuencia, contra una referencia o mediante algoritmos.
+- RNF-01 [D] Las salidas deben servir a una verificación regulatoria de alerta temprana. El autor no fijó cómo se usarán como insumo para la medición profesional posterior.
+- RNF-02 [D] Tiempo real es la condición de visualización y audio. El autor no fijó una latencia.
+- RNF-03 [D] La fiabilidad de la medida debe acotarse con márgenes de error o de tolerancia realistas. El autor no fijó sus valores.
+- RNF-04 [D] El dispositivo debe ser de costo eficiente. El autor no fijó un techo de costo ni qué se sacrifica frente a un equipo profesional.
+- RNF-05 [No declarado] Disponibilidad, seguridad de registros, trazabilidad de decisiones y retención de datos. Ninguno aparece en la entrada.
+- Nota sobre el texto del autor: la entrada original decía hacer modulación y monitoreo en simultáneo. El autor confirmó que SB-2 es demodulación y audio en streaming simultáneo al monitoreo. La ambigüedad queda resuelta.
+- Interesado usuario: personal técnico de vigilancia que opera el sistema. El autor no nombró al usuario (procedencia I, desde D-01).
+- Interesado regulador: Agencia Nacional del Espectro (ANE), dueña de la base de datos de emisiones autorizadas (procedencia D).
+- Interesado afectado no usuario: concesionarios autorizados en la banda, cuyas emisiones pueden sufrir interferencia; no usan el sistema (procedencia I, desde D-08).
+- Interesado afectado no usuario: oyentes y servicios aeronáuticos que usan frecuencias próximas; solo se mencionan como contexto (procedencia I, desde D-08).
+- Sistema externo: base de datos de emisiones autorizadas de la ANE; formato y campos no declarados (procedencia D).
+- Mantenedor: no identificado, sin ocupante declarado.
+- Operador de la estación medida: titular de la emisora observada; su condición de afectado depende de la respuesta a P-03 (procedencia I).
+- Entorno: hardware SDR, modelo no declarado.
+- Entorno: plataforma de cómputo, no declarada.
+- Entorno: ubicación de la estación de monitoreo, fija o móvil, no declarada.
+- Entorno: banda de operación, FM de radiodifusión sonora, en el rango que fija el plan técnico nacional.
+- Dentro del sistema: adquisición de señal con un SDR sobre la banda FM.
+- Dentro del sistema: SB-1, cálculo y visualización de PSD, espectrograma con waterfall y métricas base en tiempo real.
+- Dentro del sistema: SB-2, demodulación FM y reproducción de audio en streaming, simultánea al monitoreo.
+- Dentro del sistema: SB-3, campaña de medición, localización espectral (frecuencia central y ancho de banda de cada emisión), comparación determinística con la base ANE, clasificación (autorizada o incumple ancho de banda) y reporte.
+- Dentro del sistema: calibración en amplitud y frecuencia (transversal).
+- X-01 Bloqueo o inhibición de emisiones. La ANE regula los inhibidores en la Resolución 509 de 2019; ese uso no se incluye.
+- X-02 Transmisión de cualquier señal. El sistema solo recibe.
+- X-03 Radiodifusión en amplitud modulada (AM). Existe un plan técnico AM, pero el alcance es FM.
+- X-04 Procedimiento sancionatorio, decisiones administrativas y evaluación legal de una emisión.
+- X-05 Creación o mantenimiento de la base de datos de emisiones autorizadas. El sistema la consume.
+- X-06 Evaluación del contenido de la programación.
+- X-07 La medición profesional que sustenta la sanción o la demanda. El sistema es el filtro de alerta temprana que la antecede y la prioriza, no la medición de grado legal.
+- Disparador de aplicabilidad: uso del espectro radioeléctrico, activado (procedencia D).
+- Disparador de aplicabilidad: captura o demodulación de contenido (audio de terceros), activado (procedencia I, desde RF-B1).
+- Disparador de aplicabilidad: producción de evidencia para un regulador, activado (procedencia D, D-01).
+- Disparador de aplicabilidad: tratamiento de datos personales, por determinar, depende de P-07.
+- Disparador de aplicabilidad: exposición de personas a campos electromagnéticos, no declarado; el sistema no mide campos.
+- Disparador de aplicabilidad: emisión de señales de prueba, no.
+- N-01 Constitución Política, art. 75: el espectro electromagnético es un bien público inenajenable e imprescriptible. Verificada en línea.
+- N-02 Ley 1341 de 2009, arts. 25 y 57 inc. 8: crea la ANE (art. 25); los concesionarios de radiodifusión sonora deben prestar el servicio atendiendo los parámetros técnicos esenciales (art. 57). Verificada, citada en la Resolución ANE 000227 de 2021.
+- N-03 Ley 1978 de 2019, art. 36, numerales 2 y 3: la ANE elabora los cuadros de características técnicas de la red y establece y actualiza los planes técnicos de radiodifusión. Verificada en línea.
+- N-04 Resolución MinTIC 2614 de 2022: reglamenta la radiodifusión sonora y deroga la Resolución 415 de 2010; su art. 6 aplica los planes técnicos AM y FM de la ANE. Verificada en línea, vigente.
+- N-05 Resolución ANE 105 de 2020, Anexo 2 (Plan Técnico Nacional de Radiodifusión Sonora en FM, PTNRS-FM): fija los canales por frecuencia de operación, frecuencia de enlace, potencia radiada aparente y área de servicio. Verificada en línea; adoptada y modificada por la Resolución ANE 463 de 2020 y actualizada después varias veces, entre ellas por la Resolución ANE 484 de 2025.
+- N-06 Resolución ANE 000031 de 2025: actualiza el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020. Verificada en línea.
+- N-07 Resolución ANE 509 de 2019: regula el uso de inhibidores y bloqueadores de señales radioeléctricas; se usa solo como exclusión (X-01). Verificada en línea.
+- N-08 Recomendación UIT-R BS.450 (ed. 4, 10/2019; anexo de la ed. 3 para Colombia): estándares de transmisión FM en VHF; admite desviación máxima de ±75 kHz o ±50 kHz según el país; ±75 kHz es el valor de referencia en Europa occidental y Estados Unidos; la tabla de la edición 3 registra para Colombia una separación de canal de 200 kHz y desviación de ±75 kHz (verificar ambos datos en la edición vigente). Verificada en línea, parcial.
+- N-09 Recomendación UIT-R SM.443-4: método de medición de ancho de banda ocupado en estaciones de monitoreo; método beta por ciento, con beta/2 = 0,5 % por defecto. Verificada en línea.
+- N-10 Recomendación UIT-R SM.1268-1: método de medición de la desviación máxima de frecuencia en estaciones de monitoreo; requiere frecuencia de muestreo de al menos 200 kHz en equipos digitales. Verificada en línea.
+- N-11 Recomendación UIT-R SM.328 (última edición: 12, 09/2025): define espectro y ancho de banda de emisiones, incluido el ancho de banda ocupado. Existencia verificada; texto de la edición vigente no leído.
+- Nota 1: las resoluciones ANE que modifican el PTNRS-FM describen cada canal con cuatro parámetros esenciales: frecuencia de operación, frecuencia de enlace, potencia radiada aparente y área de servicio; el ancho de banda no aparece entre ellos. Los 200 kHz que cita el autor sí tienen respaldo técnico, pero como separación entre canales: la tabla de la Rec. UIT-R BS.450 registra para Colombia una separación de canal de 200 kHz, y un canal FM ocupa normalmente 200 kHz. Es decir, 200 kHz es el raster de asignación y la anchura nominal del canal, no necesariamente el umbral de ancho de banda ocupado que mediría el sistema.
+- Nota 2: la Resolución 415 de 2010 del MinTIC fue derogada por la Resolución 2614 de 2022 (N-04). No se usa.
+- C-01 [D] La fiabilidad de la medida depende de la calibración del sistema. Debe calibrarse contra una referencia o mediante algoritmos.
+- C-02 [D] La calibración es doble: en amplitud (para que la potencia y la PSD sean fiables) y en frecuencia (para que el ancho de banda ocupado y la desviación sean fiables). Son las dos magnitudes de las que dependen las dos reglas de incumplimiento (ancho de banda y desviación).
+- C-03 [I, desde C-01 y C-02] Un filtro de alerta temprana con medida no calibrada produciría falsas alertas o dejaría pasar incumplimientos, y perdería su valor como filtro. La calibración es, por tanto, condición de que la alerta temprana sirva a su propósito.
+- C-04 [D] La medida debe acompañarse de márgenes de error o de tolerancia realistas. Una emisión no se marca por rebasar el límite en un valor dentro del margen de incertidumbre del propio instrumento.
+- C-05 [I, desde C-04] La regla de incumplimiento de ancho de banda (RF-C3) no es una comparación exacta contra 200 kHz: es una comparación contra 200 kHz más una tolerancia que cubre la incertidumbre de la medida. El valor de esa tolerancia no está declarado (ver P-02 y P-10).
+- Obligación abierta: sin una fuente identificada para el ancho de banda autorizado, RF-C3 no puede ejecutarse (ver P-01).
+- Obligación abierta: sin una referencia o método de calibración y sin un margen de tolerancia, la fiabilidad de la medida no es verificable (ver P-10, P-11).
+- Obligación abierta: ante un incumplimiento de ancho de banda, el sistema marca el incumplimiento; no dice qué sanción corresponde (X-04).
+- V-01 [D] El sistema debe verificar si existen emisiones no autorizadas.
+- V-02 [D] El sistema debe verificar si incumplen su parámetro de ancho de banda.
+- V-03 [D] Un incumplimiento se marca. El texto no dice que se corrija ni que se bloquee.
+- P-01 ¿De qué documento o campo sale el ancho de banda autorizado de cada emisión? Los 200 kHz que cita el autor corresponden en el plan técnico a la separación entre canales, no a un ancho de banda listado como parámetro esencial.
+- P-02 ¿Cuánto puede excederse el ancho de banda autorizado antes de marcar incumplimiento? ¿Se mide el ancho ocupado al 99 %, con el método beta por ciento, o con un método x dB?
+- P-03 ¿Qué es una emisión no autorizada? ¿Una frecuencia sin registro, un registro con otra potencia, otro lugar o un canal distinto?
+- P-04 Localización espectral ya está definida y en alcance. Falta: ¿qué modelo o método la implementa, y con qué resolución y umbral de detección en frecuencia central y ancho de banda?
+- P-05 ¿Qué latencia máxima se considera tiempo real?
+- P-06 ¿Qué modelo de SDR y cuántos canales simultáneos? ¿Cubre toda la banda FM o un subconjunto?
+- P-07 ¿Se almacena el audio demodulado? ¿Por cuánto tiempo? ¿Puede contener voces identificables?
+- P-08 ¿Qué valores toman los parámetros de la campaña de medición de SB-3: el periodo n entre mediciones, la duración total y el espaciado entre mediciones?
+- P-09 ¿La desviación autorizada viene en la base de datos o es un valor de referencia de la norma (±75 kHz)?
+- P-10 ¿Qué margen de tolerancia se aplica a cada medida (ancho de banda, potencia, desviación) antes de marcar incumplimiento?
+- P-11 ¿Contra qué referencia se calibra en amplitud y en frecuencia, o con qué algoritmo? ¿Con qué periodicidad?
+- P-12 Como filtro de alerta temprana, ¿qué pesa más: no dejar pasar un incumplimiento (sensibilidad) o no generar falsas alertas (precisión)? ¿Con qué valores?
+- P-13 ¿Qué define costo eficiente? ¿Hay un techo de costo o una plataforma de referencia?

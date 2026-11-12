@@ -1,0 +1,2093 @@
+{
+  "absent_fields": [],
+  "content_sha256": "1e091e25240c5d4848fbc885d146addf22c961eca9819486238ce0d6498a7cb7",
+  "frozen_sha256": "d96bd3c3ed6e812675f6411736d97c5c94f12e9ed669fc8d280e1a1bcfedf99f",
+  "intake": {
+    "file": "input.md",
+    "sha256": "9db5c741642c9b4814524b6af3d61bb7ee4dc0600ae3141960b67912e35ff203"
+  },
+  "items": {
+    "APP": [
+      {
+        "id": "APP-01",
+        "origin": "derived",
+        "resolution": "src",
+        "src": "SRC-01",
+        "status": "provisional",
+        "trigger": "uses_radio_spectrum"
+      },
+      {
+        "id": "APP-02",
+        "origin": "derived",
+        "resolution": "src",
+        "src": "SRC-02",
+        "status": "provisional",
+        "trigger": "produces_regulatory_evidence"
+      },
+      {
+        "id": "APP-03",
+        "origin": "derived",
+        "reason": "Activated by SB-2 (demodulated third-party audio), but no governing source with a local snapshot exists in the candidate corpus; recorded as OQ-15 / ASM-15 for source identification before the Ctx 01 freeze.",
+        "resolution": "not_applicable",
+        "status": "provisional",
+        "trigger": "captures_or_demodulates_content"
+      },
+      {
+        "id": "APP-04",
+        "origin": "derived",
+        "reason": "Undetermined: depends on P-07 (whether demodulated audio is stored and may contain identifiable voices); no data-protection norm in the candidate corpus; recorded as OQ-07 / ASM-07.",
+        "resolution": "not_applicable",
+        "status": "provisional",
+        "trigger": "processes_personal_data"
+      },
+      {
+        "id": "APP-05",
+        "origin": "derived",
+        "reason": "The system does not measure electromagnetic field exposure of people (the intake states the system does not measure fields).",
+        "resolution": "not_applicable",
+        "status": "provisional",
+        "trigger": "measures_human_em_exposure"
+      },
+      {
+        "id": "APP-06",
+        "origin": "derived",
+        "reason": "The system only receives; transmission of any signal is out of scope (X-02).",
+        "resolution": "not_applicable",
+        "status": "provisional",
+        "trigger": "emits_test_signals"
+      }
+    ],
+    "ASM": [
+      {
+        "closure_criterion": "identifying the document or database field that defines authorized bandwidth per emission, before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-91",
+            "quote": "De qué documento o campo sale el ancho de banda autorizado"
+          }
+        ],
+        "id": "ASM-01",
+        "origin": "derived",
+        "owner": "project owner with the ANE",
+        "status": "provisional",
+        "text": "The source document or field that defines the authorized bandwidth of each emission is assumed identified before the Ctx 01 freeze; until then the compliance comparison has no criterion."
+      },
+      {
+        "closure_criterion": "selecting the measurement method and the excess tolerance value in Ctx 01",
+        "derives_from": [
+          {
+            "location": "STM-92",
+            "quote": "Cuánto puede excederse el ancho de banda autorizado antes de marcar incumplimiento"
+          }
+        ],
+        "id": "ASM-02",
+        "origin": "derived",
+        "owner": "project owner (measurement methodology)",
+        "status": "provisional",
+        "text": "The occupied-bandwidth measurement method and the allowed excess before marking a non-compliance are assumed fixed in Ctx 01."
+      },
+      {
+        "closure_criterion": "selecting the definition of unauthorized emission before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-93",
+            "quote": "Qué es una emisión no autorizada"
+          }
+        ],
+        "id": "ASM-03",
+        "origin": "derived",
+        "owner": "project owner with the ANE",
+        "status": "provisional",
+        "text": "The definition of an unauthorized emission (frequency without record, record with other power, other place or different channel) is assumed fixed before the Ctx 01 freeze."
+      },
+      {
+        "closure_criterion": "the Ctx 02 trade study selects the localization method with resolution and detection threshold",
+        "derives_from": [
+          {
+            "location": "STM-94",
+            "quote": "qué modelo o método la implementa"
+          }
+        ],
+        "id": "ASM-04",
+        "origin": "derived",
+        "owner": "design stage (Ctx 02)",
+        "status": "provisional",
+        "text": "The model or method that implements spectral localization, and its resolution and detection threshold, are assumed resolved in the design stage (Ctx 02)."
+      },
+      {
+        "closure_criterion": "setting the maximum latency value in Ctx 01",
+        "derives_from": [
+          {
+            "location": "STM-95",
+            "quote": "Qué latencia máxima se considera tiempo real"
+          }
+        ],
+        "id": "ASM-05",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "The maximum latency considered real time is assumed fixed in Ctx 01."
+      },
+      {
+        "closure_criterion": "the Ctx 02 trade study selects the acquisition model and the coverage",
+        "derives_from": [
+          {
+            "location": "STM-96",
+            "quote": "Qué modelo de SDR y cuántos canales simultáneos"
+          }
+        ],
+        "id": "ASM-06",
+        "origin": "derived",
+        "owner": "design stage (Ctx 02)",
+        "status": "provisional",
+        "text": "The hardware model, the number of simultaneous channels and the band coverage subset are assumed resolved in the design stage (Ctx 02)."
+      },
+      {
+        "closure_criterion": "deciding the audio storage policy and identifying the governing data-protection source before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-97",
+            "quote": "Se almacena el audio demodulado"
+          }
+        ],
+        "id": "ASM-07",
+        "origin": "derived",
+        "owner": "project owner with a data-protection advisor",
+        "status": "provisional",
+        "text": "Whether demodulated audio is stored, for how long, and whether it may contain identifiable voices is assumed decided before the Ctx 01 freeze."
+      },
+      {
+        "closure_criterion": "setting the campaign parameter values in Ctx 01",
+        "derives_from": [
+          {
+            "location": "STM-98",
+            "quote": "el periodo n entre mediciones, la duración total y el espaciado entre mediciones"
+          }
+        ],
+        "id": "ASM-08",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "The campaign parameters (period between measurements, total duration, spacing between measurements) are assumed fixed in Ctx 01."
+      },
+      {
+        "closure_criterion": "identifying the source of the authorized deviation value before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-99",
+            "quote": "La desviación autorizada viene en la base de datos o es un valor de referencia de la norma"
+          }
+        ],
+        "id": "ASM-09",
+        "origin": "derived",
+        "owner": "project owner with the ANE",
+        "status": "provisional",
+        "text": "Whether the authorized deviation comes from the ANE database or from a norm reference value is assumed fixed before the Ctx 01 freeze."
+      },
+      {
+        "closure_criterion": "setting the tolerance margins in Ctx 01",
+        "derives_from": [
+          {
+            "location": "STM-100",
+            "quote": "Qué margen de tolerancia se aplica a cada medida"
+          }
+        ],
+        "id": "ASM-10",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "The tolerance margin applied to each measurement (bandwidth, power, deviation) before marking a non-compliance is assumed fixed in Ctx 01."
+      },
+      {
+        "closure_criterion": "defining the calibration reference and periodicity in Ctx 01",
+        "derives_from": [
+          {
+            "location": "STM-101",
+            "quote": "Contra qué referencia se calibra en amplitud y en frecuencia"
+          }
+        ],
+        "id": "ASM-11",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "The amplitude and frequency calibration reference (or procedure) and its periodicity are assumed fixed in Ctx 01."
+      },
+      {
+        "closure_criterion": "fixing the sensitivity/precision operating point and its values before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-102",
+            "quote": "qué pesa más: no dejar pasar un incumplimiento (sensibilidad) o no generar falsas alertas (precisión)"
+          }
+        ],
+        "id": "ASM-12",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "The operating point between sensitivity and precision of the early-warning filter is assumed fixed before the Ctx 01 freeze."
+      },
+      {
+        "closure_criterion": "defining the cost ceiling or the reference platform in Ctx 01",
+        "derives_from": [
+          {
+            "location": "STM-103",
+            "quote": "Qué define costo eficiente"
+          }
+        ],
+        "id": "ASM-13",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "What defines cost-efficient (cost ceiling or reference platform) is assumed fixed in Ctx 01."
+      },
+      {
+        "closure_criterion": "naming the maintainer before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-43",
+            "quote": "Mantenedor: no identificado, sin ocupante declarado"
+          }
+        ],
+        "id": "ASM-14",
+        "origin": "derived",
+        "owner": "project owner",
+        "status": "provisional",
+        "text": "The maintainer of the system is assumed named before the Ctx 01 freeze; the intake declares no occupant."
+      },
+      {
+        "closure_criterion": "identifying the governing source with a local snapshot, or formally declaring none applies, before the Ctx 01 freeze",
+        "derives_from": [
+          {
+            "location": "STM-62",
+            "quote": "captura o demodulación de contenido (audio de terceros), activado"
+          }
+        ],
+        "id": "ASM-15",
+        "origin": "derived",
+        "owner": "project owner with a data-protection advisor",
+        "status": "provisional",
+        "text": "No governing source for capturing and demodulating third-party audio exists in the candidate corpus; one is assumed identified before the Ctx 01 freeze."
+      }
+    ],
+    "BND": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-49",
+            "quote": "adquisición de señal con un SDR sobre la banda FM"
+          }
+        ],
+        "id": "BND-01",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Signal acquisition over the FM band; real-time spectral monitoring (PSD, waterfall, base metrics); streaming FM demodulation and audio; measurement campaigns with spectral localization, deterministic comparison against the ANE database, classification and reporting; amplitude and frequency calibration."
+      }
+    ],
+    "ENV": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-47",
+            "quote": "ubicación de la estación de monitoreo, fija o móvil, no declarada"
+          }
+        ],
+        "env_type": "physical",
+        "id": "ENV-01",
+        "origin": "declared",
+        "status": "provisional",
+        "text": "The monitoring station location is fixed or mobile, not declared."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-45",
+            "quote": "hardware SDR, modelo no declarado"
+          }
+        ],
+        "env_type": "physical",
+        "id": "ENV-02",
+        "origin": "declared",
+        "status": "provisional",
+        "text": "SDR hardware model and computing platform are not declared in the intake."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-48",
+            "quote": "banda de operación, FM de radiodifusión sonora"
+          }
+        ],
+        "env_type": "electromagnetic",
+        "id": "ENV-03",
+        "origin": "declared",
+        "status": "provisional",
+        "text": "Operating band: sound broadcasting FM, in the range set by the national technical plan."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-09",
+            "quote": "las visitas de control son anuales y que faltan personal e infraestructura"
+          }
+        ],
+        "env_type": "temporal",
+        "id": "ENV-04",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Control visits in small and intermediate cities are annual, with limited staff and infrastructure."
+      }
+    ],
+    "EXT": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-49",
+            "quote": "adquisición de señal con un SDR sobre la banda FM"
+          }
+        ],
+        "direction": "inbound",
+        "id": "EXT-01",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "FM broadcast transmitters radiating in the monitored band (authorized or not)."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-14",
+            "quote": "compara con la base de datos de la ANE"
+          }
+        ],
+        "direction": "inbound",
+        "id": "EXT-02",
+        "origin": "declared",
+        "status": "provisional",
+        "text": "ANE authorization database consulted during campaigns (format and fields not declared)."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-05",
+            "quote": "genera alertas tempranas cuando detecta emisiones no autorizadas"
+          }
+        ],
+        "direction": "outbound",
+        "id": "EXT-03",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Surveillance team receiving early-warning alerts."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-06",
+            "quote": "La alerta temprana prioriza dónde conviene después hacer la medición profesional"
+          }
+        ],
+        "direction": "outbound",
+        "id": "EXT-04",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Professional measurement teams receiving prioritized indications of where to measure."
+      }
+    ],
+    "MOE": [
+      {
+        "definition": "fraction of non-compliant emissions present in the monitored band that the system flags as early warnings during a monitoring campaign",
+        "derives_from": [
+          {
+            "location": "STM-05",
+            "quote": "genera alertas tempranas cuando detecta emisiones no autorizadas"
+          }
+        ],
+        "id": "MOE-01",
+        "obj": "OBJ-01",
+        "origin": "derived",
+        "reference_point": "all non-compliant emissions present in the monitored band during the campaign window",
+        "sense": "higher_is_better",
+        "status": "provisional",
+        "title": "Early-warning detection coverage",
+        "unit": "percent of non-compliant emissions"
+      },
+      {
+        "definition": "time between reception of a signal and its appearance in the spectrum display and base metrics",
+        "derives_from": [
+          {
+            "location": "STM-33",
+            "quote": "Tiempo real es la condición de visualización y audio"
+          }
+        ],
+        "id": "MOE-02",
+        "obj": "OBJ-02",
+        "origin": "derived",
+        "reference_point": "display follows the emission while it is being monitored",
+        "sense": "lower_is_better",
+        "status": "provisional",
+        "title": "Live visualization latency",
+        "unit": "seconds"
+      },
+      {
+        "definition": "proportion of monitoring time during which the demodulated audio is reproduced without interruption together with the spectrum view",
+        "derives_from": [
+          {
+            "location": "STM-25",
+            "quote": "Reproducir el audio mientras el usuario ve en tiempo real el espectro"
+          }
+        ],
+        "id": "MOE-03",
+        "obj": "OBJ-03",
+        "origin": "derived",
+        "reference_point": "continuous simultaneous reproduction while the user watches the spectrum",
+        "sense": "higher_is_better",
+        "status": "provisional",
+        "title": "Simultaneous audio continuity",
+        "unit": "percent of monitoring time"
+      },
+      {
+        "definition": "fraction of emissions captured in a campaign that are classified against the ANE database as authorized or as bandwidth non-compliance and appear in the report",
+        "derives_from": [
+          {
+            "location": "STM-29",
+            "quote": "Generar un reporte con los resultados de la medición"
+          }
+        ],
+        "id": "MOE-04",
+        "obj": "OBJ-04",
+        "origin": "derived",
+        "reference_point": "every captured emission classified and reported",
+        "sense": "higher_is_better",
+        "status": "provisional",
+        "title": "Campaign classification completeness",
+        "unit": "percent of captured emissions"
+      },
+      {
+        "definition": "width of the error or tolerance margin within which a measured magnitude is considered reliable before marking a non-compliance",
+        "derives_from": [
+          {
+            "location": "STM-83",
+            "quote": "márgenes de error o de tolerancia realistas"
+          }
+        ],
+        "id": "MOE-05",
+        "obj": "OBJ-05",
+        "origin": "derived",
+        "reference_point": "measurement calibrated against a reference in amplitude and frequency",
+        "sense": "lower_is_better",
+        "status": "provisional",
+        "title": "Measurement reliability margin",
+        "unit": "percent of the measured magnitude"
+      },
+      {
+        "definition": "cost of deploying and operating the early-warning device relative to deploying professional measurement equipment",
+        "derives_from": [
+          {
+            "location": "STM-35",
+            "quote": "El dispositivo debe ser de costo eficiente"
+          }
+        ],
+        "id": "MOE-06",
+        "obj": "OBJ-06",
+        "origin": "derived",
+        "reference_point": "professional measurement equipment and procedure cost",
+        "sense": "lower_is_better",
+        "status": "provisional",
+        "title": "Relative cost of the warning stage",
+        "unit": "ratio to professional measurement cost"
+      }
+    ],
+    "OBJ": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-01",
+            "quote": "verificar si existen emisiones no autorizadas en la banda FM"
+          },
+          {
+            "location": "STM-02",
+            "quote": "incumplen el ancho de banda autorizado"
+          },
+          {
+            "location": "STM-06",
+            "quote": "La alerta temprana prioriza dónde conviene después hacer la medición profesional"
+          }
+        ],
+        "id": "OBJ-01",
+        "operational_decision": "Decide which emissions are escalated to professional measurement for sanction or claim support.",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Detect FM broadcast emissions that are unauthorized or that exceed their authorized bandwidth, as an early-warning filter that prioritizes where to perform the professional measurement that supports a sanction or claim."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-21",
+            "quote": "Mostrar el monitoreo clásico de RF para la banda FM en tiempo real"
+          },
+          {
+            "location": "STM-12",
+            "quote": "espectrograma con waterfall y PSD"
+          }
+        ],
+        "id": "OBJ-02",
+        "operational_decision": "Decide, while monitoring live, whether the observed emission shows abnormal behavior that deserves a measurement campaign.",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Provide real-time radio-frequency monitoring of the FM band: spectrogram with waterfall, power spectral density and base metrics of the graphics."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-24",
+            "quote": "Demodular la emisión FM y reproducir su audio en streaming"
+          }
+        ],
+        "id": "OBJ-03",
+        "operational_decision": "Decide which emission the operator listens to while observing the spectrum.",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Demodulate the monitored FM emission and reproduce its audio in streaming, simultaneously with the spectrum view."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-26",
+            "quote": "Ejecutar una campaña de medición en un tiempo determinado"
+          },
+          {
+            "location": "STM-28",
+            "quote": "cuáles están autorizadas y cuáles incumplen el ancho de banda autorizado"
+          }
+        ],
+        "id": "OBJ-04",
+        "operational_decision": "Decide, per captured emission, whether it is authorized or a bandwidth non-compliance to mark.",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Execute measurement campaigns that spectrally localize each emission (center frequency and occupied bandwidth), compare captured results against the ANE authorization database with a deterministic comparison, and report which emissions are authorized and which exceed their authorized bandwidth."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-80",
+            "quote": "Debe calibrarse contra una referencia"
+          },
+          {
+            "location": "STM-83",
+            "quote": "La medida debe acompañarse de márgenes de error o de tolerancia realistas"
+          }
+        ],
+        "id": "OBJ-05",
+        "operational_decision": "Decide whether a measured value is reliable enough to mark a non-compliance instead of an instrument artifact.",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Assure the reliability of the measurement through amplitude and frequency calibration against a reference and through realistic error or tolerance margins."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-19",
+            "quote": "Ser de costo eficiente y operar como filtro de alerta temprana"
+          },
+          {
+            "location": "STM-05",
+            "quote": "un dispositivo de costo eficiente que sirva como filtro de alerta temprana"
+          }
+        ],
+        "id": "OBJ-06",
+        "operational_decision": "Decide where to send the scarce professional measurement resources first.",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Operate as a cost-efficient early-warning filter that precedes professional measurement and expands surveillance coverage."
+      }
+    ],
+    "OQ": [
+      {
+        "converted_to": "ASM-01",
+        "id": "OQ-01",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What document or field defines the authorized bandwidth of each emission?"
+      },
+      {
+        "converted_to": "ASM-02",
+        "id": "OQ-02",
+        "origin": "derived",
+        "state": "converted",
+        "text": "How much may the authorized bandwidth be exceeded before marking a non-compliance, and by which measurement method?"
+      },
+      {
+        "converted_to": "ASM-03",
+        "id": "OQ-03",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What counts as an unauthorized emission?"
+      },
+      {
+        "converted_to": "ASM-04",
+        "id": "OQ-04",
+        "origin": "derived",
+        "state": "converted",
+        "text": "Which model or method implements spectral localization, with what resolution and detection threshold?"
+      },
+      {
+        "converted_to": "ASM-05",
+        "id": "OQ-05",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What maximum latency counts as real time?"
+      },
+      {
+        "converted_to": "ASM-06",
+        "id": "OQ-06",
+        "origin": "derived",
+        "state": "converted",
+        "text": "Which hardware model, how many simultaneous channels, and full or partial FM band coverage?"
+      },
+      {
+        "converted_to": "ASM-07",
+        "id": "OQ-07",
+        "origin": "derived",
+        "state": "converted",
+        "text": "Is demodulated audio stored, for how long, and can it contain identifiable voices?"
+      },
+      {
+        "converted_to": "ASM-08",
+        "id": "OQ-08",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What values do the campaign parameters take (period, duration, spacing)?"
+      },
+      {
+        "converted_to": "ASM-09",
+        "id": "OQ-09",
+        "origin": "derived",
+        "state": "converted",
+        "text": "Does the authorized deviation come from the database or from a norm reference value?"
+      },
+      {
+        "converted_to": "ASM-10",
+        "id": "OQ-10",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What tolerance margin applies to each measurement before marking a non-compliance?"
+      },
+      {
+        "converted_to": "ASM-11",
+        "id": "OQ-11",
+        "origin": "derived",
+        "state": "converted",
+        "text": "Against what reference is the system calibrated, and how often?"
+      },
+      {
+        "converted_to": "ASM-12",
+        "id": "OQ-12",
+        "origin": "derived",
+        "state": "converted",
+        "text": "For the early-warning filter, which weighs more: sensitivity or precision, and with what values?"
+      },
+      {
+        "converted_to": "ASM-13",
+        "id": "OQ-13",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What defines cost-efficient (cost ceiling or reference platform)?"
+      },
+      {
+        "converted_to": "ASM-14",
+        "id": "OQ-14",
+        "origin": "derived",
+        "state": "converted",
+        "text": "Who is the maintainer of the system?"
+      },
+      {
+        "converted_to": "ASM-15",
+        "id": "OQ-15",
+        "origin": "derived",
+        "state": "converted",
+        "text": "What governing source applies to capturing and demodulating third-party audio?"
+      }
+    ],
+    "PRB": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-03",
+            "quote": "La vigilancia del espectro es una función estatal"
+          },
+          {
+            "location": "STM-04",
+            "quote": "son caros de implementar y requieren tiempo"
+          },
+          {
+            "location": "STM-08",
+            "quote": "interfieren con estaciones autorizadas y con frecuencias de servicios aeronáuticos"
+          },
+          {
+            "location": "STM-09",
+            "quote": "las visitas de control son anuales y que faltan personal e infraestructura"
+          }
+        ],
+        "id": "PRB-01",
+        "origin": "derived",
+        "status": "provisional",
+        "text": "Unauthorized FM broadcast emissions and emissions exceeding their authorized channel parameters go unnoticed in routine control, interfere with licensed stations and with aeronautical services using nearby frequencies, and rigorous verification with evidence usable for a sanction or claim requires professional measurement equipment, procedure and time that the control authority lacks in small and intermediate cities."
+      }
+    ],
+    "SCP": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-02",
+            "quote": "incumplen el ancho de banda autorizado"
+          }
+        ],
+        "id": "SCP-IN-01",
+        "origin": "derived",
+        "side": "in",
+        "status": "provisional",
+        "text": "Detect and mark FM emissions that are unauthorized or exceed their authorized bandwidth.",
+        "traces_to": "OBJ-01"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-21",
+            "quote": "espectrograma con waterfall y PSD"
+          }
+        ],
+        "id": "SCP-IN-02",
+        "origin": "derived",
+        "side": "in",
+        "status": "provisional",
+        "text": "Real-time RF monitoring: spectrogram with waterfall, PSD and base metrics.",
+        "traces_to": "OBJ-02"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-24",
+            "quote": "Demodular la emisión FM y reproducir su audio en streaming"
+          }
+        ],
+        "id": "SCP-IN-03",
+        "origin": "derived",
+        "side": "in",
+        "status": "provisional",
+        "text": "FM demodulation and streaming audio simultaneous with monitoring.",
+        "traces_to": "OBJ-03"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-28",
+            "quote": "compare los resultados con la base de datos de la ANE"
+          }
+        ],
+        "id": "SCP-IN-04",
+        "origin": "derived",
+        "side": "in",
+        "status": "provisional",
+        "text": "Measurement campaigns, spectral localization, deterministic comparison against the ANE database, classification and report.",
+        "traces_to": "OBJ-04"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-53",
+            "quote": "calibración en amplitud y frecuencia"
+          }
+        ],
+        "id": "SCP-IN-05",
+        "origin": "derived",
+        "side": "in",
+        "status": "provisional",
+        "text": "Amplitude and frequency calibration of the measurement chain.",
+        "traces_to": "OBJ-05"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-05",
+            "quote": "genera alertas tempranas"
+          }
+        ],
+        "id": "SCP-IN-06",
+        "origin": "derived",
+        "side": "in",
+        "status": "provisional",
+        "text": "Early-warning alert generation to prioritize professional measurement.",
+        "traces_to": "OBJ-06"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-49",
+            "quote": "adquisición de señal con un SDR sobre la banda FM"
+          }
+        ],
+        "id": "SCP-IN-07",
+        "origin": "declared",
+        "side": "in",
+        "status": "provisional",
+        "text": "Signal acquisition with an SDR over the FM band.",
+        "traces_to": "OBJ-01"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-54",
+            "quote": "Bloqueo o inhibición de emisiones"
+          }
+        ],
+        "id": "SCP-OUT-01",
+        "origin": "declared",
+        "reason": "The ANE regulates inhibitors in Resolution 509 of 2019; that use is not included (X-01).",
+        "side": "out",
+        "status": "provisional",
+        "text": "Blocking or inhibition of emissions (jammers)."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-55",
+            "quote": "Transmisión de cualquier señal"
+          }
+        ],
+        "id": "SCP-OUT-02",
+        "origin": "declared",
+        "reason": "Receive-only system; transmission is excluded from the project (X-02).",
+        "side": "out",
+        "status": "provisional",
+        "text": "Transmission of any signal; the system is receive-only."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-56",
+            "quote": "Radiodifusión en amplitud modulada (AM)"
+          }
+        ],
+        "id": "SCP-OUT-03",
+        "origin": "declared",
+        "reason": "An AM technical plan exists, but the scope is FM (X-03).",
+        "side": "out",
+        "status": "provisional",
+        "text": "Amplitude modulation (AM) sound broadcasting."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-57",
+            "quote": "Procedimiento sancionatorio, decisiones administrativas y evaluación legal"
+          }
+        ],
+        "id": "SCP-OUT-04",
+        "origin": "declared",
+        "reason": "Legal and administrative acts belong to the authority, not to this system (X-04).",
+        "side": "out",
+        "status": "provisional",
+        "text": "Sanctioning procedure, administrative decisions and legal evaluation of an emission."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-58",
+            "quote": "Creación o mantenimiento de la base de datos de emisiones autorizadas"
+          }
+        ],
+        "id": "SCP-OUT-05",
+        "origin": "declared",
+        "reason": "The system consumes the database; it does not create or maintain it (X-05).",
+        "side": "out",
+        "status": "provisional",
+        "text": "Creation or maintenance of the ANE authorization database."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-59",
+            "quote": "Evaluación del contenido de la programación"
+          }
+        ],
+        "id": "SCP-OUT-06",
+        "origin": "declared",
+        "reason": "Content evaluation is outside the regulatory parameters measured (X-06).",
+        "side": "out",
+        "status": "provisional",
+        "text": "Evaluation of programming content."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-60",
+            "quote": "La medición profesional que sustenta la sanción o la demanda"
+          }
+        ],
+        "id": "SCP-OUT-07",
+        "origin": "declared",
+        "reason": "The system is the early-warning filter that precedes and prioritizes it, not legal-grade measurement (X-07).",
+        "side": "out",
+        "status": "provisional",
+        "text": "The professional measurement that supports the sanction or claim."
+      }
+    ],
+    "SRC": [
+      {
+        "date": "2026-11-06",
+        "id": "SRC-01",
+        "identifier": "Resolución MinTIC 2614 de 2022",
+        "issuer": "Ministerio de Tecnologías de la Información y las Comunicaciones (MinTIC), Colombia",
+        "origin": "declared",
+        "snapshot_file": "res-mintic-2614-2022.txt",
+        "snapshot_sha256": "b428c74a6001fdc07274f4d8ceb51e307191f7f7f0151928320c7479fd5fc6af",
+        "status": "verified",
+        "text": "Resolución MinTIC 2614 de 2022 (local snapshot).",
+        "version": "vigente-2026-11"
+      },
+      {
+        "date": "2026-11-06",
+        "id": "SRC-02",
+        "identifier": "Resolución ANE 000031 de 2025",
+        "issuer": "Agencia Nacional del Espectro (ANE), Colombia",
+        "origin": "declared",
+        "snapshot_file": "res-ane-000031-2025.txt",
+        "snapshot_sha256": "9d19c9b98cff6e6b3ef4e9404674d66d2443122797c7bae78a7b7fbaba1cc439",
+        "status": "verified",
+        "text": "Resolución ANE 000031 de 2025 — actualización del Apéndice A del Anexo 2 del PTNRS-FM (local snapshot).",
+        "version": "vigente-2026-11"
+      }
+    ],
+    "STK": [
+      {
+        "derives_from": [
+          {
+            "location": "STM-38",
+            "quote": "personal técnico de vigilancia que opera el sistema"
+          }
+        ],
+        "id": "STK-01",
+        "origin": "derived",
+        "status": "provisional",
+        "stk_type": "user",
+        "text": "Technical surveillance personnel who operate the system.",
+        "use": "operate the monitoring and campaigns to detect and prioritize non-compliant emissions"
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-39",
+            "quote": "dueña de la base de datos de emisiones autorizadas"
+          }
+        ],
+        "id": "STK-02",
+        "origin": "declared",
+        "status": "provisional",
+        "stk_type": "regulator",
+        "text": "Agencia Nacional del Espectro (ANE), the national spectrum control authority."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-40",
+            "quote": "concesionarios autorizados en la banda, cuyas emisiones pueden sufrir interferencia"
+          }
+        ],
+        "id": "STK-03",
+        "origin": "derived",
+        "status": "provisional",
+        "stk_type": "affected",
+        "text": "Licensed FM concessionaires whose emissions may suffer interference; they do not use the system."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-41",
+            "quote": "oyentes y servicios aeronáuticos que usan frecuencias próximas"
+          }
+        ],
+        "id": "STK-04",
+        "origin": "derived",
+        "status": "provisional",
+        "stk_type": "affected",
+        "text": "Listeners and aeronautical services using nearby frequencies; mentioned as context only."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-42",
+            "quote": "formato y campos no declarados"
+          }
+        ],
+        "id": "STK-05",
+        "origin": "declared",
+        "status": "provisional",
+        "stk_type": "data_provider",
+        "text": "ANE authorization database of licensed emissions (external system; format and fields not declared)."
+      },
+      {
+        "derives_from": [
+          {
+            "location": "STM-44",
+            "quote": "titular de la emisora observada"
+          }
+        ],
+        "id": "STK-06",
+        "origin": "derived",
+        "status": "provisional",
+        "stk_type": "operator",
+        "text": "Operator of the measured station: the license holder of the observed transmitter."
+      }
+    ],
+    "STM": [
+      {
+        "field": "objectives",
+        "id": "STM-01",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-01 [D] El sistema debe servir a un objetivo regulatorio: verificar si existen emisiones no autorizadas en la banda FM."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-02",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-02 [D] Debe verificar si las emisiones incumplen el ancho de banda autorizado. Cuando una emisión excede ese ancho, el sistema debe marcarla como incumplimiento."
+      },
+      {
+        "field": "problem",
+        "id": "STM-03",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-03 [I, a partir de D-01] La vigilancia del espectro es una función estatal. La Agencia Nacional del Espectro (ANE) ejerce vigilancia y control del espectro, entre ellas la identificación de emisiones no autorizadas."
+      },
+      {
+        "field": "problem",
+        "id": "STM-04",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-04 [D] Verificar el cumplimiento de forma rigurosa con evidencia que se pueda usar para imponer una sanción o una demanda exige un equipo de medición profesional y un procedimiento que son caros de implementar y requieren tiempo."
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-05",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-05 [D] De ahí la necesidad de un dispositivo de costo eficiente que sirva como filtro de alerta temprana: hace monitoreo en tiempo real y realiza campañas de medición, y genera alertas tempranas cuando detecta emisiones no autorizadas o emisiones que incumplen la normativa por emitir con un ancho de banda superior al establecido por la ANE.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-06",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-06 [D] El dispositivo no reemplaza la medición profesional: la antecede. La alerta temprana prioriza dónde conviene después hacer la medición profesional que sustente la sanción o la demanda.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "target_signals_bands",
+        "id": "STM-07",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-07 [D] El ancho de banda de referencia que cita el autor para FM es 200 kHz."
+      },
+      {
+        "field": "problem",
+        "id": "STM-08",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-08 [I, contexto verificado] Las emisiones FM no autorizadas interfieren con estaciones autorizadas y con frecuencias de servicios aeronáuticos. La ANE lo ha señalado públicamente."
+      },
+      {
+        "field": "problem",
+        "id": "STM-09",
+        "origin": "declared",
+        "status": "seed",
+        "text": "D-09 [I, contexto verificado] La capacidad de control en ciudades intermedias y pequeñas es limitada. Un trabajo académico de 2020 sobre un prototipo SDR de monitoreo FM en Popayán señala que las visitas de control son anuales y que faltan personal e infraestructura. Esto sostiene la necesidad de un filtro de bajo costo que amplíe la cobertura de vigilancia."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-10",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OG-01 [D] Un sistema basado en SDR, de costo eficiente, que funcione como filtro de alerta temprana: detecta emisiones FM no autorizadas y verifica su cumplimiento frente a los parámetros autorizados con el ancho de banda como parámetro obligatorio para priorizar una medición profesional posterior."
+      },
+      {
+        "field": "performance_expectations",
+        "id": "STM-11",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OG-01 medida de éxito: no declarada por el autor. El carácter de alerta temprana implica una medida de sensibilidad (no dejar pasar emisiones en incumplimiento) frente a una de precisión, pero el autor no fijó cuál pesa más ni con qué valor.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "monitoring_task",
+        "id": "STM-12",
+        "origin": "declared",
+        "status": "seed",
+        "text": "SB-1 [D] Servicio de monitoreo en tiempo real. Monitoreo clásico de RF para la banda FM en tiempo real: espectrograma con waterfall y PSD, más las métricas base de las gráficas."
+      },
+      {
+        "field": "monitoring_task",
+        "id": "STM-13",
+        "origin": "declared",
+        "status": "seed",
+        "text": "SB-2 [D] Servicio de demodulación y audio en streaming. Reproduce el audio de la emisión mientras el usuario observa, en tiempo real, el espectro y la emisión monitoreada."
+      },
+      {
+        "field": "monitoring_task",
+        "id": "STM-14",
+        "origin": "declared",
+        "status": "seed",
+        "text": "SB-3 [D] Servicio de validación de cumplimiento normativo. Ejecuta una campaña de medición, aplica el modelo de localización espectral, compara con la base de datos de la ANE mediante un algoritmo determinístico y genera un reporte."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-15",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OE-01 [D] Operar el monitoreo en tiempo real: espectrograma, waterfall, PSD y métricas base (servicio SB-1)."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-16",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OE-02 [D] Demodular y reproducir el audio en streaming, simultáneo al monitoreo (servicio SB-2)."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-17",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OE-03 [D] Ejecutar la campaña de medición, localizar espectralmente cada emisión y clasificarla contra la base ANE, con reporte (servicio SB-3)."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-18",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OE-04 [D] Asegurar la fiabilidad de la medida mediante calibración y márgenes de tolerancia (transversal)."
+      },
+      {
+        "field": "objectives",
+        "id": "STM-19",
+        "origin": "declared",
+        "status": "seed",
+        "text": "OE-05 [D] Ser de costo eficiente y operar como filtro de alerta temprana (transversal)."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-20",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Definición operativa - localización espectral: cuando el autor dice localización se refiere a localización espectral, es decir, detectar la emisión y determinar su frecuencia central y su ancho de banda. No es localización geográfica de la fuente. Esta definición resuelve la ambigüedad detección o localización de la v0.1."
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-21",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-A1 [D] Mostrar el monitoreo clásico de RF para la banda FM en tiempo real: espectrograma con waterfall y PSD (densidad espectral de potencia).",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-22",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-A2 [D] Mostrar las métricas base de las gráficas: potencia promedio, potencia instantánea, SNR, potencia pico, entre otras.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-23",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-A3 [D] Mostrar las métricas de excursión o desviación máxima de frecuencia de la emisión.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-24",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-B1 [D] Demodular la emisión FM y reproducir su audio en streaming.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-25",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-B2 [D] Reproducir el audio mientras el usuario ve en tiempo real el espectro y la emisión que se está monitoreando (simultaneidad con SB-1).",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-26",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-C1 [D] Ejecutar una campaña de medición en un tiempo determinado: el sensor genera mediciones cada n segundos, de forma continua durante un tiempo determinado (horas o minutos), y con cada medición espaciada de la siguiente por otro tiempo determinado. Los valores de n, de la duración y del espaciado viajan a Ctx 01.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-27",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-C2 [D] Con los resultados de la campaña, aplicar el modelo de localización espectral: detectar cada emisión y determinar su frecuencia central y su ancho de banda.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-28",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-C3 [D] Aplicar un algoritmo determinístico que compare los resultados con la base de datos de la ANE y determine, de las emisiones capturadas, cuáles están autorizadas y cuáles incumplen el ancho de banda autorizado.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "expected_results",
+        "id": "STM-29",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-C4 [D] Generar un reporte con los resultados de la medición.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-30",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-G1 [D] El sistema debe estar basado en SDR.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-31",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RF-G2 [D] El sistema debe calibrarse para asegurar la fiabilidad de la medida, en amplitud y en frecuencia, contra una referencia o mediante algoritmos.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "performance_expectations",
+        "id": "STM-32",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RNF-01 [D] Las salidas deben servir a una verificación regulatoria de alerta temprana. El autor no fijó cómo se usarán como insumo para la medición profesional posterior.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "performance_expectations",
+        "id": "STM-33",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RNF-02 [D] Tiempo real es la condición de visualización y audio. El autor no fijó una latencia.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "performance_expectations",
+        "id": "STM-34",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RNF-03 [D] La fiabilidad de la medida debe acotarse con márgenes de error o de tolerancia realistas. El autor no fijó sus valores.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "performance_expectations",
+        "id": "STM-35",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RNF-04 [D] El dispositivo debe ser de costo eficiente. El autor no fijó un techo de costo ni qué se sacrifica frente a un equipo profesional.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "performance_expectations",
+        "id": "STM-36",
+        "origin": "declared",
+        "status": "seed",
+        "text": "RNF-05 [No declarado] Disponibilidad, seguridad de registros, trazabilidad de decisiones y retención de datos. Ninguno aparece en la entrada.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-37",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Nota sobre el texto del autor: la entrada original decía hacer modulación y monitoreo en simultáneo. El autor confirmó que SB-2 es demodulación y audio en streaming simultáneo al monitoreo. La ambigüedad queda resuelta."
+      },
+      {
+        "field": "monitoring_task",
+        "id": "STM-38",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Interesado usuario: personal técnico de vigilancia que opera el sistema. El autor no nombró al usuario (procedencia I, desde D-01)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-39",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Interesado regulador: Agencia Nacional del Espectro (ANE), dueña de la base de datos de emisiones autorizadas (procedencia D)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-40",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Interesado afectado no usuario: concesionarios autorizados en la banda, cuyas emisiones pueden sufrir interferencia; no usan el sistema (procedencia I, desde D-08)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-41",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Interesado afectado no usuario: oyentes y servicios aeronáuticos que usan frecuencias próximas; solo se mencionan como contexto (procedencia I, desde D-08)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-42",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Sistema externo: base de datos de emisiones autorizadas de la ANE; formato y campos no declarados (procedencia D)."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-43",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Mantenedor: no identificado, sin ocupante declarado."
+      },
+      {
+        "field": "scope",
+        "id": "STM-44",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Operador de la estación medida: titular de la emisora observada; su condición de afectado depende de la respuesta a P-03 (procedencia I)."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-45",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Entorno: hardware SDR, modelo no declarado."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-46",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Entorno: plataforma de cómputo, no declarada."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-47",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Entorno: ubicación de la estación de monitoreo, fija o móvil, no declarada."
+      },
+      {
+        "field": "target_signals_bands",
+        "id": "STM-48",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Entorno: banda de operación, FM de radiodifusión sonora, en el rango que fija el plan técnico nacional."
+      },
+      {
+        "field": "scope",
+        "id": "STM-49",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Dentro del sistema: adquisición de señal con un SDR sobre la banda FM."
+      },
+      {
+        "field": "scope",
+        "id": "STM-50",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Dentro del sistema: SB-1, cálculo y visualización de PSD, espectrograma con waterfall y métricas base en tiempo real."
+      },
+      {
+        "field": "scope",
+        "id": "STM-51",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Dentro del sistema: SB-2, demodulación FM y reproducción de audio en streaming, simultánea al monitoreo."
+      },
+      {
+        "field": "scope",
+        "id": "STM-52",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Dentro del sistema: SB-3, campaña de medición, localización espectral (frecuencia central y ancho de banda de cada emisión), comparación determinística con la base ANE, clasificación (autorizada o incumple ancho de banda) y reporte."
+      },
+      {
+        "field": "scope",
+        "id": "STM-53",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Dentro del sistema: calibración en amplitud y frecuencia (transversal)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-54",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-01 Bloqueo o inhibición de emisiones. La ANE regula los inhibidores en la Resolución 509 de 2019; ese uso no se incluye."
+      },
+      {
+        "field": "scope",
+        "id": "STM-55",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-02 Transmisión de cualquier señal. El sistema solo recibe."
+      },
+      {
+        "field": "scope",
+        "id": "STM-56",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-03 Radiodifusión en amplitud modulada (AM). Existe un plan técnico AM, pero el alcance es FM."
+      },
+      {
+        "field": "scope",
+        "id": "STM-57",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-04 Procedimiento sancionatorio, decisiones administrativas y evaluación legal de una emisión."
+      },
+      {
+        "field": "scope",
+        "id": "STM-58",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-05 Creación o mantenimiento de la base de datos de emisiones autorizadas. El sistema la consume."
+      },
+      {
+        "field": "scope",
+        "id": "STM-59",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-06 Evaluación del contenido de la programación."
+      },
+      {
+        "field": "scope",
+        "id": "STM-60",
+        "origin": "declared",
+        "status": "seed",
+        "text": "X-07 La medición profesional que sustenta la sanción o la demanda. El sistema es el filtro de alerta temprana que la antecede y la prioriza, no la medición de grado legal."
+      },
+      {
+        "field": "scope",
+        "id": "STM-61",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Disparador de aplicabilidad: uso del espectro radioeléctrico, activado (procedencia D)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-62",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Disparador de aplicabilidad: captura o demodulación de contenido (audio de terceros), activado (procedencia I, desde RF-B1)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-63",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Disparador de aplicabilidad: producción de evidencia para un regulador, activado (procedencia D, D-01)."
+      },
+      {
+        "field": "scope",
+        "id": "STM-64",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Disparador de aplicabilidad: tratamiento de datos personales, por determinar, depende de P-07."
+      },
+      {
+        "field": "scope",
+        "id": "STM-65",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Disparador de aplicabilidad: exposición de personas a campos electromagnéticos, no declarado; el sistema no mide campos."
+      },
+      {
+        "field": "scope",
+        "id": "STM-66",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Disparador de aplicabilidad: emisión de señales de prueba, no."
+      },
+      {
+        "field": "scope",
+        "id": "STM-67",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-01 Constitución Política, art. 75: el espectro electromagnético es un bien público inenajenable e imprescriptible. Verificada en línea."
+      },
+      {
+        "field": "scope",
+        "id": "STM-68",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-02 Ley 1341 de 2009, arts. 25 y 57 inc. 8: crea la ANE (art. 25); los concesionarios de radiodifusión sonora deben prestar el servicio atendiendo los parámetros técnicos esenciales (art. 57). Verificada, citada en la Resolución ANE 000227 de 2021."
+      },
+      {
+        "field": "scope",
+        "id": "STM-69",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-03 Ley 1978 de 2019, art. 36, numerales 2 y 3: la ANE elabora los cuadros de características técnicas de la red y establece y actualiza los planes técnicos de radiodifusión. Verificada en línea."
+      },
+      {
+        "field": "scope",
+        "id": "STM-70",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-04 Resolución MinTIC 2614 de 2022: reglamenta la radiodifusión sonora y deroga la Resolución 415 de 2010; su art. 6 aplica los planes técnicos AM y FM de la ANE. Verificada en línea, vigente."
+      },
+      {
+        "field": "scope",
+        "id": "STM-71",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-05 Resolución ANE 105 de 2020, Anexo 2 (Plan Técnico Nacional de Radiodifusión Sonora en FM, PTNRS-FM): fija los canales por frecuencia de operación, frecuencia de enlace, potencia radiada aparente y área de servicio. Verificada en línea; adoptada y modificada por la Resolución ANE 463 de 2020 y actualizada después varias veces, entre ellas por la Resolución ANE 484 de 2025."
+      },
+      {
+        "field": "scope",
+        "id": "STM-72",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-06 Resolución ANE 000031 de 2025: actualiza el Apéndice A del Anexo 2 de la Resolución ANE 105 de 2020. Verificada en línea."
+      },
+      {
+        "field": "scope",
+        "id": "STM-73",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-07 Resolución ANE 509 de 2019: regula el uso de inhibidores y bloqueadores de señales radioeléctricas; se usa solo como exclusión (X-01). Verificada en línea."
+      },
+      {
+        "field": "scope",
+        "id": "STM-74",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-08 Recomendación UIT-R BS.450 (ed. 4, 10/2019; anexo de la ed. 3 para Colombia): estándares de transmisión FM en VHF; admite desviación máxima de ±75 kHz o ±50 kHz según el país; ±75 kHz es el valor de referencia en Europa occidental y Estados Unidos; la tabla de la edición 3 registra para Colombia una separación de canal de 200 kHz y desviación de ±75 kHz (verificar ambos datos en la edición vigente). Verificada en línea, parcial."
+      },
+      {
+        "field": "scope",
+        "id": "STM-75",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-09 Recomendación UIT-R SM.443-4: método de medición de ancho de banda ocupado en estaciones de monitoreo; método beta por ciento, con beta/2 = 0,5 % por defecto. Verificada en línea."
+      },
+      {
+        "field": "scope",
+        "id": "STM-76",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-10 Recomendación UIT-R SM.1268-1: método de medición de la desviación máxima de frecuencia en estaciones de monitoreo; requiere frecuencia de muestreo de al menos 200 kHz en equipos digitales. Verificada en línea."
+      },
+      {
+        "field": "scope",
+        "id": "STM-77",
+        "origin": "declared",
+        "status": "seed",
+        "text": "N-11 Recomendación UIT-R SM.328 (última edición: 12, 09/2025): define espectro y ancho de banda de emisiones, incluido el ancho de banda ocupado. Existencia verificada; texto de la edición vigente no leído."
+      },
+      {
+        "field": "target_signals_bands",
+        "id": "STM-78",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Nota 1: las resoluciones ANE que modifican el PTNRS-FM describen cada canal con cuatro parámetros esenciales: frecuencia de operación, frecuencia de enlace, potencia radiada aparente y área de servicio; el ancho de banda no aparece entre ellos. Los 200 kHz que cita el autor sí tienen respaldo técnico, pero como separación entre canales: la tabla de la Rec. UIT-R BS.450 registra para Colombia una separación de canal de 200 kHz, y un canal FM ocupa normalmente 200 kHz. Es decir, 200 kHz es el raster de asignación y la anchura nominal del canal, no necesariamente el umbral de ancho de banda ocupado que mediría el sistema."
+      },
+      {
+        "field": "scope",
+        "id": "STM-79",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Nota 2: la Resolución 415 de 2010 del MinTIC fue derogada por la Resolución 2614 de 2022 (N-04). No se usa."
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-80",
+        "origin": "declared",
+        "status": "seed",
+        "text": "C-01 [D] La fiabilidad de la medida depende de la calibración del sistema. Debe calibrarse contra una referencia o mediante algoritmos.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-81",
+        "origin": "declared",
+        "status": "seed",
+        "text": "C-02 [D] La calibración es doble: en amplitud (para que la potencia y la PSD sean fiables) y en frecuencia (para que el ancho de banda ocupado y la desviación sean fiables). Son las dos magnitudes de las que dependen las dos reglas de incumplimiento (ancho de banda y desviación).",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-82",
+        "origin": "declared",
+        "status": "seed",
+        "text": "C-03 [I, desde C-01 y C-02] Un filtro de alerta temprana con medida no calibrada produciría falsas alertas o dejaría pasar incumplimientos, y perdería su valor como filtro. La calibración es, por tanto, condición de que la alerta temprana sirva a su propósito.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-83",
+        "origin": "declared",
+        "status": "seed",
+        "text": "C-04 [D] La medida debe acompañarse de márgenes de error o de tolerancia realistas. Una emisión no se marca por rebasar el límite en un valor dentro del margen de incertidumbre del propio instrumento.",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-84",
+        "origin": "declared",
+        "status": "seed",
+        "text": "C-05 [I, desde C-04] La regla de incumplimiento de ancho de banda (RF-C3) no es una comparación exacta contra 200 kHz: es una comparación contra 200 kHz más una tolerancia que cubre la incertidumbre de la medida. El valor de esa tolerancia no está declarado (ver P-02 y P-10).",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-85",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Obligación abierta: sin una fuente identificada para el ancho de banda autorizado, RF-C3 no puede ejecutarse (ver P-01).",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-86",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Obligación abierta: sin una referencia o método de calibración y sin un margen de tolerancia, la fiabilidad de la medida no es verificable (ver P-10, P-11).",
+        "transfer_class": "E2"
+      },
+      {
+        "field": "declared_constraints",
+        "id": "STM-87",
+        "origin": "declared",
+        "status": "seed",
+        "text": "Obligación abierta: ante un incumplimiento de ancho de banda, el sistema marca el incumplimiento; no dice qué sanción corresponde (X-04).",
+        "transfer_class": "E2"
+      },
+      {
+        "discard_code": "DUPLICATE",
+        "id": "STM-88",
+        "origin": "declared",
+        "status": "seed",
+        "text": "V-01 [D] El sistema debe verificar si existen emisiones no autorizadas."
+      },
+      {
+        "discard_code": "DUPLICATE",
+        "id": "STM-89",
+        "origin": "declared",
+        "status": "seed",
+        "text": "V-02 [D] El sistema debe verificar si incumplen su parámetro de ancho de banda."
+      },
+      {
+        "field": "scope",
+        "id": "STM-90",
+        "origin": "declared",
+        "status": "seed",
+        "text": "V-03 [D] Un incumplimiento se marca. El texto no dice que se corrija ni que se bloquee."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-91",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-01 ¿De qué documento o campo sale el ancho de banda autorizado de cada emisión? Los 200 kHz que cita el autor corresponden en el plan técnico a la separación entre canales, no a un ancho de banda listado como parámetro esencial."
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-92",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-02 ¿Cuánto puede excederse el ancho de banda autorizado antes de marcar incumplimiento? ¿Se mide el ancho ocupado al 99 %, con el método beta por ciento, o con un método x dB?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-93",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-03 ¿Qué es una emisión no autorizada? ¿Una frecuencia sin registro, un registro con otra potencia, otro lugar o un canal distinto?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-94",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-04 Localización espectral ya está definida y en alcance. Falta: ¿qué modelo o método la implementa, y con qué resolución y umbral de detección en frecuencia central y ancho de banda?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-95",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-05 ¿Qué latencia máxima se considera tiempo real?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-96",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-06 ¿Qué modelo de SDR y cuántos canales simultáneos? ¿Cubre toda la banda FM o un subconjunto?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-97",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-07 ¿Se almacena el audio demodulado? ¿Por cuánto tiempo? ¿Puede contener voces identificables?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-98",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-08 ¿Qué valores toman los parámetros de la campaña de medición de SB-3: el periodo n entre mediciones, la duración total y el espaciado entre mediciones?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-99",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-09 ¿La desviación autorizada viene en la base de datos o es un valor de referencia de la norma (±75 kHz)?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-100",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-10 ¿Qué margen de tolerancia se aplica a cada medida (ancho de banda, potencia, desviación) antes de marcar incumplimiento?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-101",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-11 ¿Contra qué referencia se calibra en amplitud y en frecuencia, o con qué algoritmo? ¿Con qué periodicidad?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-102",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-12 Como filtro de alerta temprana, ¿qué pesa más: no dejar pasar un incumplimiento (sensibilidad) o no generar falsas alertas (precisión)? ¿Con qué valores?"
+      },
+      {
+        "field": "assumptions",
+        "id": "STM-103",
+        "origin": "declared",
+        "status": "seed",
+        "text": "P-13 ¿Qué define costo eficiente? ¿Hay un techo de costo o una plataforma de referencia?"
+      }
+    ]
+  },
+  "project": "fm-regulatory-spectrum-monitoring",
+  "stage": "Ctx00",
+  "status": "frozen",
+  "transfer_package": [
+    {
+      "derives_from": [
+        {
+          "location": "STM-05",
+          "quote": "D-05 [D] De ahí la necesidad de un dispositivo de costo eficiente que sirva como filtro de alerta temprana: hace monitoreo en tiempo real y realiza campañas de medición, y genera alertas tempranas cuando detecta emisiones no autorizadas o emisiones que incumplen la normativa por emitir con un ancho de banda superior al establecido por la ANE."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-05",
+      "text": "D-05 [D] De ahí la necesidad de un dispositivo de costo eficiente que sirva como filtro de alerta temprana: hace monitoreo en tiempo real y realiza campañas de medición, y genera alertas tempranas cuando detecta emisiones no autorizadas o emisiones que incumplen la normativa por emitir con un ancho de banda superior al establecido por la ANE."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-06",
+          "quote": "D-06 [D] El dispositivo no reemplaza la medición profesional: la antecede. La alerta temprana prioriza dónde conviene después hacer la medición profesional que sustente la sanción o la demanda."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-06",
+      "text": "D-06 [D] El dispositivo no reemplaza la medición profesional: la antecede. La alerta temprana prioriza dónde conviene después hacer la medición profesional que sustente la sanción o la demanda."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-11",
+          "quote": "OG-01 medida de éxito: no declarada por el autor. El carácter de alerta temprana implica una medida de sensibilidad (no dejar pasar emisiones en incumplimiento) frente a una de precisión, pero el autor no fijó cuál pesa más ni con qué valor."
+        }
+      ],
+      "field": "performance_expectations",
+      "id": "STM-11",
+      "text": "OG-01 medida de éxito: no declarada por el autor. El carácter de alerta temprana implica una medida de sensibilidad (no dejar pasar emisiones en incumplimiento) frente a una de precisión, pero el autor no fijó cuál pesa más ni con qué valor."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-21",
+          "quote": "RF-A1 [D] Mostrar el monitoreo clásico de RF para la banda FM en tiempo real: espectrograma con waterfall y PSD (densidad espectral de potencia)."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-21",
+      "text": "RF-A1 [D] Mostrar el monitoreo clásico de RF para la banda FM en tiempo real: espectrograma con waterfall y PSD (densidad espectral de potencia)."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-22",
+          "quote": "RF-A2 [D] Mostrar las métricas base de las gráficas: potencia promedio, potencia instantánea, SNR, potencia pico, entre otras."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-22",
+      "text": "RF-A2 [D] Mostrar las métricas base de las gráficas: potencia promedio, potencia instantánea, SNR, potencia pico, entre otras."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-23",
+          "quote": "RF-A3 [D] Mostrar las métricas de excursión o desviación máxima de frecuencia de la emisión."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-23",
+      "text": "RF-A3 [D] Mostrar las métricas de excursión o desviación máxima de frecuencia de la emisión."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-24",
+          "quote": "RF-B1 [D] Demodular la emisión FM y reproducir su audio en streaming."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-24",
+      "text": "RF-B1 [D] Demodular la emisión FM y reproducir su audio en streaming."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-25",
+          "quote": "RF-B2 [D] Reproducir el audio mientras el usuario ve en tiempo real el espectro y la emisión que se está monitoreando (simultaneidad con SB-1)."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-25",
+      "text": "RF-B2 [D] Reproducir el audio mientras el usuario ve en tiempo real el espectro y la emisión que se está monitoreando (simultaneidad con SB-1)."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-26",
+          "quote": "RF-C1 [D] Ejecutar una campaña de medición en un tiempo determinado: el sensor genera mediciones cada n segundos, de forma continua durante un tiempo determinado (horas o minutos), y con cada medición espaciada de la siguiente por otro tiempo determinado. Los valores de n, de la duración y del espaciado viajan a Ctx 01."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-26",
+      "text": "RF-C1 [D] Ejecutar una campaña de medición en un tiempo determinado: el sensor genera mediciones cada n segundos, de forma continua durante un tiempo determinado (horas o minutos), y con cada medición espaciada de la siguiente por otro tiempo determinado. Los valores de n, de la duración y del espaciado viajan a Ctx 01."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-27",
+          "quote": "RF-C2 [D] Con los resultados de la campaña, aplicar el modelo de localización espectral: detectar cada emisión y determinar su frecuencia central y su ancho de banda."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-27",
+      "text": "RF-C2 [D] Con los resultados de la campaña, aplicar el modelo de localización espectral: detectar cada emisión y determinar su frecuencia central y su ancho de banda."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-28",
+          "quote": "RF-C3 [D] Aplicar un algoritmo determinístico que compare los resultados con la base de datos de la ANE y determine, de las emisiones capturadas, cuáles están autorizadas y cuáles incumplen el ancho de banda autorizado."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-28",
+      "text": "RF-C3 [D] Aplicar un algoritmo determinístico que compare los resultados con la base de datos de la ANE y determine, de las emisiones capturadas, cuáles están autorizadas y cuáles incumplen el ancho de banda autorizado."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-29",
+          "quote": "RF-C4 [D] Generar un reporte con los resultados de la medición."
+        }
+      ],
+      "field": "expected_results",
+      "id": "STM-29",
+      "text": "RF-C4 [D] Generar un reporte con los resultados de la medición."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-30",
+          "quote": "RF-G1 [D] El sistema debe estar basado en SDR."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-30",
+      "text": "RF-G1 [D] El sistema debe estar basado en SDR."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-31",
+          "quote": "RF-G2 [D] El sistema debe calibrarse para asegurar la fiabilidad de la medida, en amplitud y en frecuencia, contra una referencia o mediante algoritmos."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-31",
+      "text": "RF-G2 [D] El sistema debe calibrarse para asegurar la fiabilidad de la medida, en amplitud y en frecuencia, contra una referencia o mediante algoritmos."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-32",
+          "quote": "RNF-01 [D] Las salidas deben servir a una verificación regulatoria de alerta temprana. El autor no fijó cómo se usarán como insumo para la medición profesional posterior."
+        }
+      ],
+      "field": "performance_expectations",
+      "id": "STM-32",
+      "text": "RNF-01 [D] Las salidas deben servir a una verificación regulatoria de alerta temprana. El autor no fijó cómo se usarán como insumo para la medición profesional posterior."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-33",
+          "quote": "RNF-02 [D] Tiempo real es la condición de visualización y audio. El autor no fijó una latencia."
+        }
+      ],
+      "field": "performance_expectations",
+      "id": "STM-33",
+      "text": "RNF-02 [D] Tiempo real es la condición de visualización y audio. El autor no fijó una latencia."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-34",
+          "quote": "RNF-03 [D] La fiabilidad de la medida debe acotarse con márgenes de error o de tolerancia realistas. El autor no fijó sus valores."
+        }
+      ],
+      "field": "performance_expectations",
+      "id": "STM-34",
+      "text": "RNF-03 [D] La fiabilidad de la medida debe acotarse con márgenes de error o de tolerancia realistas. El autor no fijó sus valores."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-35",
+          "quote": "RNF-04 [D] El dispositivo debe ser de costo eficiente. El autor no fijó un techo de costo ni qué se sacrifica frente a un equipo profesional."
+        }
+      ],
+      "field": "performance_expectations",
+      "id": "STM-35",
+      "text": "RNF-04 [D] El dispositivo debe ser de costo eficiente. El autor no fijó un techo de costo ni qué se sacrifica frente a un equipo profesional."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-36",
+          "quote": "RNF-05 [No declarado] Disponibilidad, seguridad de registros, trazabilidad de decisiones y retención de datos. Ninguno aparece en la entrada."
+        }
+      ],
+      "field": "performance_expectations",
+      "id": "STM-36",
+      "text": "RNF-05 [No declarado] Disponibilidad, seguridad de registros, trazabilidad de decisiones y retención de datos. Ninguno aparece en la entrada."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-80",
+          "quote": "C-01 [D] La fiabilidad de la medida depende de la calibración del sistema. Debe calibrarse contra una referencia o mediante algoritmos."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-80",
+      "text": "C-01 [D] La fiabilidad de la medida depende de la calibración del sistema. Debe calibrarse contra una referencia o mediante algoritmos."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-81",
+          "quote": "C-02 [D] La calibración es doble: en amplitud (para que la potencia y la PSD sean fiables) y en frecuencia (para que el ancho de banda ocupado y la desviación sean fiables). Son las dos magnitudes de las que dependen las dos reglas de incumplimiento (ancho de banda y desviación)."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-81",
+      "text": "C-02 [D] La calibración es doble: en amplitud (para que la potencia y la PSD sean fiables) y en frecuencia (para que el ancho de banda ocupado y la desviación sean fiables). Son las dos magnitudes de las que dependen las dos reglas de incumplimiento (ancho de banda y desviación)."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-82",
+          "quote": "C-03 [I, desde C-01 y C-02] Un filtro de alerta temprana con medida no calibrada produciría falsas alertas o dejaría pasar incumplimientos, y perdería su valor como filtro. La calibración es, por tanto, condición de que la alerta temprana sirva a su propósito."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-82",
+      "text": "C-03 [I, desde C-01 y C-02] Un filtro de alerta temprana con medida no calibrada produciría falsas alertas o dejaría pasar incumplimientos, y perdería su valor como filtro. La calibración es, por tanto, condición de que la alerta temprana sirva a su propósito."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-83",
+          "quote": "C-04 [D] La medida debe acompañarse de márgenes de error o de tolerancia realistas. Una emisión no se marca por rebasar el límite en un valor dentro del margen de incertidumbre del propio instrumento."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-83",
+      "text": "C-04 [D] La medida debe acompañarse de márgenes de error o de tolerancia realistas. Una emisión no se marca por rebasar el límite en un valor dentro del margen de incertidumbre del propio instrumento."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-84",
+          "quote": "C-05 [I, desde C-04] La regla de incumplimiento de ancho de banda (RF-C3) no es una comparación exacta contra 200 kHz: es una comparación contra 200 kHz más una tolerancia que cubre la incertidumbre de la medida. El valor de esa tolerancia no está declarado (ver P-02 y P-10)."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-84",
+      "text": "C-05 [I, desde C-04] La regla de incumplimiento de ancho de banda (RF-C3) no es una comparación exacta contra 200 kHz: es una comparación contra 200 kHz más una tolerancia que cubre la incertidumbre de la medida. El valor de esa tolerancia no está declarado (ver P-02 y P-10)."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-85",
+          "quote": "Obligación abierta: sin una fuente identificada para el ancho de banda autorizado, RF-C3 no puede ejecutarse (ver P-01)."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-85",
+      "text": "Obligación abierta: sin una fuente identificada para el ancho de banda autorizado, RF-C3 no puede ejecutarse (ver P-01)."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-86",
+          "quote": "Obligación abierta: sin una referencia o método de calibración y sin un margen de tolerancia, la fiabilidad de la medida no es verificable (ver P-10, P-11)."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-86",
+      "text": "Obligación abierta: sin una referencia o método de calibración y sin un margen de tolerancia, la fiabilidad de la medida no es verificable (ver P-10, P-11)."
+    },
+    {
+      "derives_from": [
+        {
+          "location": "STM-87",
+          "quote": "Obligación abierta: ante un incumplimiento de ancho de banda, el sistema marca el incumplimiento; no dice qué sanción corresponde (X-04)."
+        }
+      ],
+      "field": "declared_constraints",
+      "id": "STM-87",
+      "text": "Obligación abierta: ante un incumplimiento de ancho de banda, el sistema marca el incumplimiento; no dice qué sanción corresponde (X-04)."
+    }
+  ]
+}
