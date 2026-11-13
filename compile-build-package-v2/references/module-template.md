@@ -48,6 +48,12 @@ and the budgets of section 5, one line per step with units>
 - Constraints the dependants must respect: <lines>
 ```
 
+Sections 1 to 8 are copied verbatim into the implementation document
+(`implementation-doc.md`): they never contain a question id (`Q-03-nn`), a
+provisional marker, a gate, a datasheet snapshot id (`SRC-03-nn`) or a remark about
+the process. Those belong only to sections 9 and 10, which are not copied. State a
+value as the value, with its unit, never as "pending the answer to Q-03-nn".
+
 Rules: every `PAR`, `PRC`, `SCH`, `ERR` named in the file exists in
 `results/ctx03/items.json` with the same values; a value is written once in the
 items and copied here, and the two must agree. Section 10 is the only part a

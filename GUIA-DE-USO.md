@@ -91,7 +91,7 @@ results/
 │            final-design.md · CONTEXT-ctx02.md
 └── ctx03/   state.json · STATUS.md · events.jsonl · questions.json · items.json ·
              spec-register.json · specs/ · validations/V1|V2/R<n>/ ·
-             build-package-baseline.json/.sha256/.md · final-spec.md · CONTEXT-ctx03.md
+             build-package-baseline.json/.sha256 · final-spec.md · CONTEXT-ctx03.md
 ```
 
 **What to look at:**
@@ -101,7 +101,7 @@ results/
 | Read the approved problem | `results/ctx00/problem-definition.md` |
 | Read the approved requirements | `results/ctx01/requirements-baseline.md` |
 | Read the approved design | `results/ctx02/final-design.md` |
-| **Read the final product** | `results/ctx03/final-spec.md` and `results/ctx03/build-package-baseline.md` |
+| **Read the final product** (the developer's reference) | `results/ctx03/final-spec.md` |
 | Know where a stage stands | that stage's `state.json` (in ctx03, also `STATUS.md`) |
 | Understand what a stage hands to the next | `CONTEXT-ctxNN.md` |
 
@@ -194,8 +194,8 @@ Same as ctx02, with:
 
 - **V1:** hardware references for everything that is not the SDR or the board (datasheets, at most two options per component). Document: `results/ctx03/validations/V1/R<n>/hardware-proposal.md`.
 - **Intermediate phase without interruption:** the agent writes the specification modules one by one. You can follow progress in `results/ctx03/STATUS.md`.
-- **V2:** final specification in `results/ctx03/validations/V2/R<n>/final-spec.md`. Values the agent could not close without you appear as questions.
-- `APROBAR` in V2 generates the Build Package.
+- **V2:** you read two documents: the review `results/ctx03/validations/V2/R<n>/v2-review.md` (open questions first, decisions, gates) and the candidate implementation document `results/ctx03/validations/V2/R<n>/final-spec.md` (requirements, design and specification, assembled from the earlier stages). Values the agent could not close without you appear as questions.
+- `APROBAR` in V2 approves both: the agent regenerates the document and, only if it is identical to the one you read, copies it to `results/ctx03/final-spec.md` and freezes the Build Package. If it differs, it asks you again.
 
 ### If you disagree with an escalation
 

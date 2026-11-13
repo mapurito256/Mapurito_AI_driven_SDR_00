@@ -1,6 +1,6 @@
 ---
 name: cb-coverage-consistency
-description: Runs the 03.5 closure — checks locked hardware is unchanged, cross-module consistency of parameters, units and schemas, the final resource budget, the closure of TBD-Ctx03 ranges, deferrals and open points, coverage both ways, a blind review of the dispositions and a consumer test by a reader who sees only the package; loaded by compile-build-package-v2 at 03.5, not invoked directly.
+description: Runs the 03.5 closure — checks locked hardware is unchanged, cross-module consistency of parameters, units and schemas, the final resource budget, the closure of TBD-Ctx03 ranges, deferrals and open points, coverage both ways, and a blind review of the dispositions; loaded by compile-build-package-v2 at 03.5, not invoked directly.
 ---
 
 # cb-coverage-consistency
@@ -8,9 +8,10 @@ description: Runs the 03.5 closure — checks locked hardware is unchanged, cros
 ## Objective
 
 Show that the specification is complete (nothing upstream lacks an element, nothing
-in the package lacks a requirement), consistent (modules agree with each other and
-with the hardware) and sufficient (a reader who only has the package needs no design
-decision). Coverage is zero tolerance on empty cells, not a quality score.
+in the package lacks a requirement) and consistent (modules agree with each other and
+with the hardware). Sufficiency (a reader who only has the implementation document
+needs no design decision) is tested afterwards by `cb-assemble-spec` at 03.6.
+Coverage is zero tolerance on empty cells, not a quality score.
 
 ## Inputs
 
@@ -80,29 +81,20 @@ decision). Coverage is zero tolerance on empty cells, not a quality score.
    entries. For each, either change the disposition and add the missing spec or
    element (re-enter the owning skill) or keep it with a written reason. Never
    resolve silently.
-9. **Consumer test.** Launch a second subagent with a fresh context. It sees only
-   `results/ctx03/specs/`, `results/ctx03/items.json` and
-   `results/ctx03/sources/`, and it is asked to list every question it would need
-   answered to implement and test the node, marking each as one that needs a design
-   decision or a mere clarification. Write each into `consumer_test`. Each design-decision
-   question is a gap: re-enter the owning module or log a question. If the tool is
-   unavailable, run `inline` and record it.
-10. Write `results/ctx03/substages/03.5.md`: consistency findings, closure tables,
-    final budget, coverage tables, blind-review table, consumer-test table, pass
-    modes.
+9. Write `results/ctx03/substages/03.5.md`: consistency findings, closure tables,
+   final budget, coverage tables, blind-review table, pass modes.
 
 ## Output format
 
-`results/ctx03/items.json` (`blind_review`, `consumer_test`, `dfr`,
-`tbd_closure`, `open_points`, `budget`), `results/ctx03/substages/03.5.md`. The
-orchestrator emits `SUBSTAGE_END`; the result is evidence for G03-5 to G03-9 and
-G03-11 in `cb-gate-check`.
+`results/ctx03/items.json` (`blind_review`, `dfr`, `tbd_closure`, `open_points`,
+`budget`), `results/ctx03/substages/03.5.md`. The orchestrator emits
+`SUBSTAGE_END`; the result is evidence for G03-5 to G03-9 in `cb-gate-check`.
 
 ## Do not
 
-- Do not let the blind review or the consumer test see the design, the
-  dispositions or earlier answers.
+- Do not let the blind review see the design, the dispositions or earlier
+  answers.
 - Do not show a coverage percentage as sufficiency; show the per-id table.
-- Do not leave a disagreement or a consumer question unattended.
+- Do not leave a disagreement unattended.
 - Do not close a `DFR` outside its window or modify an upstream item.
 - Do not load any fixture or example dataset.

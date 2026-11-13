@@ -1,29 +1,31 @@
 ---
 name: cb-validation-report
-description: Writes the V1 hardware-proposal document and the V2 final-specification document, open questions first, plus the response form the person fills; loaded by compile-build-package-v2 after the gate, not invoked directly.
+description: Writes the V1 hardware-proposal document and the V2 review document (which points to the candidate implementation document built by cb-assemble-spec), open questions first, plus the response form the person fills; loaded by compile-build-package-v2 after the gate, not invoked directly.
 ---
 
 # cb-validation-report
 
 ## Objective
 
-Produce the one document a person reads at each validation and the form they
-answer with. Substages leave their trace in `results/ctx03/substages/`, the
-modules in `results/ctx03/specs/` and the events in `results/ctx03/events.jsonl`;
-the validation document is the only narrative the person sees per presentation.
-The agent exposes; the person decides.
+Produce the document a person reads at each validation and the form they answer
+with. Substages leave their trace in `results/ctx03/substages/`, the modules in
+`results/ctx03/specs/` and the events in `results/ctx03/events.jsonl`; the
+validation document is the only narrative the person sees per presentation. At V2
+the person also reads the candidate implementation document, which this skill does
+not write: it only points to it. The agent exposes; the person decides.
 
 ## Inputs
 
 `results/ctx03/items.json`, `results/ctx03/questions.json`,
-`results/ctx03/state.json`, `results/ctx03/spec-register.json`, the gate result of
+`results/ctx03/state.json`, `results/ctx03/spec-register.json`, `results/ctx03/substages/03.6.md`, the gate result of
 `cb-gate-check`, `results/ctx03/substages/*.md`, `references/templates.md` (the V1,
 V2 and form layouts), `references/item-schema.md`.
 
 ## Steps
 
 1. Pick the document: V1 after 03.2 (`results/ctx03/validations/V1/R<n>/hardware-proposal.md`),
-   V2 after 03.5 (`results/ctx03/validations/V2/R<n>/final-spec.md`), where `R<n>` is
+   V2 after 03.6 (`results/ctx03/validations/V2/R<n>/v2-review.md`; the candidate
+   `final-spec.md` beside it is written by `cb-assemble-spec`), where `R<n>` is
    the presentation index of `results/ctx03/state.json`.
 2. Fill the sections of the template exactly in order. **Section 1 is always the
    open questions**: all of them with state, `kind`, `category`, `gate`; those whose
@@ -38,12 +40,13 @@ V2 and form layouts), `references/item-schema.md`.
    the references fixed by Ctx 02, the compatibility checks, the provisional budget
    with the planning margins used, the Ctx 02 open points closed or still open, and
    the register: what will be specified, in order, and what needs no specification.
-4. V2 content: each `SPEC` in order with the ids it closes and its critical
-   parameters, the hardware as approved, the final budget and open-point closure,
-   the `TBD-Ctx03` and `DFR` closure tables, the AC→TST table with the threshold
-   written side by side, the coverage tables, blind-review disagreements, the
-   consumer-test questions and their resolution, and any change that touches
-   approved hardware as an `escalate:V1` row.
+4. V2 content: the path and hash of the candidate implementation document with its
+   content counts and the `SPEC` ids in order, the hardware as approved, the
+   fidelity and exclusion findings, a summary of the closures (final budget,
+   open points, `TBD-Ctx03`, `DFR`), blind-review disagreements, the consumer-test
+   questions and their resolution, and any change that touches approved hardware as
+   an `escalate:V1` row. The detailed tables (parameters, tests, coverage, closure)
+   are not repeated: they are in the candidate document.
 5. "What the agent decided" is an index of ids and marks: proposed items and
    figures, forced closures, provisional values resolved, `beyond_mvp`. In V2 only
    the `critical` parameters show with a one-line rationale; the routine ones are
@@ -61,7 +64,7 @@ V2 and form layouts), `references/item-schema.md`.
 
 ## Output format
 
-The document (sections of the template) and the empty form.
+The review document (sections of the template) and the empty form.
 
 ## Do not
 
@@ -69,5 +72,6 @@ The document (sections of the template) and the empty form.
 - Do not add a written justification to "what the agent decided".
 - Do not recommend as if decided: a recommendation is `propuesto`.
 - Do not hide a `FAIL`, a forced closure, a provisional value or a `by-limit` need.
+- Do not copy the candidate's sections into the review; do not edit the candidate.
 - Do not approve, sign or decide for the person.
 - Do not load any fixture or example dataset.

@@ -28,7 +28,8 @@ New questions come only from the runs that produce R1 and R2
 
 `results/ctx03/validations/V<k>/R<n>/feedback.md`, `results/ctx03/state.json`,
 `results/ctx03/questions.json`, `results/ctx03/items.json`,
-`results/ctx03/spec-register.json`, `references/item-schema.md`,
+`results/ctx03/spec-register.json`, the candidate
+`results/ctx03/validations/V2/R<n>/final-spec.md`, `references/item-schema.md`,
 `references/templates.md`.
 
 ## Steps
@@ -61,7 +62,8 @@ New questions come only from the runs that produce R1 and R2
    - V2: set the `SPEC` named (and its dependants when an exported parameter or
      schema changed) to `reopened`; load `cb-spec-module` to run the loop in
      `order`; then rerun `cb-test-design` and `cb-coverage-consistency` as the changes
-     require.
+     require, and always `cb-assemble-spec` (the implementation document is rebuilt
+     from the items).
    Then rerun `cb-gate-check` completely (not only the impact set) and issue the next
    presentation with `cb-validation-report`. From presentation R3 a need found while
    integrating is closed `propuesto`, `forced: by-limit`.
@@ -74,14 +76,24 @@ New questions come only from the runs that produce R1 and R2
      not advance. V1: lock approved hardware (`locked_v1: true` on each `HW` and
      hardware `DEC`), store `v1_locked_sha256` with
      `jq -S -c '[.items[]|select(.locked_v1==true)]' results/ctx03/items.json | sha256sum`,
-     emit `VALIDATION_APPROVED`, set `phase: B`, `validation: V2`. V2: emit
+     emit `VALIDATION_APPROVED`, set `phase: B`, `validation: V2`. V2: first
+     re-assemble the document as `cb-assemble-spec` steps 2 and 3, writing to
+     `results/ctx03/final-spec.md`, and compare it with the candidate the person
+     reviewed: `cmp results/ctx03/final-spec.md results/ctx03/validations/V2/R<n>/final-spec.md`.
+     If a fidelity check prints a defect, the approval is not accepted (G03-12 is a
+     `FAIL`). If the files differ, the approval is not accepted either: write the
+     `diff` into `integration.md`, replace the candidate with the new file, set
+     `status: blocked` with `blocked_by: document-changed`, and issue the review again
+     under the same presentation (not counted as a feedback or a new presentation);
+     the person must decide again. If the files are identical, emit
      `VALIDATION_APPROVED`, write `results/ctx03/build-package-baseline.json`
      (shape in `references/records.md`, manifest from
-     `sha256sum results/ctx03/specs/* results/ctx03/sources/*`), store its hash with
+     `sha256sum results/ctx03/specs/* results/ctx03/sources/* results/ctx03/final-spec.md`),
+     store its hash with
      `sha256sum results/ctx03/build-package-baseline.json > results/ctx03/build-package-baseline.sha256`,
-     write `results/ctx03/build-package-baseline.md` (reading copy), copy the approved
-     V2 document to `results/ctx03/final-spec.md`, emit `STAGE_APPROVED`, set
-     `status: approved`, write `results/ctx03/CONTEXT-ctx03.md`.
+     emit `STAGE_APPROVED`, set `status: approved` and write
+     `results/ctx03/CONTEXT-ctx03.md`. There is no `build-package-baseline.md`:
+     `results/ctx03/final-spec.md` is the document the builder reads.
    - `AJUSTAR`: run steps 3 and 4. If the feedback cap is spent, `AJUSTAR` is not
      offered at the next presentation (R4).
    - `DETENER`: set `status: stopped`, write `results/ctx03/CONTEXT-ctx03.md`, do not
@@ -92,7 +104,7 @@ New questions come only from the runs that produce R1 and R2
    only. For `escalate:R0`, `R1` or `R2`: emit `ESCALATION`, set
    `status: returned_upstream`, write `results/ctx03/CONTEXT-ctx03.md` with the reason.
 8. **CONTEXT-ctx03.md.** Fill the template of `references/templates.md`: status,
-   baseline path and hash, final document hash, forced closures with values, what
+   baseline path and hash, implementation document hash, forced closures with values, what
    travels open to the build stage, how to read the items, where to look. Written on
    approval, stop and return.
 
@@ -100,7 +112,8 @@ New questions come only from the runs that produce R1 and R2
 
 `integration.md`, updated `results/ctx03/state.json`, `results/ctx03/STATUS.md`,
 `results/ctx03/questions.json`, `results/ctx03/items.json`, and on close
-`results/ctx03/build-package-baseline.*`, `results/ctx03/final-spec.md` and
+`results/ctx03/build-package-baseline.json`, its `.sha256`,
+`results/ctx03/final-spec.md` (the implementation document) and
 `results/ctx03/CONTEXT-ctx03.md`.
 
 ## Do not

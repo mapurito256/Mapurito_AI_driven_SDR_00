@@ -18,7 +18,7 @@ The **Build Package** is the system's construction manual: a complete, traceable
 
 > Every requirement ends up turned into a test that checks it; every design decision ends up written down, with its reason; and not a single number or procedure is left to the discretion of whoever builds.
 
-Final product: `results/ctx03/build-package-baseline.json` (plus `.sha256` and `.md`) and `results/ctx03/final-spec.md`.
+Final product: `results/ctx03/final-spec.md`, the implementation document the developer builds from (requirements, design and specification, assembled from the ctx01, ctx02 and ctx03 outputs), and its hash-bound `results/ctx03/build-package-baseline.json` (plus `.sha256`).
 
 ---
 
@@ -59,7 +59,7 @@ flowchart LR
 | **ctx00** | document in `inputs/` | What problem, for whom, how far? | `problem-baseline.json` + `problem-definition.md` | 1 final review (up to 3 rounds) |
 | **ctx01** | ctx00 baseline | What must it do, with what limits, how is it checked? | `requirements-baseline.json` (REQ, LIM, AC, DFR) | DEE per round (up to 6 outputs) |
 | **ctx02** | ctx01 baseline | How is it solved and with what reference hardware? | `architecture-baseline.json` + `final-design.md` | V1 (hardware) and V2 (final design) |
-| **ctx03** | ctx02 and ctx01 baselines | What does the developer receive so as to decide nothing? | `build-package-baseline.json` + `final-spec.md` | V1 (hardware references) and V2 (specification) |
+| **ctx03** | ctx02 and ctx01 baselines | What does the developer receive so as to decide nothing? | `final-spec.md` (implementation document) + `build-package-baseline.json` | V1 (hardware references) and V2 (specification) |
 
 **Structure of each stage.** All have a `SKILL.md` that is their **single entry point** and that orchestrates; a set of sub-skills with their own prefix that are loaded **one by one** (`dp-`, `sr-`, `ra-`, `cb-`); a `references/` folder with schemas, templates and registers; and, in ctx01–ctx03, an `evals/` folder that **no skill reads**.
 
@@ -175,18 +175,20 @@ flowchart TD
     K --> S3
     S3 --> S4["03.4 cb-test-design<br/>one test per AC"]
     S4 --> S5["03.5 cb-coverage-consistency<br/>final budget, coverage"]
-    S5 --> V2{{"V2 · final specification"}}
-    V2 -- "APROBAR" --> OUT(["build-package-baseline"])
+    S5 --> S6["03.6 cb-assemble-spec<br/>implementation document, consumer test"]
+    S6 --> V2{{"V2 · final specification"}}
+    V2 -- "APROBAR" --> OUT(["final-spec.md + build-package-baseline"])
 ```
 
 - **Loop discipline (03.3):** one module is finished, self-checked and registered before starting the next; the register order is the only order; a module is never skipped. If a value is missing that only a person can give, the module is completed with a `provisional` value and a candidate question.
 - **Self-sufficient package:** requirement values and text are copied, not referenced; no executable code, no measurement results, no `TBD`.
 - **Consistency with the hardware:** every value that uses compute, memory, storage, throughput, power, RF level or time is checked against a cited capacity, with margin.
 - **Tests:** one test per acceptance criterion, with a threshold identical to the criterion's, three cases and a failure condition.
-- **Gates:** G03-1 to G03-11 (includes the **consumer test**: a blind implementer who reads only the package must not need any design decision).
+- **Implementation document (03.6):** `final-spec.md` is assembled, not written, from the approved requirements (ctx01), the design (ctx02) and the specification (ctx03): requirements, design, hardware and resources, the specification of each solution, catalogs, tests, traceability and the contract with the implementer. It adds no information and leaves out the problem, scope and objectives of ctx00, discarded alternatives and process material.
+- **Gates:** G03-1 to G03-12 (includes the **consumer test**: a blind implementer who reads only the implementation document must not need any design decision; and the fidelity check of the document against its sources).
 - **Web:** only in 03.2, for datasheets, and queries carry only component names and specifications, never project data.
 - **Rounds and escalations:** same as ctx02, with returns `escalate:V1`, `R2`, `R1`, `R0`.
-- **Output:** `results/ctx03/` with `state.json`, `STATUS.md`, `events.jsonl`, `questions.json`, `items.json`, `spec-register.json`, `specs/SPEC-nn.md`, `validations/`, `build-package-baseline.json/.sha256/.md`, `final-spec.md`, `CONTEXT-ctx03.md`.
+- **Output:** `results/ctx03/` with `state.json`, `STATUS.md`, `events.jsonl`, `questions.json`, `items.json`, `spec-register.json`, `specs/SPEC-nn.md`, `validations/`, `build-package-baseline.json/.sha256`, `final-spec.md`, `CONTEXT-ctx03.md`.
 
 ---
 
@@ -195,7 +197,7 @@ flowchart TD
 | | ctx00 | ctx01 | ctx02 | ctx03 |
 |---|---|---|---|---|
 | Number of stops | 1 | 1 per output (up to 6) | 2 (V1, V2) | 2 (V1, V2) |
-| Document that is read | `problem-definition.md` | `rounds/O<n>/dee.md` | `validations/V<k>/R<n>/hardware-proposal.md` or `final-design.md` | `validations/V<k>/R<n>/hardware-proposal.md` or `final-spec.md` |
+| Document that is read | `problem-definition.md` | `rounds/O<n>/dee.md` | `validations/V<k>/R<n>/hardware-proposal.md` or `final-design.md` | `validations/V<k>/R<n>/hardware-proposal.md` or `v2-review.md` + the candidate `final-spec.md` |
 | Where it is answered | in the chat (`APROBAR` + name and answers to the questions) | `rounds/O<n>/response-form.md` | `validations/V<k>/R<n>/feedback.md` | `validations/V<k>/R<n>/feedback.md` |
 | Decisions | `APROBAR` / adjustments / stop | `APROBAR` · `AJUSTAR` · `DETENER` | same | same |
 | Forced closure | question closed by the person as "forced" | automatic in O3 | `CERRAR_FORZADO: <Q-id>` | `CERRAR_FORZADO: <Q-id>` |

@@ -204,7 +204,7 @@ Other lists: `themes` use `T-nn`; datasheet snapshots use `SRC-03-nn`.
 | Input disposition (`REQ`, `LIM`, `AC`, `DFR`) | `specify` · `hardware` · `already-closed` · `not-applicable` | `cb-admit-analyze`, `cb-coverage-consistency` |
 | Integration disposition | `apply` · `no-op-confirmed` · `reject:<gate id>` · `defer:build` · `escalate:<V1\|R0\|R1\|R2>` · `not-locatable` | `cb-feedback-cycle` |
 | Escalation | `V1` (reopen hardware) · `R0` (to Ctx 00) · `R1` (to Ctx 01) · `R2` (to Ctx 02) | `cb-feedback-cycle`, `cb-admit-analyze`, `cb-hardware-options`, `cb-resource-budget`, `cb-coverage-consistency` |
-| Gate id | `G03-1` … `G03-11` | `cb-gate-check` |
+| Gate id | `G03-1` … `G03-12` | `cb-gate-check` |
 | Gate verdict | `PASS` · `FAIL` · `NOT_EVALUABLE` | `cb-gate-check` |
 | Human decision | `APROBAR` · `AJUSTAR` · `DETENER`; form directive `CERRAR_FORZADO: <Q-id>` | `cb-feedback-cycle` |
 | Validation / presentation / phase | `V1` `V2` / `R1`–`R4` / `A` `B` | all |

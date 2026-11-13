@@ -52,8 +52,9 @@ Path and hash rules for the whole pipeline live in **`pipeline-layout/SKILL.md`*
 (read it once before running any stage). `pipeline-layout/guardrails.md` is
 method-owned and read-only.
 
-Final product: `results/ctx03/build-package-baseline.json` (+ `.sha256`, `.md`),
-`results/ctx03/final-spec.md`.
+Final product: `results/ctx03/final-spec.md` (the implementation document for the
+developer, assembled from the ctx01, ctx02 and ctx03 outputs) and
+`results/ctx03/build-package-baseline.json` (+ `.sha256`).
 
 ---
 
@@ -72,7 +73,7 @@ results/                       ← ALL outputs (created by the stages)
   ctx00/  state.json, events.jsonl, intake.md, sources/, problem-definition.md, problem-baseline.json/.sha256, CONTEXT-ctx00.md
   ctx01/  record.json, state.json, events.jsonl, rounds/O<n>/, requirements-baseline.json/.sha256/.md, CONTEXT-ctx01.md
   ctx02/  state.json, events.jsonl, questions.json, items.json, substages/, validations/, architecture-baseline.json/.sha256/.md, final-design.md, CONTEXT-ctx02.md
-  ctx03/  state.json, STATUS.md, events.jsonl, questions.json, items.json, spec-register.json, specs/, validations/, build-package-baseline.json/.sha256/.md, final-spec.md, CONTEXT-ctx03.md
+  ctx03/  state.json, STATUS.md, events.jsonl, questions.json, items.json, spec-register.json, specs/, validations/, build-package-baseline.json/.sha256, final-spec.md, CONTEXT-ctx03.md
 ```
 
 - **Input:** the project document must be in `inputs/` and **referenced explicitly**

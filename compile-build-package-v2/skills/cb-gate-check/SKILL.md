@@ -1,6 +1,6 @@
 ---
 name: cb-gate-check
-description: Evaluates gates G03-1 to G03-11 for V1 and V2 as an evidence table — mechanical parts by shell, judgement parts with a cited verdict and an independent recheck — and computes a verdict without deciding it; loaded by compile-build-package-v2 before each validation, not invoked directly.
+description: Evaluates gates G03-1 to G03-12 for V1 and V2 as an evidence table — mechanical parts by shell, judgement parts with a cited verdict and an independent recheck — and computes a verdict without deciding it; loaded by compile-build-package-v2 before each validation, not invoked directly.
 ---
 
 # cb-gate-check
@@ -27,10 +27,11 @@ changes.
 | G03-8 | Tests: one `TST` per `AC`, threshold equality, three cases, `fails_if`; every `REQ`/`LIM` covered | `jq` + judgement + blind review | no | yes |
 | G03-9 | Boundary and immutability: no Ctx 00/01/02 item modified, no new requirement, no architecture change, no executable code, no uncited figure, V1-locked hardware unchanged | `jq` + hash + judgement + recheck | yes (no code, figures, immutability) | yes |
 | G03-10 | Order: dependency graph acyclic and the register `order` equals the `tsort` order | Shell | yes | yes |
-| G03-11 | Consumer test: a blind implementer reading only the package lists no question that needs a design decision | Judgement by subagent | no | yes |
+| G03-11 | Consumer test: a blind implementer reading only the implementation document lists no question that needs a design decision | Judgement by subagent | no | yes |
+| G03-12 | Implementation document: every requirement, limit, criterion, deferral, component, decision, hardware, parameter, procedure, schema, error code and test id appears in it; every parameter value equals its item; no process material, placeholder, code, problem or scope section; assembled from sources only | Shell (`jq`, `grep`) + judgement | no | yes |
 
 V1 evaluates G03-1 to G03-5, G03-7 (provisional), G03-9 (partial) and G03-10:
-eight gates. V2 evaluates all eleven.
+eight gates. V2 evaluates all twelve.
 
 ## Mechanical evidence (shell)
 
@@ -63,6 +64,8 @@ grep -rnE '^[`]{3}(python|bash|sh|c|cpp|rust|js|javascript)' results/ctx03/specs
 # G03-10
 jq -r '.specs[]|.id as $i|(.depends_on[]?|"\(.) \($i)"), "\($i) \($i)"' results/ctx03/spec-register.json | tsort
 jq -r '.order[]' results/ctx03/spec-register.json
+# G03-12: run the fidelity checks of references/implementation-doc.md on
+# results/ctx03/validations/V2/R<n>/final-spec.md (each must print nothing)
 ```
 Compare the two lists of G03-10 line by line; a `tsort` error is a `FAIL`. For the
 `diff` of G03-8, every remaining line is a row to judge: only a threshold deferred by
@@ -80,8 +83,11 @@ real and sensitivities meaningful; no remission instead of a value. G03-7: recom
 each budget row's arithmetic from its operands; check each capacity is cited and
 each margin kept. G03-9: any figure not cited or derived; any `Ctx 02` decision
 reopened; any new requirement; any procedure or value needing a decision the
-builder would have to make. G03-8 and G03-11: use the tables and results of
-`cb-test-design` and `cb-coverage-consistency`.
+builder would have to make. G03-8: use the tables and results of `cb-test-design`
+and `cb-coverage-consistency`. G03-11 and G03-12: use the consumer-test table and the
+fidelity and exclusion findings recorded in `results/ctx03/substages/03.6.md` by
+`cb-assemble-spec`; check that the document holds no problem, scope or objectives
+text, no discarded alternative and no process id.
 Launch a subagent with a fresh context (Agent tool) that sees the artifacts and the
 gate wording but not your verdicts, and repeats G03-3, G03-6, G03-7 and G03-9.
 Disagreements are shown beside the verdict. If the tool is unavailable, run
@@ -96,7 +102,7 @@ provisional values still unresolved.
 
 ## Output format
 
-The gate rows (V1: eight; V2: eleven) with verdict, ids and evidence, and the
+The gate rows (V1: eight; V2: twelve) with verdict, ids and evidence, and the
 warnings. Computed verdict: `FAIL on <ids>` or all `PASS`. Emit `GATE_RESULT` with
 the validation and the per-gate verdicts. Update `blocked_by` in
 `results/ctx03/state.json`.

@@ -17,16 +17,20 @@ results/ctx03/
   items.json                    HW, PAR, PRC, SCH, ERR, TST, DEC and the lists of item-schema.md
   spec-register.json            the specification register: SPEC entries and `order`
   sources/SRC-03-nn.md          datasheet snapshots (URL, access date, extract)
-  substages/03.1.md ... 03.5.md
+  substages/03.1.md ... 03.6.md
   substages/03.2-criteria.md    criteria file of 03.2, written before any comparison
   specs/SPEC-nn.md              one file per specification module (module-template.md)
   validations/
     V1/R<n>/hardware-proposal.md  feedback.md  integration.md
-    V2/R<n>/final-spec.md         feedback.md  integration.md
+    V2/R<n>/v2-review.md          review document (controls and records)
+    V2/R<n>/final-spec.md         candidate implementation document (built at 03.6)
+    V2/R<n>/feedback.md  integration.md
   build-package-baseline.json   written only after APROBAR in V2
   build-package-baseline.sha256 its `sha256sum` line, written on approval
-  build-package-baseline.md     reading copy of the approved JSON, written on approval
-  final-spec.md                 approved V2 document, readable
+  final-spec.md                 the implementation document: the builder's reference,
+                                byte-identical to the candidate approved at V2
+                                (structure: implementation-doc.md); written on approval,
+                                before the baseline JSON
   CONTEXT-ctx03.md              written on approval, stop and return
 ```
 
@@ -108,29 +112,24 @@ Top-level keys: `stage` (`Ctx03`), `status` (`approved`), `decision`, `signer`,
 `lists` (`dispositions`, `open_points`, `tbd_closure`, `dfr`, `budget`,
 `beyond_mvp`), `register` (the `spec-register.json` content), `manifest` (list
 `{path, sha256}` of every file under `results/ctx03/specs/`, `results/ctx03/sources/`
-and `results/ctx03/final-spec.md`, taken with `sha256sum` at approval).
+and `results/ctx03/final-spec.md`, taken with `sha256sum` at approval; `final-spec.md` is
+written first, so its hash is in the manifest).
 
-## Reading copy: build-package-baseline.md
+## Implementation document: final-spec.md
 
-Written by `cb-feedback-cycle` on `APROBAR` in V2, immediately after the JSON and
-its `.sha256`. For a person; derived only from the approved JSON, no new
-information, never enters hashes, gates, `state.json` or events. An empty list
-reads `none`. Sections, in this order:
-
-1. Decision, signer and date.
-2. Hardware: each `HW` with its `CMP`, reference, chosen option, alternatives.
-3. Specification index: each `SPEC` in `order`, kind, and the ids it closes.
-4. Parameters: each `PAR` as name, value, unit, range, `critical`, provenance.
-5. Procedures, schemas and error codes: id, name and one line each.
-6. Tests: each acceptance `TST` against its `AC` (threshold side by side).
-7. Resource budget: each `RB` row with verdict.
-8. Closures: `tbd_closure`, `dfr`, and `open_points`.
-9. Forced closures and `beyond_mvp`.
+There is no reading copy of the JSON. `results/ctx03/final-spec.md` is the document
+the builder reads: requirements, design, hardware and resources, specification of
+each solution, catalogs, verification, traceability and the contract with the
+implementer. It is assembled by `cb-assemble-spec` from the Ctx 01 baseline, the
+Ctx 02 baseline and the Ctx 03 items and modules, with no new information, and it
+does not contain the Ctx 00 problem, scope or objectives. Structure, exclusions and
+commands: `references/implementation-doc.md`. It is not a hashed input of any gate
+other than G03-11 and G03-12, and it never modifies the JSON or the `.sha256`.
 
 ## CONTEXT-ctx03.md
 
 Written by `cb-feedback-cycle` on approval, stop and return. It lists the path and
 sha256 of what it hands over (`results/ctx03/build-package-baseline.json`, its
 `.sha256`, `results/ctx03/final-spec.md`), as `results/ctx02/CONTEXT-ctx02.md`
-does. It is the only file the implementation stage reads first (layout in
+does. It is the only file the implementation stage reads first, and it points to `results/ctx03/final-spec.md` (layout in
 `references/templates.md`).

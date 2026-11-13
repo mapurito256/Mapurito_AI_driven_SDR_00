@@ -19,7 +19,7 @@ results/ctx02/  state.json, events.jsonl, questions.json, items.json, sources/SR
 results/ctx03/  state.json, STATUS.md, events.jsonl, questions.json, items.json, spec-register.json,
                 sources/SRC-03-nn.md, substages/, specs/SPEC-nn.md, validations/,
                 build-package-baseline.json, build-package-baseline.sha256,
-                build-package-baseline.md, final-spec.md, CONTEXT-ctx03.md
+                final-spec.md, CONTEXT-ctx03.md
 ```
 
 Ctx03 is the skill `compile-build-package-v2`. The older `compile-build-package/` folder

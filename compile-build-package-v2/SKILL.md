@@ -14,6 +14,13 @@ board's maximum operating temperature and its compute load. Its result is a
 specification the builder can implement and validate without making design
 decisions, without changing the architecture or the requirements.
 
+The deliverable is one **implementation document** (`final-spec.md`): the Ctx 01
+requirements, the Ctx 02 design solutions and the Ctx 03 specification (methods,
+parameters, procedures, schemas, errors, hardware, tests) assembled in one
+reference for the builder. It is assembled from the earlier outputs and adds no
+information; the problem and scope of Ctx 00 are not included (see
+`references/implementation-doc.md`).
+
 No program validates or decides. The agent drafts and judges by following the
 cb-* skills, mechanical facts are checked with shell one-liners (`sha256sum`,
 `jq`, `grep`, `comm`, `tsort`), and a person decides at V1 and V2. No script is
@@ -51,10 +58,15 @@ stop rules. The detail of each step lives in its skill. No skill reads `evals/`.
 13. Do not load or imitate evaluation material. Web access only in 03.2, for
     datasheets, and the queries carry component names and specifications only,
     never project or user details.
+14. The implementation document is assembled, not written: no information beyond
+    the Ctx 01, Ctx 02 and Ctx 03 files, no Ctx 00 problem, scope or objectives,
+    no discarded alternatives and no process material. The person reviews the
+    candidate at V2, and what is frozen is byte-identical to what was reviewed.
 
 Every artifact is in English. Fields and closed codes: `references/item-schema.md`.
 Folders, `results/ctx03/state.json`, the thirteen events: `references/records.md`.
-Forms: `references/templates.md`. What must be specified:
+Forms: `references/templates.md`. Implementation document:
+`references/implementation-doc.md`. What must be specified:
 `references/spec-classes.md`. How values are chosen and checked:
 `references/parameter-rules.md`. Module shape: `references/module-template.md`.
 Decision rule: `references/mvp-criteria.md`.
@@ -78,9 +90,10 @@ Paths follow the root skill `pipeline-layout`. Everything is written under
 | `cb-spec-interface` | module kind `interface`: schemas, errors, retries, limits, storage, reporting |
 | `cb-spec-nfr` | module kind `nfr`: performance, resource and reliability allocations |
 | `cb-test-design` | 03.4 one test per acceptance criterion plus qualification and procedure tests |
-| `cb-coverage-consistency` | 03.5 cross-module consistency, final budget, closures, coverage both ways, blind and consumer review |
-| `cb-gate-check` | gates G03-1 to G03-11 for V1 and V2 |
-| `cb-validation-report` | V1 and V2 documents and the response form |
+| `cb-coverage-consistency` | 03.5 cross-module consistency, final budget, closures, coverage both ways, blind review of dispositions |
+| `cb-assemble-spec` | 03.6 implementation document assembled from Ctx 01, Ctx 02 and Ctx 03, fidelity checks, consumer test on the document |
+| `cb-gate-check` | gates G03-1 to G03-12 for V1 and V2 |
+| `cb-validation-report` | V1 and V2 review documents and the response form |
 | `cb-feedback-cycle` | feedback, rounds, blocking, forced closure, integration, approval, close-out |
 
 ## Run procedure
@@ -106,14 +119,19 @@ every substage, every `SPEC_DONE` and every human decision, update
    when every `SPEC` of kind `algorithm`, `procedure`, `interface` and `nfr` is
    `done`. Emit `SUBSTAGE_END` for `03.3`.
 5. **03.4** `cb-test-design`: the register entry of kind `test`.
-6. **03.5** `cb-coverage-consistency` (loads `cb-resource-budget` in `final` mode),
-   then `cb-gap-questions` in `design` mode (consolidates the provisional values
-   logged by the modules), then `cb-gate-check` (V2) and `cb-validation-report` (V2).
-7. **V2 — stop.** `cb-feedback-cycle`. `APROBAR` writes
-   `results/ctx03/build-package-baseline.json`, `results/ctx03/build-package-baseline.sha256`,
-   `results/ctx03/build-package-baseline.md`, `results/ctx03/final-spec.md` and
-   `results/ctx03/CONTEXT-ctx03.md`. A change that touches approved hardware is
-   `escalate:V1`.
+6. **03.5** `cb-coverage-consistency` (loads `cb-resource-budget` in `final` mode).
+7. **03.6** `cb-assemble-spec`: the candidate implementation document
+   `results/ctx03/validations/V2/R<n>/final-spec.md`, its fidelity checks and the
+   consumer test. Writes `results/ctx03/substages/03.6.md`. Then `cb-gap-questions`
+   in `design` mode (consolidates the provisional values logged by the modules and
+   the consumer-test gaps), then `cb-gate-check` (V2) and `cb-validation-report` (V2),
+   which presents the review document `v2-review.md` and points to the candidate.
+8. **V2 — stop.** The person reads the review document and the candidate.
+   `cb-feedback-cycle`. `APROBAR` re-assembles the document, confirms it is
+   byte-identical to the candidate reviewed, copies it to
+   `results/ctx03/final-spec.md`, then writes `results/ctx03/build-package-baseline.json`,
+   `results/ctx03/build-package-baseline.sha256` and `results/ctx03/CONTEXT-ctx03.md`.
+   A change that touches approved hardware is `escalate:V1`.
 
 When a decision has more than one plausible alternative, apply the comparison
 method of `cb-hardware-options` with a criteria file saved first.
@@ -127,7 +145,8 @@ method of `cb-hardware-options` with a criteria file saved first.
   `provisional` value and a candidate question; if it cannot be completed because
   upstream is defective or insufficient, the stage escalates. A module is never
   left half-done and never skipped.
-- Reopened modules (after feedback) are re-run in `order`, with their dependants.
+- Reopened modules (after feedback) are re-run in `order`, with their dependants;
+  then 03.6 is re-run, because the implementation document is rebuilt from the items.
 - Provisional values are logged in `questions.json` `candidates`; they become
   questions in the single run that produces the V2 presentation, so the cap holds.
 

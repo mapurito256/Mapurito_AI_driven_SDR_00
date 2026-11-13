@@ -54,8 +54,9 @@ the agent as `propuesto` and are listed, not asked.
 ## Procedure
 
 1. Choose the mode. `input` (03.1): absences in the admitted input. `design`
-   (03.2 and 03.5): absences and decisions found while designing; in 03.5 also
-   every logged candidate with a provisional value.
+   (03.2 and, after 03.6, the V2 presentation): absences and decisions found while
+   designing; for V2 also every logged candidate with a provisional value and every
+   design-decision gap of the consumer test on the implementation document.
 2. **Independent pass.** Launch a subagent with the Agent tool and a fresh context
    that sees only the admitted inputs, never the design or earlier answers; it
    returns candidates with a quote each. If the tool is unavailable, run `inline`

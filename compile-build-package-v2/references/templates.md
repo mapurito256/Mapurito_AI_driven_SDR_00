@@ -18,7 +18,8 @@ table is the authoritative wording and reads identically in `cb-gate-check`.
 | G03-8 | Tests: one `TST` per `AC`, threshold equality, three cases, `fails_if`; every `REQ`/`LIM` covered | `jq` + judgement + blind review | no | yes |
 | G03-9 | Boundary and immutability: no Ctx 00/01/02 item modified, no new requirement, no architecture change, no executable code, no uncited figure, V1-locked hardware unchanged | `jq` + hash + judgement + recheck | yes (no code, figures, immutability) | yes |
 | G03-10 | Order: dependency graph acyclic and the register `order` equals the `tsort` order | Shell | yes | yes |
-| G03-11 | Consumer test: a blind implementer reading only the package lists no question that needs a design decision | Judgement by subagent | no | yes |
+| G03-11 | Consumer test: a blind implementer reading only the implementation document lists no question that needs a design decision | Judgement by subagent | no | yes |
+| G03-12 | Implementation document: every requirement, limit, criterion, deferral, component, decision, hardware, parameter, procedure, schema, error code and test id appears in it; every parameter value equals its item; no process material, placeholder, code, problem or scope section; assembled from sources only | Shell (`jq`, `grep`) + judgement | no | yes |
 
 Each row: verdict (`PASS`, `FAIL`, `NOT_EVALUABLE`), ids, one computed line or citation.
 
@@ -52,31 +53,33 @@ Computed verdict: <PASS | FAIL on ids>. Fill `feedback.md`: APROBAR, AJUSTAR or 
 Presentation R<n> accepts: <answers, themes and decision | only APROBAR or DETENER>.
 ```
 
-## V2 document — `results/ctx03/validations/V2/R<n>/final-spec.md`
+## V2 document — `results/ctx03/validations/V2/R<n>/v2-review.md`
+
+The review document of V2: it controls and records; it is not the product. The
+product under review is the candidate implementation document
+`results/ctx03/validations/V2/R<n>/final-spec.md` (structure in
+`references/implementation-doc.md`), which the person reads beside this document.
 
 ```markdown
-# V2 — Final specification — presentation R<n>
+# V2 — Review of the final specification — presentation R<n>
 ## 1. Open questions (all states; those with gate V2 block approval)
 - <same line form as V1 section 1>; changes touching approved hardware: <escalate:V1 rows>
-## 2. Specification
-- Per SPEC in order: <SPEC id, kind, ids closed, file path, critical PAR ids with value and unit, PRC/SCH/ERR ids>
+## 2. Implementation document under review
+- Candidate: <path> sha256 <hash>; sections 1 to 8 as in `references/implementation-doc.md`
+- Contents: <counts: REQ, LIM, AC, DFR, CMP, DEC, HW, SPEC, PAR, PRC, SCH, ERR, TST>; SPEC in order: <SPEC ids, kind>
 - Hardware as approved at V1: <HW ids, locked hash>
-## 3. Resource closure
-- Final budget: <RB rows with verdict>; Ctx 02 open points: <OP id -> closure>
-- Closure of Ctx 02 TBD ranges: <CMP id -> closing PAR or HW id>
-- Closure of Ctx 01 deferrals: <DFR id -> PAR id, value inside window>; travelling intact: <DFR ids>
-## 4. Tests
-- <AC id -> TST id: threshold, unit, operator side by side>; qualification and procedure tests: <TST ids>
-## 5. Coverage and independent review
-- <REQ/LIM/AC id: disposition, SPEC ids>; each spec element -> <REQ ids>
+- Fidelity checks: <empty | defects found and corrected>; exclusion check: <findings or none>
+## 3. Closure and coverage (summary; the tables are in the candidate)
+- Final budget: <RB verdict counts>; Ctx 02 open points: <OP id -> closure>; `TBD-Ctx03` closures: <count>; Ctx 01 deferrals: <closed ids; travelling intact ids>
 - Blind-review disagreements: <list> ; consumer-test questions and their resolution: <list>
-## 6. What the agent decided
+## 4. What the agent decided
 - Critical parameters proposed: <PAR id, value, unit, rationale line> ; provisional values resolved: <Q ids>
 - Forced closures: <ids> ; beyond-MVP: <list> ; routine proposed parameters: <path to the list in items.json>
-## 7. Gate result (V2)
-<rows G03-1 to G03-11 from the table above; warnings listed apart>
-## 8. Pending decision
-Computed verdict and the accepted inputs of this presentation, as in V1.
+## 5. Gate result (V2)
+<rows G03-1 to G03-12 from the table above; warnings listed apart>
+## 6. Pending decision
+Computed verdict and the accepted inputs of this presentation, as in V1. `APROBAR` approves the
+review above and the candidate `final-spec.md` byte for byte.
 ```
 
 ## Response form — `results/ctx03/validations/V<k>/R<n>/feedback.md`
@@ -95,11 +98,12 @@ Decision: <APROBAR | AJUSTAR | DETENER>
 ```markdown
 # Ctx 03 context — read this first, then the baseline
 - Status: <approved | stopped | returned_upstream (R0|R1|R2)>; reason: <text>
-- Baseline: <path> sha256 <hash>; final document: <path> sha256 <hash>
+- Baseline: <path> sha256 <hash>; implementation document (the builder's reference, read it first): <path> sha256 <hash>
 - Inputs admitted: <Ctx 02 baseline hash>, <Ctx 01 baseline hash>, <Ctx 00 document hash>
 - Forced closures: <Q-03-nn: forced true|by-limit, value, criterion step>
 - Travels open to the build stage: <DFR ids of implementation; OP ids still open; defer:build themes>
-- How to read: results/ctx03/items.json holds HW, PAR, PRC, SCH, ERR, TST, DEC;
+- How to read: results/ctx03/final-spec.md is the implementation document and the builder's
+  single reference; results/ctx03/items.json holds HW, PAR, PRC, SCH, ERR, TST, DEC;
   `jq '.items[]|select(.type=="PAR")'`; modules in results/ctx03/specs/SPEC-nn.md in `order`
   of results/ctx03/spec-register.json; sources in results/ctx03/sources/SRC-03-nn.md
 - Where to look: <substage files, validations folders, results/ctx03/events.jsonl, results/ctx03/STATUS.md>
