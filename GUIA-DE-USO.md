@@ -25,14 +25,29 @@ It does so in four stages, always in this order:
 
 ## 2. Before you start
 
-1. **Put your input document in `inputs/`.** Use Markdown or text: agents do not read PDFs well. If you only have a PDF, convert it to `.md`.
-2. **Open the agent in this folder** (`methodology_22/`). The agent reads `AGENTS.md` on its own.
+1. **Put your input document(s) in `inputs/`.** The current intake contract uses
+   Markdown/plain text. If you only have a PDF, provide a `.md`/text copy before execution.
+2. **Open the agent from the repository root with the stage executor profile.**
+   Use `opencode` or `claude` normally; project plugin/hooks select the stage file
+   policy. Claude's hook requires Node 20+. See
+   [the harness guide](.agents/mapurito/README.md) for checks and permission limits.
+   Fixed-stage launch arguments are optional, not required for normal use.
 3. **Decide the run mode** (see §3).
 4. **Set aside time to respond.** At each validation the agent stops and waits for your decision.
 
 ---
 
 ## 3. How to run it
+
+You may write `Start methodology`, `Run methodology`, `Start with @inputs/my_document.md`
+or equivalent Spanish wording. The agent checks existing progress first. A new
+generic start admits ctx00 only; an existing run is resumed, never implicitly reset.
+
+For a new ctx00, explicit file references win. Without a reference, the agent
+inspects `inputs/`: zero files → stop and request upload; one → select and validate
+it; several → immediately ask which one(s) and stop. Several selected text files
+form one ordered input set. Nothing is initialized until the selection is clear.
+Resume/downstream requests use already admitted inputs instead of selecting again.
 
 ### Mode A · stage by stage (recommended the first time)
 
@@ -42,7 +57,8 @@ Write to the agent, in a new session:
 Run ctx00 with @inputs/my_document.md
 ```
 
-When ctx00 finishes and you approve it, open **a new session** (or clear the context) and write:
+When ctx00 finishes and you approve it, open **a new normal session**; the runtime
+selects the next stage's policy from the records, then write:
 
 ```
 Run ctx01
@@ -166,7 +182,10 @@ Only with your `APROBAR` does the agent freeze the JSON and write the hash.
 | O4–O6 | No | Only improvement themes |
 | After O6 | — | Only `APROBAR` (with forced assumptions visible) or `DETENER` |
 
-If any deferral (`DFR`) remains open, the only possible approval is `APROBAR_CON_APLAZAMIENTO`, which carries the list of deferrals attached.
+If a controlled technical deferral (`DFR`) remains open, review its responsible
+stage, bracket and closure criterion in the DEE. The approval is still `APROBAR`;
+the frozen baseline carries the visible obligations and not-acceptable-until-closure
+set. A DFR is not an unanswered question or a missing approval.
 
 ### ctx02 — two validations: V1 (hardware) and V2 (final design)
 

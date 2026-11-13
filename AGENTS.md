@@ -10,6 +10,24 @@ and present; you never approve your own output.
 > This file is the entry point. Read it fully, then load **only** the stage skill the
 > user asked for. Do not read other stage folders ahead of time.
 
+## Agent harness entry
+
+For running, resuming or inspecting Mapurito, read
+`.agents/skills/mapurito/SKILL.md` and follow its common contracts before selecting
+a stage. Claude Code enters through `.claude/skills/mapurito-claude/SKILL.md`.
+For execution, invoke the corresponding native skill tool so the trusted
+session-activation hook runs; filesystem reading alone does not activate it.
+These are routing adapters, not replacements for stage skills. Repository
+maintenance requests do not start the methodology. Source maintenance needs a
+human-managed developer environment without the executor guard; the agent must
+not disable its own protection. Start with normal `opencode`
+or `claude`; project plugin/hooks select a stage policy from execution evidence.
+They protect file tools independently of the skill. Optional fixed-stage profiles
+remain available; no agent may weaken policy by editing its own configuration.
+
+The development mapping is `.agents/mapurito/layout.json`: project and methodology
+roots are currently the same. A future `.mapurito/` relocation is not active yet.
+
 ---
 
 ## 1. Core principles (apply in every stage)
@@ -30,7 +48,14 @@ and present; you never approve your own output.
 6. **Artifacts are in English.** Talk to the user in their language; write files in
    English.
 7. **Shell one-liners only** (`sha256sum`, `jq`, `grep`, `comm`, `tsort`, `diff`).
-   Do not write or keep scripts. Run commands from this root.
+   Do not generate or keep scripts as stage work. Run commands from this root.
+   Repository-owned infrastructure in `.agents/mapurito/runtime/` implements the
+   requested automatic permission harness; it is not a generated stage artifact
+   and does not replace human approval or substantive gate judgement.
+8. **Freeze is a verified closure.** Never freeze without explicit human approval,
+   all blocking questions closed and all required checks passing. V1 hardware
+   locking is not a stage freeze. Files from an interrupted freeze do not permit
+   downstream admission; reconcile state, events, decision, artifacts and hashes.
 
 ---
 
@@ -76,9 +101,12 @@ results/                       ← ALL outputs (created by the stages)
   ctx03/  state.json, STATUS.md, events.jsonl, questions.json, items.json, spec-register.json, specs/, validations/, build-package-baseline.json/.sha256, final-spec.md, CONTEXT-ctx03.md
 ```
 
-- **Input:** the project document must be in `inputs/` and **referenced explicitly**
-  by the user. Agents can't read PDFs reliably: use the `.md` version. If only a
-  PDF is given, stop and ask for a Markdown/text copy.
+- **Input:** selected document(s) must be in `inputs/`. Use explicit references
+  when supplied; otherwise inspect the folder: no files → request upload; one
+  file → select it and proceed after validation; multiple files → immediately
+  ask which one(s), then stop. See `.agents/mapurito/contracts/input-selection.md`.
+  The current intake contract requires Markdown/plain text; a selected PDF needs
+  a Markdown/text copy before execution. Never proceed with ambiguous inputs.
 - **Output:** everything goes to `results/ctxNN/` (flat, no `output` subfolder).
   `results/` is created on demand.
 - **Hand-off between stages** is only through files: each stage ends with a
@@ -97,10 +125,12 @@ The user starts a run with a short instruction plus a reference to the input:
 | `Run ctx01` / `Run ctx02` / `Run ctx03` | Run **only** that stage on the existing `results/` of the previous one. |
 | `Run Full methodology with @inputs/<doc>` | **Full run** (§6): ctx00 → ctx03, each in an isolated context. |
 | `Continue` / `Resume` | Detect progress (§7) and continue the current stage or the next one. |
+| `Start methodology` / `Run methodology` / `Start with @inputs/<doc>` | Inspect progress first; resume existing work or select inputs and admit ctx00 if new. This is not an implicit restart or full-run request. |
 
 Equivalent phrasing in Spanish ("Corre ctx00 con @…", "Corre toda la metodología con @…")
-means the same. If the document is not in `inputs/` or not referenced, ask for it
-before doing anything else.
+means the same. For a new ctx00 use the explicit/zero/one/multiple input rule
+above. Resume and downstream stages use existing admitted inputs and handoffs,
+not a fresh automatic selection from `inputs/`.
 
 ---
 
@@ -110,8 +140,8 @@ before doing anything else.
 
    | Stage | Required before starting |
    |---|---|
-   | ctx00 | A document in `inputs/`, referenced by the user. `results/ctx00/` empty or the user confirmed a restart. |
-   | ctx01 | `results/ctx00/CONTEXT-ctx00.md` with `Status: approved`, and `sha256sum -c results/ctx00/problem-baseline.sha256` passes. |
+   | ctx00 | Clear selected text input(s) in `inputs/` (explicit selection or sole discovered file). `results/ctx00/` empty or the user confirmed a restart. |
+   | ctx01 | `CONTEXT-ctx00.md` has `Status: frozen`, ctx00 execution state is `approved`, human `APROBAR` is recorded, questions are closed, and `sha256sum -c results/ctx00/problem-baseline.sha256` passes. |
    | ctx02 | `sha256sum -c results/ctx01/requirements-baseline.sha256` passes, baseline `status: frozen`. |
    | ctx03 | `sha256sum -c results/ctx02/architecture-baseline.sha256` **and** `…/ctx01/requirements-baseline.sha256` pass. |
 
@@ -168,20 +198,24 @@ next stage over a failed gate or a failed hash.
 
 ## 7. Detecting progress and resuming
 
-Read `results/` to find where things stand (check in this order, last match wins):
+Read `results/` to locate candidate progress using the table below. Before choosing
+an action, apply `.agents/mapurito/contracts/stage-routing.md` and `handoff.md`:
+state, events, human decision, artifacts and hashes must agree. A baseline file
+alone never proves completion; contradictions stop routing. This table does not
+override a blocked, stopped or returned state, even if later files exist.
 
 | Evidence | State |
 |---|---|
 | `results/` missing or empty | Nothing run. Start ctx00. |
 | `results/ctx00/state.json` exists and `status` is not `approved` | ctx00 in progress or stopped; read `status`, `next_action` and events, then resume per its `SKILL.md`, even if freeze files are partially present. |
 | `results/ctx00/CONTEXT-ctx00.md` says `Status: not_approved` | ctx00 failed. Restart it with a corrected input. |
-| `results/ctx00/problem-baseline.json` + `.sha256` exist and `state.json` says `approved` (or an older run without `state.json` has an approved hand-off) | ctx00 done → ctx01 is next, subject to the admission checks. |
+| ctx00 closure evidence agrees, including `state.json: approved`, `CONTEXT: frozen`, approval, closed questions and a verified baseline hash | ctx00 done → ctx01 is next, subject to admission. Older runs need the read-only compatibility review in `handoff.md`; never fabricate logs. |
 | `results/ctx01/state.json` exists, no `requirements-baseline.json` | ctx01 in progress. Resume per its `SKILL.md`. |
-| `results/ctx01/requirements-baseline.json` + `.sha256` | ctx01 done → ctx02 is next. |
+| ctx01 baseline + hash + handoff + recorded human approval + `baseline_frozen` agree | ctx01 done → ctx02 is next, subject to admission. |
 | `results/ctx02/state.json` without `architecture-baseline.json` | ctx02 in progress (read `status`, `blocked_by`). |
-| `results/ctx02/architecture-baseline.json` + `.sha256` | ctx02 done → ctx03 is next. |
+| ctx02 state, V1/V2 approval, `STAGE_APPROVED`, handoff and verified baseline agree | ctx02 done → ctx03 is next, subject to admission. |
 | `results/ctx03/state.json` (`next_action`, `STATUS.md`) without `build-package-baseline.json` | ctx03 in progress. |
-| `results/ctx03/build-package-baseline.json` + `.sha256` | Methodology complete. |
+| ctx03 closure evidence agrees, including V1/V2 approval, hashes and final-candidate identity | Methodology complete. |
 
 For ctx02/ctx03, `state.json` is written after every step so a fresh session can
 resume (ctx03 also has `STATUS.md`). A stage in `returned_upstream` means the human

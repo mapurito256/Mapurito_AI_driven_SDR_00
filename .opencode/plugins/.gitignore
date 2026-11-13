@@ -1,0 +1,3 @@
+# Keep the local plugin's module metadata in source control.
+!.gitignore
+!package.json

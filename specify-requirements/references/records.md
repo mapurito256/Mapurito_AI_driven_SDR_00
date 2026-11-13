@@ -47,9 +47,40 @@ Top-level keys: `stage` (`Ctx01`), `upstream_baseline_hash` (the JSON's hash fro
 | `upstream_baseline_hash` | the hash of `problem-baseline.json` read from `results/ctx00/problem-baseline.sha256` |
 | `round` | current output index `O<n>`, 1..6 |
 | `question_runs_used` | new-question runs used, of 2 |
-| `decision` | `pending` · `SEGUIR` · `APROBAR_CON_APLAZAMIENTO` · `DETENER` |
+| `decision` | `pending` · `APROBAR` · `AJUSTAR` · `DETENER`; only the human decision, never the computed verdict |
 | `open_dfr` | list of open `DFR` ids |
 | `not_acceptable_until_closure` | computed list reaching every open `DFR` |
+
+### Initialization and resume
+
+On a new run after upstream-only admission passes, initialize `record.json` with
+`stage: Ctx01`, the verified `upstream_baseline_hash` and `guardrails_sha256`, and
+empty `items`, `exclusions`, `discards`, `downgrades`, `omission_candidates`, and
+`not_asked` arrays. Initialize state with the same upstream hash, `round: 1`,
+`question_runs_used: 0`, `decision: pending`, and empty `open_dfr` and
+`not_acceptable_until_closure`. Create the empty event log once; append
+`admission_checked` before raising questions. Seeded REQs are written at 01.2,
+not required of an empty 01.1 record.
+
+On resume, compare the actual files, event sequence and current round before any
+write. Do not reset counters, truncate logs, duplicate feedback or reinitialize
+missing files in a partially populated directory. The owning step can finish a
+documented partial action from evidence; ambiguous or contradictory evidence
+requires a stop and reconciliation with the person.
+
+### Human decisions, verdicts and older records
+
+The computed gate verdict is `SEGUIR` or `AJUSTAR`; it is not a human decision.
+`open_dfr` and `not_acceptable_until_closure` record technical obligations without
+introducing a second approval type. New freezes store `decision: APROBAR`, signer
+and date, with the DFR list visible in the reviewed DEE and handoff.
+
+Read-only compatibility: an existing `APROBAR_CON_APLAZAMIENTO` decision may count
+as approval only with the original signed human response, passing gate evidence,
+closed OQ, frozen baseline, event and matching hash. An older `SEGUIR` value is a
+computed verdict, never sufficient proof of human approval. Missing or conflicting
+evidence stops admission for human reconciliation. Do not rewrite old frozen
+records, rehash them to repair a mismatch, or invent missing history.
 
 ## results/ctx01/events.jsonl — the nine events (closed)
 
@@ -66,7 +97,7 @@ not-measured`).
 | 4 | `coverage_contrasted` | `sr-coverage-contrast` | coverage table; independent-pass mode |
 | 5 | `gate_evaluated` | `sr-gate-check` | per-gate verdict and evidence |
 | 6 | `dee_emitted` | `sr-dee-report` | DEE path; candidate baseline hash |
-| 7 | `feedback_received` | `sr-feedback-cycle` | round index; answers/themes read |
+| 7 | `feedback_received` | `sr-feedback-cycle` | reviewed round; human decision, signer when given, response form path; answers/themes read |
 | 8 | `improvement_planned` | `sr-improvement-plan` | plan path; rows by disposition |
 | 9 | `baseline_frozen` | orchestrator (01.7) | signer; decision; frozen hash |
 

@@ -26,6 +26,14 @@ All commands run from the root.
    - `grep -cE '^- \*\*State:\*\* open' results/ctx00/problem-definition.md` prints `0`.
    - `grep -E '^- Decision: ' results/ctx00/problem-definition.md` still shows `<pending>` (the agent has not filled it).
    - The person's message is the word `APROBAR` and gives a name. Nothing else counts as approval.
+   - All required verification reports and the structural checklist are `GREEN`;
+     an unresolved failure prevents freeze even if approval was requested.
+   On recovery of an interrupted step 7, first reconcile original approval,
+   section 11, events and existing artifacts using the harness handoff contract.
+   The `pending` check applies to a new freeze; a recorded decision is not reset
+   to pending and a verified original approval is not requested or counted twice.
+   Resume only the incomplete operation, repeating its checks as necessary;
+   ambiguous or altered approval evidence blocks further writes.
 2. **Record the decision.** In section 11 write `Decision: APROBAR`, `Approved by:` the name as the person wrote it, and `Date:` from `date -I`.
 3. **Draft the JSON.** Write `results/ctx00/problem-baseline.json` from the `.md`, item by item, following `baseline-schema.md`. Leave `document.sha256` and `intake.sha256` as empty strings for now. Read each `.md` line and copy it; do not summarize, merge or complete.
 4. **Content checks** (they do not depend on any hash). Run each, and keep the command and its output:
@@ -48,6 +56,12 @@ All commands run from the root.
    orchestrator, which records `STAGE_APPROVED`, updates execution state and
    closes step 7 per `record-schema.md`. Do not start Ctx 01. Tell the person the
    three hand-off files are written.
+
+`CONTEXT` and baseline `status: frozen` imply approval and closed questions;
+execution `state.json` uses `approved` only after successful freeze. On an
+interruption, preserve partial artifacts and resume only from verifiable existing
+evidence. Do not infer approval, regenerate an absent decision or hand off a
+partially written baseline.
 
 ## Output
 

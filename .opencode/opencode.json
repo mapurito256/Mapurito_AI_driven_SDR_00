@@ -1,0 +1,115 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "edit": {
+      "*": "ask",
+      "AGENTS.md": "deny", "*/AGENTS.md": "deny",
+      "CLAUDE.md": "deny", "*/CLAUDE.md": "deny",
+      ".agents/*": "deny", "*/.agents/*": "deny",
+      ".claude/*": "deny", "*/.claude/*": "deny",
+      ".opencode/*": "deny", "*/.opencode/*": "deny",
+      ".mapurito/*": "deny", "*/.mapurito/*": "deny",
+      ".git/*": "deny", "*/.git/*": "deny",
+      "inputs/*": "deny", "*/inputs/*": "deny",
+      "pipeline-layout/*": "deny", "*/pipeline-layout/*": "deny",
+      "define-problem/*": "deny", "*/define-problem/*": "deny",
+      "specify-requirements/*": "deny", "*/specify-requirements/*": "deny",
+      "resolve-architecture-v2/*": "deny", "*/resolve-architecture-v2/*": "deny",
+      "compile-build-package-v2/*": "deny", "*/compile-build-package-v2/*": "deny"
+    },
+    "bash": { "*": "ask", "git push*": "deny" },
+    "task": "deny",
+    "read": { "*/evals/*": "deny", "evals/*": "deny", "*/legacy/*": "deny", "legacy/*": "deny" },
+    "external_directory": "deny",
+    "skill": { "*": "deny", "mapurito": "allow" },
+    "question": "allow",
+    "todowrite": "allow",
+    "glob": "ask",
+    "grep": "ask",
+    "list": "allow",
+    "webfetch": "ask",
+    "websearch": "ask"
+  },
+  "agent": {
+    "mapurito-ctx00": {
+      "description": "Run only Mapurito ctx00 with native active-stage file permissions",
+      "mode": "primary",
+      "prompt": "You are the Mapurito ctx00 executor. Read .agents/skills/mapurito/SKILL.md and its contracts. Your stage is ctx00; do not execute another stage in this session. Verify on-disk routing and human approval. Loading a skill does not change this profile. File permissions are not an OS sandbox. Use inline review fallback and record reduced independence.",
+      "permission": {
+        "read": { "*/evals/*": "deny", "evals/*": "deny", "*/legacy/*": "deny", "legacy/*": "deny" },
+        "edit": { "*": "deny", "results/ctx00/*": "ask", "*/results/ctx00/*": "ask" },
+        "bash": { "*": "ask", "git push*": "deny" },
+        "task": "deny",
+        "external_directory": "deny",
+        "skill": { "*": "deny", "mapurito": "allow" },
+        "question": "allow",
+        "todowrite": "allow",
+        "glob": "ask",
+        "grep": "ask",
+        "list": "allow",
+        "webfetch": "ask",
+        "websearch": "ask"
+      }
+    },
+    "mapurito-ctx01": {
+      "description": "Run only Mapurito ctx01 with native active-stage file permissions",
+      "mode": "primary",
+      "prompt": "You are the Mapurito ctx01 executor. Read .agents/skills/mapurito/SKILL.md and its contracts. Your stage is ctx01; do not execute another stage in this session. Verify on-disk routing and human approval. Loading a skill does not change this profile. File permissions are not an OS sandbox. Use inline review fallback and record reduced independence.",
+      "permission": {
+        "read": { "*/evals/*": "deny", "evals/*": "deny", "*/legacy/*": "deny", "legacy/*": "deny" },
+        "edit": { "*": "deny", "results/ctx01/*": "ask", "*/results/ctx01/*": "ask" },
+        "bash": { "*": "ask", "git push*": "deny" },
+        "task": "deny",
+        "external_directory": "deny",
+        "skill": { "*": "deny", "mapurito": "allow" },
+        "question": "allow",
+        "todowrite": "allow",
+        "glob": "ask",
+        "grep": "ask",
+        "list": "allow",
+        "webfetch": "ask",
+        "websearch": "ask"
+      }
+    },
+    "mapurito-ctx02": {
+      "description": "Run only Mapurito ctx02 with native active-stage file permissions",
+      "mode": "primary",
+      "prompt": "You are the Mapurito ctx02 executor. Read .agents/skills/mapurito/SKILL.md and its contracts. Your stage is ctx02; do not execute another stage in this session. Verify on-disk routing and human approval. Loading a skill does not change this profile. File permissions are not an OS sandbox. Use inline review fallback and record reduced independence.",
+      "permission": {
+        "read": { "*/evals/*": "deny", "evals/*": "deny", "*/legacy/*": "deny", "legacy/*": "deny" },
+        "edit": { "*": "deny", "results/ctx02/*": "ask", "*/results/ctx02/*": "ask" },
+        "bash": { "*": "ask", "git push*": "deny" },
+        "task": "deny",
+        "external_directory": "deny",
+        "skill": { "*": "deny", "mapurito": "allow" },
+        "question": "allow",
+        "todowrite": "allow",
+        "glob": "ask",
+        "grep": "ask",
+        "list": "allow",
+        "webfetch": "ask",
+        "websearch": "ask"
+      }
+    },
+    "mapurito-ctx03": {
+      "description": "Run only Mapurito ctx03 with native active-stage file permissions",
+      "mode": "primary",
+      "prompt": "You are the Mapurito ctx03 executor. Read .agents/skills/mapurito/SKILL.md and its contracts. Your stage is ctx03; do not execute another stage in this session. Verify on-disk routing and human approval. Web reads only for 03.2 datasheets. Loading a skill does not change this profile. File permissions are not an OS sandbox. Use inline review fallback and record reduced independence.",
+      "permission": {
+        "read": { "*/evals/*": "deny", "evals/*": "deny", "*/legacy/*": "deny", "legacy/*": "deny" },
+        "edit": { "*": "deny", "results/ctx03/*": "ask", "*/results/ctx03/*": "ask" },
+        "bash": { "*": "ask", "git push*": "deny" },
+        "task": "deny",
+        "external_directory": "deny",
+        "skill": { "*": "deny", "mapurito": "allow" },
+        "question": "allow",
+        "todowrite": "allow",
+        "glob": "ask",
+        "grep": "ask",
+        "list": "allow",
+        "webfetch": "ask",
+        "websearch": "ask"
+      }
+    }
+  }
+}

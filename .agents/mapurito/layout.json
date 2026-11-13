@@ -1,0 +1,15 @@
+{
+  "format_version": 1,
+  "mode": "development",
+  "project_root": ".",
+  "method_root": ".",
+  "input_root": "inputs",
+  "result_root": "results",
+  "methodology_version": null,
+  "stage_entries": {
+    "ctx00": "define-problem/SKILL.md",
+    "ctx01": "specify-requirements/SKILL.md",
+    "ctx02": "resolve-architecture-v2/SKILL.md",
+    "ctx03": "compile-build-package-v2/SKILL.md"
+  }
+}

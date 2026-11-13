@@ -15,3 +15,6 @@ node_modules/
 
 # Archivos del sistema
 .DS_Store
+# Local AI runtime state
+.atl/
+.agents/mapurito/session-state/

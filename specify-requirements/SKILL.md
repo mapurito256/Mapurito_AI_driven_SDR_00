@@ -58,7 +58,9 @@ Paths follow the root skill `pipeline-layout`.
 
 1. **Admit (01.1).** Read `results/ctx00/CONTEXT-ctx00.md` first, then the baseline JSON, `results/ctx00/intake.md` and `results/ctx00/sources/` (its reading order). Run the mechanical checks below. If any fails, do not start:
    a version mismatch re-runs against the current baseline; a content problem is
-   an R0 return to Ctx 00. Emit `admission_checked`. Then load `sr-gap-questions`
+   an R0 return to Ctx 00. For a new run, initialize records only after upstream-only
+   checks pass, as specified below. Emit `admission_checked` once at that
+   initialization checkpoint; do not duplicate it on resume. Then load `sr-gap-questions`
    over the input to produce the first question candidates.
 2. **Draft (01.2–01.5).** Load `sr-draft-items`: disposition of transferred
    material, then limits, then requirements, then acceptance criteria and any
@@ -72,27 +74,52 @@ Paths follow the root skill `pipeline-layout`.
 
 ### Admission — mechanical checks (shell, no script)
 
+Separate admission into these checkpoints; do not query a new record before it
+exists:
+
+1. **Upstream only:** read the handoff first; require ctx00 state `approved`,
+   handoff/baseline `frozen`, recorded human `APROBAR` with signer, closed questions,
+   verified source snapshots and matching baseline/document/intake hashes.
+   Older runs lacking modern logs/state require the explicit read-only
+   compatibility review in `.agents/mapurito/contracts/handoff.md`; absence is
+   not automatically interpreted as a valid older run.
+2. **New run:** only when `results/ctx01/` has no existing work, initialize
+   `record.json` and `state.json` per `references/records.md`; capture upstream and
+   guardrail hashes. Initialize an empty event log and emit `admission_checked`
+   after those checks pass. Do not create seeded REQs during 01.1.
+3. **Resume:** preserve all files and counters; verify stored hash links. A partial
+   initialization requires reconciliation with existing evidence, not reset.
+4. **After drafting 01.2:** `sr-draft-items` creates the seeded REQs. Check catalog
+   completeness and modality markers then, and again in G01-1 at every gate.
+   Missing seeds at 01.1 are not yet a failure; missing seeds after 01.2 are.
+
+The commands below are grouped by their prerequisites:
+
 ```
 # all commands run from the root; read results/ctx00/CONTEXT-ctx00.md first, then:
 # frozen, and the JSON still matches its stored hash
+jq -e '.status=="frozen" and .approved.decision=="APROBAR" and (.approved.by|type=="string" and length>0)' results/ctx00/problem-baseline.json
 jq -r '.status' results/ctx00/problem-baseline.json
 sha256sum -c results/ctx00/problem-baseline.sha256
 # the readable document is the one the baseline was frozen from
 jq -r '.document.sha256' results/ctx00/problem-baseline.json
 sha256sum results/ctx00/problem-definition.md
-# record is built against this baseline (the JSON's hash from the .sha256 file)
+# after new-record initialization, or on resume: record hash links
 jq -r '.upstream_baseline_hash' results/ctx01/record.json
 cut -d' ' -f1 results/ctx00/problem-baseline.sha256
 # guardrail catalog is the one the record was built against
 sha256sum pipeline-layout/guardrails.md      # equals the next line
 jq -r '.guardrails_sha256' results/ctx01/record.json
-# every catalog guardrail is a seeded item, and only those
+# after 01.2, then at every G01-1: every guardrail is seeded, and only those
 diff <(grep -oE '^\| *GRD-[0-9]+' pipeline-layout/guardrails.md | tr -d '| ' | sort) <(jq -r '.items[]|select(.sembrado==true)|.guardrail_id' results/ctx01/record.json | sort)   # empty
 # every open question closed; every verified source has a snapshot
 jq -r '.open_questions[] | select(.state|startswith("closed")|not) | .id' results/ctx00/problem-baseline.json
 jq -r '.sources[] | select(.status=="verified" and (.snapshot_file==null or .snapshot_file=="")) | .id' results/ctx00/problem-baseline.json
 ```
-Each seeded item's `text` must contain its catalog `modality_marker` (judgement, cited in G01-1 evidence).
+The non-empty-output checks must be interpreted as checks, not merely run: hashes
+and links must equal, closed-question and missing-snapshot lists must be empty,
+and catalog comparison must be empty after 01.2. Each seeded item's `text` must
+contain its catalog `modality_marker` (judgement, cited in G01-1 evidence).
 A judgement about the baseline (is the frozen content actually complete?) is not
 mechanical and is not Ctx 01's to make; a content defect returns to Ctx 00.
 
@@ -112,14 +139,19 @@ mechanical and is not Ctx 01's to make; a content defect returns to Ctx 00.
 
 ## Close and gate 1 (01.7)
 
-The gate re-runs complete every round, not only the impact set. On a clean gate
-and a human `APROBAR`, freeze: write `results/ctx01/requirements-baseline.json` with
+The gate re-runs complete every round, not only the impact set. Require zero open
+OQ, every gate passing, and explicit human `APROBAR` with signer before freeze.
+Write `results/ctx01/requirements-baseline.json` with
 `status: frozen`, the decision and the signer, store its hash with
 `sha256sum results/ctx01/requirements-baseline.json > results/ctx01/requirements-baseline.sha256`,
 write `results/ctx01/requirements-baseline.md` as defined in `references/records.md`,
-and write `results/ctx01/CONTEXT-ctx01.md`. Emit `baseline_frozen`. If any `DFR` is open, the only
-approval is `APROBAR_CON_APLAZAMIENTO`, carrying the deferral list. Without a
-sign-off, do not freeze.
+and write `results/ctx01/CONTEXT-ctx01.md`. Verify the hash, then emit
+`baseline_frozen` with signer, decision and frozen hash. Open `DFR` items are
+controlled technical obligations, not open questions: present their list,
+responsible stage, closure criteria and `not_acceptable_until_closure` explicitly
+to the signer and carry them intact. The human decision remains `APROBAR`.
+Without sign-off or with a failed check, do not freeze. Interrupted closure is
+incomplete; reconcile evidence before downstream admission.
 
 ## Stop rules
 

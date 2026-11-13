@@ -15,6 +15,8 @@ citation depends on this numbering, so it is written once and never changed.
 ## Inputs
 
 - The input material in any format, converted to plain text or Markdown.
+- One or several inputs selected through the common input-selection contract;
+  do not infer a new source set while resuming.
 - `../../references/record-schema.md` for **Identifiers**, **Item lines**, **Classification categories (section 1)** and **Provenance marks**.
 
 ## Procedure
@@ -23,6 +25,9 @@ citation depends on this numbering, so it is written once and never changed.
 2. For a long input, work in chunks that follow the natural sections of the source, keeping a running counter. Write each chunk to `results/ctx00/intake.md` as soon as it is finished. Copy the source's headings as unnumbered context lines; they are not statements.
 3. Number each statement and write the number into the file as `- STM-nn · <literal text>`. Numbers are sequential, in order of appearance, with no gaps. Past 99, use three digits.
 4. Write the first line of `results/ctx00/intake.md` as `Total statements: N`, where N is the count of numbered statements.
+   For multiple inputs, retain unnumbered source headings with each selected
+   path and SHA-256 and use the selected order. Keep `STM` numbering continuous
+   and literal statement text unchanged; do not merge contradictory statements.
 5. Immutability: once numbering is finished, never edit `results/ctx00/intake.md`. Do not renumber, insert or correct anything. Anything the person says later goes to the feedback log with its own identifier, never into the intake. If the client delivers a corrected input, restart the stage on the new material.
 6. Recount: read the file a second time and confirm the identifiers are consecutive, have no duplicates, and the last equals N. Then, for each section of the source, confirm its last sentence appears in a statement — a cheap check that nothing was dropped.
 7. Classify each `STM-nn` in section 1 of `results/ctx00/problem-definition.md`: one category, or a discard with a reason, exactly once. Write each as a section 1 line of **Item lines**. A statement that names a solution is discarded as `discard: solution` and copied to section 7 as the next `SOL-nn` line (from 01, no gaps, no reuse) with its citation. A contiguous block with no substantive content may be discarded as a range on one line: `STM-nn to STM-nn · discard: noise`.

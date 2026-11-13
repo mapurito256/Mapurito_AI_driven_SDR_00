@@ -28,7 +28,11 @@ Nothing upstream is modified (invariant 4) or dropped silently (invariant 5).
    jq -r '.items[] | select(.type=="REQ" or .type=="LIM" or .type=="DFR") | .id' results/ctx01/requirements-baseline.json
    ```
    If the baseline shape differs from `.items[]`, adapt the `jq` path and record
-   the shape found. The baseline status must be `frozen` or `approved`; the
+   the shape found. For new ctx01 baselines the status must be `frozen` and the
+   human decision `APROBAR` with signer. Apply the read-only compatibility rules
+   in `.agents/mapurito/contracts/handoff.md` to older records; never translate a
+   computed `SEGUIR` into approval. Verify signed response, passing gates,
+   `baseline_frozen` event and handoff agree before entry. The
    `sha256sum -c` check must say `OK`; section 8 of the Ctx 00 document must hold no open
    question. A check that cannot be evaluated is `NOT_EVALUABLE`, never a pass.
 3. **On failure** do not start. A Ctx 01 baseline that is not approved or whose
