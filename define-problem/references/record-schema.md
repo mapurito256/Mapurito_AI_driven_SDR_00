@@ -55,7 +55,7 @@ existing hand-off and baseline status values are unchanged.
 
 | Event | When and payload |
 |---|---|
-| `STAGE_START` | Initialize a new run; input path and its SHA-256. |
+| `STAGE_START` | Initialize a new run; input path and its SHA-256 for a single input, or ordered `inputs: [{path, sha256}]` for multiple inputs. Record `input_selection: explicit` or `single-discovered`. |
 | `VERIFICATION_RESULT` | Each verification, including retries; skill or check, scope, verdict and evidence location in section 10 or the hand-off. |
 | `SUBSTAGE_END` | Each completed step; step number and output paths. |
 | `VALIDATION_ISSUED` | Each presentation to the person; document path and open question ids. |
@@ -186,6 +186,11 @@ Four fields plus a state; a question missing any field is not written:
 Criteria for raising a question: `dp-gap-search`.
 
 ## CONTEXT template
+
+`frozen` is a completed approved handoff, never an unapproved outcome. Execution
+state uses `approved`; the baseline and this note use `frozen`. All three must
+agree with the person's approval, closed questions, successful checks and hashes.
+`not_approved` has no frozen baseline. An interrupted freeze is incomplete.
 
 ```markdown
 # CONTEXT-ctx00

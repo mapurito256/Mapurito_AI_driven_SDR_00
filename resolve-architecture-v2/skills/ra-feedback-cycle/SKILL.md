@@ -59,7 +59,12 @@ that produce R1 and R2 (`ra-gap-questions`), at most 8 per run.
      `v1_locked_sha256`, emit `VALIDATION_APPROVED`, open phase B. V2: emit
      `VALIDATION_APPROVED`, write `results/ctx02/architecture-baseline.json` (items and
      plan), store its hash with `sha256sum results/ctx02/architecture-baseline.json > results/ctx02/architecture-baseline.sha256`, write `results/ctx02/architecture-baseline.md` (reading copy, see `references/records.md`), write `results/ctx02/final-design.md`, emit
-     `STAGE_APPROVED`, set `status: approved`, write `results/ctx02/CONTEXT-ctx02.md`.
+      `STAGE_APPROVED`, set `status: approved`, write `results/ctx02/CONTEXT-ctx02.md`.
+      Before emitting `STAGE_APPROVED`, verify the stored baseline hash with
+      `sha256sum -c` and the required artifacts. Require a signer and the recorded
+      V1/V2 human approvals. A missing check, open blocking question or interrupted
+      freeze cannot grant downstream admission. Reconcile partial closure using
+      `.agents/mapurito/contracts/handoff.md`, without inventing approval.
    - `AJUSTAR`: run steps 3 and 4. If the feedback cap is spent, `AJUSTAR` is not
      offered at the next presentation (R4).
    - `DETENER`: set `status: stopped`, write `results/ctx02/CONTEXT-ctx02.md`, do not

@@ -48,8 +48,9 @@ Warnings (non-blocking): <vagueness, uncited-limit, single-requirement>, or none
 2. Is coverage sufficient? (see the per-upstream table in section 5)
 3. Is each deferral immaterial? (brackets in section 4)
 4. Can Ctx 02 compare alternatives without inventing?
-Computed verdict: <SEGUIR | APROBAR_CON_APLAZAMIENTO | AJUSTAR>.
-ACTION REQUIRED: a person signs -> APROBAR or AJUSTAR. The agent does not sign.
+Computed verdict: <SEGUIR | AJUSTAR> (not a human decision).
+Open controlled deferrals: <DFR ids>, or none; see section 4 for obligations.
+ACTION REQUIRED: a person signs -> APROBAR, AJUSTAR or DETENER. The agent does not sign.
 ```
 
 ## Gate evidence table (identical wording in `sr-gate-check`)
@@ -69,6 +70,8 @@ ACTION REQUIRED: a person signs -> APROBAR or AJUSTAR. The agent does not sign.
 ```markdown
 # Feedback response — round <n> (output O<n>)
 Decision: <APROBAR | AJUSTAR | DETENER>
+Signer: <person's name>
+Date: <YYYY-MM-DD>
 
 ## Answers to open questions
 - <Q-id>: <content answer, or "forced closure">   [cite line: <source>]
@@ -81,7 +84,8 @@ Decision: <APROBAR | AJUSTAR | DETENER>
 
 ```markdown
 # Ctx 01 context — frozen Requirements Baseline
-- Gate-1 decision: <SEGUIR | APROBAR_CON_APLAZAMIENTO> signed by <name>
+- Gate-1 human decision: APROBAR signed by <name> on <date>
+- Computed verdict: SEGUIR; all gates pass and no OQ is open
 - Frozen hash: <hash>
 ## Files (path · sha256)
 - pipeline-layout/guardrails.md · <sha256>

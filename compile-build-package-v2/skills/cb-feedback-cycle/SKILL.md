@@ -93,7 +93,13 @@ New questions come only from the runs that produce R1 and R2
      `sha256sum results/ctx03/build-package-baseline.json > results/ctx03/build-package-baseline.sha256`,
      emit `STAGE_APPROVED`, set `status: approved` and write
      `results/ctx03/CONTEXT-ctx03.md`. There is no `build-package-baseline.md`:
-     `results/ctx03/final-spec.md` is the document the builder reads.
+      `results/ctx03/final-spec.md` is the document the builder reads.
+      Before `STAGE_APPROVED`, require signer, recorded V1/V2 human approvals,
+      passing required gates and closed blocking questions; verify the baseline
+      with `sha256sum -c` and every manifest entry against its artifact. A partial
+      closure is not complete. Reconcile interruptions through
+      `.agents/mapurito/contracts/handoff.md`; never invent approval or freeze
+      a final document different from the reviewed candidate.
    - `AJUSTAR`: run steps 3 and 4. If the feedback cap is spent, `AJUSTAR` is not
      offered at the next presentation (R4).
    - `DETENER`: set `status: stopped`, write `results/ctx03/CONTEXT-ctx03.md`, do not

@@ -37,7 +37,10 @@ dropped silently (invariant 5).
    jq -r '.items[] | select(.type=="DEC" or .type=="CMP" or .type=="DEP") | "\(.type) \(.id)"' results/ctx02/architecture-baseline.json
    ```
    If a baseline shape differs from `.items[]`, adapt the `jq` path and record the
-   shape found. Both statuses must be `frozen` or `approved`; both `sha256sum -c`
+   shape found. Current ctx01 status must be `frozen` and ctx02 status `approved`;
+   human approvals, closure events and handoffs must agree, including ctx02 V1/V2.
+   Apply `.agents/mapurito/contracts/handoff.md` for older records without changing
+   their files. Missing or contradictory approval evidence blocks entry. Both `sha256sum -c`
    must say `OK`; section 8 of the Ctx 00 document must hold no open question. A
    check that cannot be evaluated is `NOT_EVALUABLE`, never a pass.
 3. **On failure** do not start. A Ctx 02 baseline that is not approved or whose

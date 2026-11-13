@@ -61,7 +61,9 @@ and single-requirement are **warnings**, listed, never blocking.
 
 Fill the gate rows of the DEE (section 5) with `pass`/`FAIL`, the cited evidence,
 and the warnings separated from verdicts. Compute the verdict: `AJUSTAR` if any
-gate FAILs; else `APROBAR_CON_APLAZAMIENTO` if any `DFR` is open; else `SEGUIR`.
+gate FAILs; otherwise `SEGUIR`. Separately expose every open DFR with responsible
+stage, bracket, materiality, closure criterion and the not-acceptable-until-closure
+set. Neither `SEGUIR` nor the DFR list is a human approval. Open OQ block freeze.
 Emit `gate_evaluated` with the per-gate verdict.
 
 ## Do not

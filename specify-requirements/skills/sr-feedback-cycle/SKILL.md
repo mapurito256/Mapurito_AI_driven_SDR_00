@@ -37,7 +37,9 @@ orchestrator.
 
 1. Read the response form. Classify each entry: an answer to a `Q-id` (content or
    forced closure) or an improvement `T-id`. Nothing is read as prose to act on;
-   the reason is the person's text, cited by line.
+   the reason is the person's text, cited by line. Emit `feedback_received` for
+   the output actually reviewed, including decision, signer when given and source
+   form path, before applying changes; do not duplicate this event on resume.
 2. Close questions. A content answer closes its `OQ` as answered and feeds a row
    to `sr-improvement-plan`; a forced closure closes it and is never reformulated.
 3. **Forced closure at O3.** When the output being prepared is O3, every still-open
@@ -45,13 +47,14 @@ orchestrator.
    and made visible in the DEE. No new question is raised from O3 onward.
 4. Hand every answer and every theme to `sr-improvement-plan`; it writes the plan
    before any item is touched. Only `sr-draft-items` then executes its rows.
-5. Update `results/ctx01/state.json`: increment `round`, record the decision, keep the two
-   counters consistent.
-6. Emit `feedback_received` with the round index and the answers and themes read.
+5. Update `results/ctx01/state.json`: record the human decision and keep counters
+   consistent. Increment `round` only when preparing the next output after
+   `AJUSTAR`; never increment on approval, stop or an incomplete response.
 
 ## Decision handling
 
-`APROBAR` → hand to the orchestrator's freeze (gate must be clean).
+`APROBAR` → hand to the orchestrator's freeze (all gates must pass, zero open OQ,
+signer recorded, and any controlled DFR explicitly visible in the reviewed DEE).
 `AJUSTAR` → run the improvement plan and produce the next output.
 `DETENER` → stop; record the decision and the open set; do not freeze.
 

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "ask": ["Bash", "Edit", "Write", "WebFetch", "WebSearch"],
+    "deny": [
+      "Edit(./.agents/**)", "Edit(./.claude/**)", "Edit(./.opencode/**)", "Edit(./.mapurito/**)", "Edit(./.git/**)",
+      "Edit(./AGENTS.md)", "Edit(./CLAUDE.md)", "Edit(./pipeline-layout/**)",
+      "Edit(./define-problem/**)", "Edit(./specify-requirements/**)", "Edit(./resolve-architecture-v2/**)", "Edit(./compile-build-package-v2/**)",
+      "Edit(./inputs/**)", "Edit(./results/ctx00/**)", "Edit(./results/ctx02/**)", "Edit(./results/ctx03/**)",
+      "Read(**/evals/**)", "Read(**/legacy/**)", "Agent"
+    ]
+  }
+}

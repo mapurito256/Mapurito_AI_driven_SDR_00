@@ -6,6 +6,12 @@
 >
 > **To use the methodology** (how to run it, where results end up, how to respond at each validation) see [`GUIA-DE-USO.md`](GUIA-DE-USO.md).
 >
+> **Agent entry and protection profiles:** see [the harness guide](.agents/mapurito/README.md).
+> The current integration runs against the development tree. Versioned `.mapurito/`
+> copies and the CLI are later phases; native permissions are not an OS sandbox.
+> Normal `opencode` / `claude` startup loads the project adapter. Runtime hooks
+> select file policies from stage evidence; Claude's hook requires Node 20+.
+>
 > **Version:** 4.0 · November 11, 2026.
 >
 > **What changes with respect to version 3.0.** Version 3.0 described a code engine with a common Stage Delivery Document, an `adjust-stage` skill and token and time logs. The current design is different: **the agent executes each stage by following skills** (`dp-*`, `sr-*`, `ra-*`, `cb-*`), mechanical checks are done with shell commands (`sha256sum`, `jq`, `grep`, `tsort`) and **no script is written or kept**. Results live in `results/ctxNN/`. Human validation is different in each stage (see §5). `adjust-stage`, the token logs and the shared rules engine no longer exist.
@@ -130,7 +136,7 @@ flowchart TD
 - **Key rules:** everything transferred from ctx00 ends up adopted or discarded with a code; every objective and every scope element has at least one requirement or an approved exclusion; a value that is not in the literal quote is never `declarado`.
 - **Human validation:** the agent issues a **DEE** (a six-section document: summary, content, what the agent decided, what remains open, gate results and pending decision) and a response form. The person responds with `APROBAR`, `AJUSTAR` or `DETENER`.
 - **Rounds:** up to **6 outputs** (O1–O6). New questions only in O1 and O2; in O3 those still open are **forced closed**; from O4 on, only improvement themes. After O6 only `APROBAR` or `DETENER` is possible.
-- **Approval:** clean gates and human signature. With any `DFR` open, the only possible approval is `APROBAR_CON_APLAZAMIENTO`.
+- **Approval:** clean gates, no open OQ and human `APROBAR` with signature. Controlled `DFR` obligations remain visible and travel to their responsible stage; they do not introduce a second approval type.
 - **Output:** `results/ctx01/` with `record.json`, `state.json`, `events.jsonl`, `rounds/O<n>/`, `requirements-baseline.json/.sha256/.md`, `CONTEXT-ctx01.md`.
 
 ### 4.3 ctx02 · Resolve the architecture (`resolve-architecture-v2`)
